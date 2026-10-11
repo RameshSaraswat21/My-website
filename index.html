@@ -2020,7 +2020,52 @@
             const trackUrl = `https://www.indiapost.gov.in/_layouts/15/dpt.cept.tracking/trackconsignment.aspx`;
             window.open(trackUrl, '_blank');
                     }
-        
+
+                // 1. WhatsApp Quick Inquiry Logic
+        function sendWhatsAppInquiry() {
+            const name = document.getElementById('inqName').value.trim();
+            const phone = document.getElementById('inqPhone').value.trim();
+            const topic = document.getElementById('inqTopic').value;
+            const msg = document.getElementById('inqMsg').value.trim();
+
+            if (!name) {
+                alert('कृपया अपना नाम दर्ज करें।');
+                return;
+            }
+
+            const text = 
+`🙏 *नमस्ते रमेश जी, वेबसाइट से नया संदेश आया है:*
+👤 *नाम:* ${name}
+📞 *फ़ोन:* ${phone || 'उपलब्ध नहीं'}
+📌 *विषय:* ${topic}
+📝 *संदेश:* ${msg || 'कृपया इस विषय में जानकारी प्रदान करें।'}`;
+
+            const url = `https://api.whatsapp.com/send?phone=918949126572&text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+
+        // 2. Add to Home Screen (PWA) Logic
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        alert('ऐप सफलतापूर्वक आपकी होम स्क्रीन में जोड़ा जा रहा है!');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                // If browser doesn't trigger prompt directly
+                alert('📲 मोबाइल में ऐप जोड़ने के लिए:\n\n1. ऊपर दाएँ कोने में 3 डॉट्स (⋮) पर टैप करें।\n2. "Add to Home screen" (होम स्क्रीन में जोड़ें) या "Install app" पर क्लिक करें।\n\nयह आपके फ़ोन में एक ऐप आइकन बन जाएगा!');
+            }
+        }
+
     </script>
 
 </body>
