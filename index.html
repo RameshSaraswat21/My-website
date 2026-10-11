@@ -1303,7 +1303,7 @@
             document.getElementById('resPliBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN') + ' (@ ₹' + bonusRate + '/हज़ार)';
             document.getElementById('resPliMat').innerText = '₹ ' + matAmount.toLocaleString('en-IN');
             document.getElementById('resPliProfit').innerText = '₹ ' + profit.toLocaleString('en-IN');
-            document.getElementById('pliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong> | शेरेराँ, बीकानेर<br><em>*यह कोटेशन वर्तमान बोनस दरों पर आधारित है। अधिक जानकारी के नजदीकी डाकघर से संपर्क करे।</em>`;
+            document.getElementById('pliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong> | शेरेराँ, बीकानेर<br><em>*यह कोटेशन वर्तमान बोनस दरों पर आधारित है। अधिक जानकारी के लिए नजदीकी डाकघर से संपर्क करे।</em>`;
 
             latestPliQuote = { name, schemeName, age, term, matAge, sa: sa.toLocaleString('en-IN'), prem: prem.toLocaleString('en-IN'), freqText, totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
             document.getElementById('pliResultBox').style.display = 'block';
@@ -1366,7 +1366,7 @@
             document.getElementById('resRpliBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN') + ' (@ ₹' + bonusRate + '/हज़ार)';
             document.getElementById('resRpliMat').innerText = '₹ ' + matAmount.toLocaleString('en-IN');
             document.getElementById('resRpliProfit').innerText = '₹ ' + profit.toLocaleString('en-IN');
-            document.getElementById('rpliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong> | शेरेराँ, बीकानेर<br><em>*यह कोटेशन वर्तमान बोनस दरों पर आधारित है। अधिक जानकारी के नजदीकी डाकघर से संपर्क करे।</em>`;
+            document.getElementById('rpliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong> | शेरेराँ, बीकानेर<br><em>*यह कोटेशन वर्तमान बोनस दरों पर आधारित है। अधिक जानकारी के लिए नजदीकी डाकघर से संपर्क करे।</em>`;
 
             latestRpliQuote = { name, schemeName, age, term, matAge: (schemeVal === 'gram_priya' ? (age + 10) : matAge), sa: sa.toLocaleString('en-IN'), prem: prem.toLocaleString('en-IN'), freqText, totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
             document.getElementById('rpliResultBox').style.display = 'block';
@@ -1460,7 +1460,6 @@
 ----------------------------------
 *परामर्शदाता:* ${q.advName}
 📞 *फ़ोन / WhatsApp:* +91 ${q.advPhone}
-📍 शेरेराँ, बीकानेर (राजस्थान)`;
 
             const element = document.getElementById('rpliPrintArea');
             const opt = getPdfConfig(filename);
