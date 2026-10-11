@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>रमेश सारस्वत | आधिकारिक वेबसाइट | शेरेराँ, बीकानेर</title>
-    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया एवं प्रेस कवरेज, फ़ोटो गैलरी, श्री गुंसाई जी महाराज आरती एवं संपर्क।">
+    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया एवं प्रेस कवरेज, फ़ोटो गैलरी, प्रीमियम कैलकुलेटर, श्री गुंसाई जी महाराज आरती एवं संपर्क।">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Header / Hero Section */
+        /* Hero / Profile Header */
         .hero {
             background: radial-gradient(circle at top right, #fff7ed 0%, #ffedd5 50%, #ffffff 100%);
             padding: 35px 20px 25px;
@@ -107,14 +107,14 @@
             font-size: 0.98rem;
         }
 
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 850px;
             margin: 0 auto;
             padding: 25px 16px 80px;
         }
 
-        /* HOME VIEW: 5 Main Option Cards */
+        /* Home View */
         #home-view {
             display: block;
             animation: fadeIn 0.3s ease;
@@ -164,7 +164,6 @@
             background: #fffaf5;
         }
 
-        /* Small Icon Image Styling */
         .menu-icon-box {
             width: 54px;
             height: 54px;
@@ -201,9 +200,9 @@
             font-weight: bold;
         }
 
-        /* DETAIL VIEWS */
+        /* Detail Views */
         .detail-view {
-            display: none; /* Hidden by default */
+            display: none;
             animation: fadeIn 0.35s ease;
         }
 
@@ -279,7 +278,7 @@
             font-size: 0.98rem;
         }
 
-        /* 1. Media Grid (10 Items) */
+        /* 1. Media Grid */
         .news-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -335,7 +334,7 @@
             border-top: 1px solid #f1f5f9;
         }
 
-        /* 2. Photo Gallery (17 Items) */
+        /* 2. Photo Gallery */
         .photo-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -378,7 +377,164 @@
             padding: 16px 5px 6px;
         }
 
-        /* 3. Gusai Ji Aarti Styles */
+        /* 3. CALCULATOR STYLES */
+        .calc-form {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px 18px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fff;
+            color: var(--dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        .btn-calc {
+            width: 100%;
+            background: linear-gradient(135deg, #c2410c, #ea580c);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35);
+            transition: all 0.25s ease;
+        }
+
+        .btn-calc:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+
+        /* Result Display Box */
+        .result-box {
+            display: none;
+            background: #ffffff;
+            border: 2px solid #fed7aa;
+            border-radius: 16px;
+            padding: 20px 18px;
+            margin-top: 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .result-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            border-bottom: 2px dashed #fed7aa;
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .result-table tr {
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .result-table td {
+            padding: 10px 6px;
+            font-size: 1rem;
+        }
+
+        .result-table td:first-child {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .result-table td:last-child {
+            text-align: right;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .highlight-row {
+            background: #fff7ed;
+        }
+
+        .highlight-row td {
+            color: var(--primary) !important;
+            font-size: 1.15rem !important;
+        }
+
+        .action-btn-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn-share-wa {
+            flex: 1;
+            min-width: 140px;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-download-pdf {
+            flex: 1;
+            min-width: 140px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+        }
+
+        /* 4. Gusai Ji Aarti */
         .aarti-special-card {
             background: #fffbeb;
             border: 2px solid #fde68a;
@@ -450,7 +606,7 @@
             font-size: 1.05rem;
         }
 
-        /* 4. About Us Styles */
+        /* 5. About Us */
         .about-content {
             display: flex;
             flex-direction: column;
@@ -481,7 +637,7 @@
             margin-bottom: 4px;
         }
 
-        /* 5. Contact Info Styles */
+        /* 6. Contact Info */
         .contact-list {
             list-style: none;
             margin-top: 10px;
@@ -545,6 +701,21 @@
             font-size: 0.95rem;
         }
 
+        /* Print Mode for PDF */
+        @media print {
+            body * { visibility: hidden; }
+            #printable-quotation, #printable-quotation * { visibility: visible; }
+            #printable-quotation {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: 2px solid #000;
+                padding: 20px;
+            }
+            .action-btn-row, .btn-home { display: none !important; }
+        }
+
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8rem; }
             .menu-card { padding: 14px 16px; }
@@ -574,17 +745,17 @@
     <div class="container">
 
         <!-- ==============================================
-             HOME VIEW: EXACT 5 CLEAN OPTIONS WITH SMALL ICONS
+             HOME VIEW: 6 CLEAN APP-STYLE OPTIONS
              ============================================== -->
         <main id="home-view">
             <div class="home-heading">
-                
-                
+                <h2>मुख्य विकल्प (मेनू)</h2>
+                <p>विवरण देखने के लिए नीचे दिए गए किसी भी विकल्प पर क्लिक करें:</p>
             </div>
 
             <div class="menu-grid">
                 
-                <!-- Option 1: Media and News Paper -->
+                <!-- 1. Media and News Paper -->
                 <div class="menu-card" onclick="openSection('detail-media')">
                     <div class="menu-icon-box">📰</div>
                     <div class="menu-info">
@@ -594,27 +765,37 @@
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- Option 2: Picture Gallery -->
+                <!-- 2. Picture Gallery -->
                 <div class="menu-card" onclick="openSection('detail-gallery')">
                     <div class="menu-icon-box">🖼️</div>
                     <div class="menu-info">
                         <h3>Picture Gallery</h3>
-                        <p>प्रकृति के रंग एवं ग्रामीण परिवेश की सुंदर झलकियाँ </p>
+                        <p>धार्मिक एवं सामाजिक कार्यक्रमों की फ़ोटो गैलरी</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- Option 3: Sri Gusai Ji Aarti -->
+                <!-- 3. NEW: Premium Calculator (गैलरी के ठीक नीचे) -->
+                <div class="menu-card" onclick="openSection('detail-calc')" style="border-color: #f97316; background: #fffaf0;">
+                    <div class="menu-icon-box" style="background: #ffedd5; border-color: #f97316;">📊</div>
+                    <div class="menu-info">
+                        <h3 style="color: var(--primary);">Premium Calculator (कैलकुलेटर)</h3>
+                        <p>DOB व आयु से प्रीमियम व मैच्योरिटी गणना, PDF व WhatsApp शेयर</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+                <!-- 4. Gusai Ji Aarti -->
                 <div class="menu-card" onclick="openSection('detail-aarti')">
                     <div class="menu-icon-box">🪔</div>
                     <div class="menu-info">
-                        <h3>Sri Gusai Ji Aarti</h3>
+                        <h3>Gusai Ji Aarti</h3>
                         <p>श्री गुंसाई जी महाराज के दर्शन एवं संपूर्ण आरती</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- Option 4: About Us -->
+                <!-- 5. About Us -->
                 <div class="menu-card" onclick="openSection('detail-about')">
                     <div class="menu-icon-box">👤</div>
                     <div class="menu-info">
@@ -624,12 +805,12 @@
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- Option 5: Contact Info -->
+                <!-- 6. Contact Info -->
                 <div class="menu-card" onclick="openSection('detail-contact')">
                     <div class="menu-icon-box">📞</div>
                     <div class="menu-info">
                         <h3>Contact Info</h3>
-                        <p>WhatsApp</p>
+                        <p>WhatsApp, मोबाइल नंबर, ईमेल एवं निवास का पता</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
@@ -660,7 +841,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #1</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260406_074902.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260406_074902.jpg" alt="प्रेस कवरेज 2" class="news-thumb" loading="lazy">
@@ -668,7 +848,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #2</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260405_080422.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260405_080422.jpg" alt="प्रेस कवरेज 3" class="news-thumb" loading="lazy">
@@ -676,7 +855,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #3</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260404_092632.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260404_092632.jpg" alt="प्रेस कवरेज 4" class="news-thumb" loading="lazy">
@@ -684,7 +862,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #4</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260405_075515.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260405_075515.jpg" alt="प्रेस कवरेज 5" class="news-thumb" loading="lazy">
@@ -692,7 +869,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #5</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260404_092336.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260404_092336.jpg" alt="प्रेस कवरेज 6" class="news-thumb" loading="lazy">
@@ -700,7 +876,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #6</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260404_092204.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260404_092204.jpg" alt="प्रेस कवरेज 7" class="news-thumb" loading="lazy">
@@ -708,7 +883,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #7</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260404_071727.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260404_071727.jpg" alt="प्रेस कवरेज 8" class="news-thumb" loading="lazy">
@@ -716,7 +890,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #8</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20260317_081419.jpg" target="_blank" class="news-link">
                             <img src="IMG_20260317_081419.jpg" alt="प्रेस कवरेज 9" class="news-thumb" loading="lazy">
@@ -724,7 +897,6 @@
                         </a>
                         <div class="news-caption">प्रकाशित आलेख #9</div>
                     </div>
-
                     <div class="news-item">
                         <a href="IMG_20251119_203733.jpg" target="_blank" class="news-link">
                             <img src="IMG_20251119_203733.jpg" alt="प्रेस कवरेज 10" class="news-thumb" loading="lazy">
@@ -750,7 +922,7 @@
                     <h2>Picture Gallery (फ़ोटो गैलरी)</h2>
                 </div>
                 <p class="section-subtitle">
-                    धार्मिक, सामाजिक एवं व्यक्तिगत पलों की सुंदर स्मृतियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
+                    🌿 प्रकृति के रंग एवं ग्रामीण परिवेश की सुंदर झलकियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
                 </p>
 
                 <div class="photo-gallery-grid">
@@ -816,7 +988,7 @@
                     </div>
                     <div class="gallery-card">
                         <a href="IMG_20250919_115940.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250919_115940.jpg" alt="फ़ोटो 11" class="gallery-link">
+                            <img src="IMG_20250919_115940.jpg" alt="फ़ोटो 11" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
@@ -864,7 +1036,148 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 3: Gusai Ji Aarti
+             DETAIL VIEW 3: PREMIUM CALCULATOR (NEW)
+             ============================================== -->
+        <section id="detail-calc" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
+            <div class="card-box">
+                <div class="section-header">
+                    <h2>बीमा प्रीमियम एवं परिपक्वता कैलकुलेटर</h2>
+                </div>
+                <p class="section-subtitle">
+                    अपनी जन्मतिथि, बीमा राशि एवं परिपक्वता आयु दर्ज कर तत्काल सटीक प्रीमियम व मैच्योरिटी लाभ जानें।
+                </p>
+
+                <!-- Input Form -->
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label for="custName">ग्राहक का नाम (Customer Name):</label>
+                        <input type="text" id="custName" class="form-control" placeholder="उदा. सुरेश कुमार" value="सम्मानित ग्राहक">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custDob">जन्मतिथि (Date of Birth - DOB):</label>
+                        <input type="date" id="custDob" class="form-control" onchange="autoUpdateAge()">
+                        <small id="ageDisplay" style="color: var(--primary); font-weight: 700; margin-top: 4px; display: block;"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sumAssured">बीमा राशि / Sum Assured (₹):</label>
+                        <select id="sumAssured" class="form-control">
+                            <option value="100000">₹ 1,00,000 (एक लाख)</option>
+                            <option value="200000">₹ 2,00,000 (दो लाख)</option>
+                            <option value="300000">₹ 3,00,000 (तीन लाख)</option>
+                            <option value="500000" selected>₹ 5,00,000 (पाँच लाख)</option>
+                            <option value="1000000">₹ 10,00,000 (दस लाख)</option>
+                            <option value="2000000">₹ 20,00,000 (बीस लाख)</option>
+                            <option value="5000000">₹ 50,00,000 (पचास लाख)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maturityAge">परिपक्वता आयु (Maturity Age):</label>
+                        <select id="maturityAge" class="form-control">
+                            <option value="35">35 वर्ष</option>
+                            <option value="40">40 वर्ष</option>
+                            <option value="45">45 वर्ष</option>
+                            <option value="50">50 वर्ष</option>
+                            <option value="55">55 वर्ष</option>
+                            <option value="58" selected>58 वर्ष (PLI सेवानिवृत्ति)</option>
+                            <option value="60">60 वर्ष (सामान्य सेवानिवृत्ति)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="freq">प्रीमियम भुगतान आवृत्ति (Premium Frequency):</label>
+                        <select id="freq" class="form-control">
+                            <option value="12" selected>मासिक (Monthly)</option>
+                            <option value="4">त्रैमासिक (Quarterly)</option>
+                            <option value="2">छमाही (Half-Yearly)</option>
+                            <option value="1">वार्षिक (Yearly)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn-calc" onclick="calculatePlan()">
+                        ⚡ गणना करें (Calculate Result)
+                    </button>
+                </div>
+
+                <!-- Printable / Downloadable Result Quotation Box -->
+                <div id="printable-quotation" class="result-box">
+                    <div class="result-title">📋 बीमा प्रस्ताव कोटेशन (Policy Quotation)</div>
+
+                    <table class="result-table">
+                        <tr>
+                            <td>प्रस्तावित ग्राहक:</td>
+                            <td id="resName">-</td>
+                        </tr>
+                        <tr>
+                            <td>प्रवेश आयु (Current Age):</td>
+                            <td id="resAge">-</td>
+                        </tr>
+                        <tr>
+                            <td>पॉलिसी अवधि (Term):</td>
+                            <td id="resTerm">-</td>
+                        </tr>
+                        <tr>
+                            <td>परिपक्वता आयु (Maturity Age):</td>
+                            <td id="resMatAge">-</td>
+                        </tr>
+                        <tr>
+                            <td>बीमा राशि (Sum Assured):</td>
+                            <td id="resSumAssured">-</td>
+                        </tr>
+                        <tr>
+                            <td>प्रीमियम भुगतान प्रकार:</td>
+                            <td id="resFreq">-</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>किस्त प्रीमियम राशि:</td>
+                            <td id="resPremium">-</td>
+                        </tr>
+                        <tr>
+                            <td>कुल जमा प्रीमियम (Total Paid):</td>
+                            <td id="resTotalPaid">-</td>
+                        </tr>
+                        <tr>
+                            <td>अनुमानित बोनस (Bonus @ ₹52/1000):</td>
+                            <td id="resBonus">-</td>
+                        </tr>
+                        <tr class="highlight-row" style="background: #ecfdf5;">
+                            <td style="color: #047857 !important;">कुल परिपक्वता लाभ (Maturity):</td>
+                            <td id="resMaturity" style="color: #047857 !important;">-</td>
+                        </tr>
+                        <tr>
+                            <td>शुद्ध अनुमानित लाभ (Net Profit):</td>
+                            <td id="resNetProfit" style="color: #16a34a; font-weight: bold;">-</td>
+                        </tr>
+                    </table>
+
+                    <div style="font-size: 0.85rem; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+                        सलाहकार: <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर | मो.: 8949126572<br>
+                        <em>*यह कोटेशन अनुमानित दरों पर आधारित है। वास्तविक नियम व शर्तें पॉलिसी दस्तावेज़ के अनुसार मान्य होंगी।</em>
+                    </div>
+
+                    <!-- Share & Download Buttons -->
+                    <div class="action-btn-row">
+                        <button type="button" class="btn-share-wa" onclick="shareOnWhatsApp()">
+                            💬 WhatsApp पर भेजें
+                        </button>
+                        <button type="button" class="btn-download-pdf" onclick="window.print()">
+                            📄 PDF / प्रिंट कोटेशन
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+        </section>
+
+
+        <!-- ==============================================
+             DETAIL VIEW 4: Gusai Ji Aarti
              ============================================== -->
         <section id="detail-aarti" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
@@ -874,12 +1187,10 @@
                     <h2>श्री गुंसाई जी महाराज दर्शन एवं आरती</h2>
                 </div>
 
-                <!-- Gusai Ji Photo -->
                 <div class="aarti-poster-wrapper">
                     <img src="gusaiji.png" alt="श्री गुंसाई जी महाराज" class="aarti-poster" onerror="this.style.display='none'">
                 </div>
 
-                <!-- Aarti Text -->
                 <div class="aarti-text-box">
                     <div class="aarti-title">॥ आरती श्री गुंसाई जी महाराज की ॥</div>
 
@@ -937,7 +1248,7 @@
                     </div>
 
                     <div>
-                        <span class="dedication-badge"> शेरेराँ</span>
+                        <span class="dedication-badge">सप्रेम भेंट : रमेश सारस्वत शेरेराँ</span>
                     </div>
                 </div>
             </div>
@@ -947,7 +1258,7 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 4: About Us
+             DETAIL VIEW 5: About Us
              ============================================== -->
         <section id="detail-about" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
@@ -961,7 +1272,7 @@
                         <strong>सादर जय श्री कृष्णा / जय श्री गुंसाई जी री सा,</strong>
                     </p>
                     <p>
-                        मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, धार्मिक संस्कृति के संरक्षण, मीडिया लेखन एवं डिजिटल नवाचारों के प्रति सदैव समर्पित रहा हूँ।
+                        मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, सनातन संस्कृति के संरक्षण, प्रेस लेखन, बीमा परामर्श एवं डिजिटल नवाचारों के प्रति समर्पित रहा हूँ।
                     </p>
                     <p>
                         स्थानीय स्तर पर सनातन संस्कृति के प्रचार-प्रसार, श्री गुंसाई जी महाराज की महिमा को डिजिटल माध्यमों से जन-जन तक पहुँचाने और समाचार पत्रों में सामयिक विषयों पर विचार साझा करने में मेरी निरंतर रुचि रही है।
@@ -973,8 +1284,8 @@
                             <p>दैनिक समाचार पत्रों में नियमित आलेख, स्तंभ व समाचार संपादन।</p>
                         </div>
                         <div class="feature-box">
-                            <h4>💻 डिजिटल व तकनीक</h4>
-                            <p>वेबसाइट प्रबंधन, डेटा विश्लेषण व डिजिटल मीडिया प्रचार।</p>
+                            <h4>📊 वित्तीय एवं बीमा समाधान</h4>
+                            <p>सटीक योजना चयन, प्रीमियम गणना व बीमा बचत परामर्श।</p>
                         </div>
                         <div class="feature-box">
                             <h4>🪔 सांस्कृतिक संकलन</h4>
@@ -989,7 +1300,7 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 5: Contact Info
+             DETAIL VIEW 6: Contact Info
              ============================================== -->
         <section id="detail-contact" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
@@ -999,7 +1310,7 @@
                     <h2>Contact Info (संपर्क सूत्र)</h2>
                 </div>
                 <p class="section-subtitle">
-                    किसी भी विचार-विमर्श, सहयोग अथवा जानकारी के लिए आप मुझसे सीधे संपर्क कर सकते हैं:
+                    किसी भी विचार-विमर्श, बीमा योजना अथवा सहयोग के लिए आप मुझसे सीधे संपर्क कर सकते हैं:
                 </p>
 
                 <ul class="contact-list">
@@ -1052,35 +1363,168 @@
         <p style="font-size: 0.85rem; margin-top: 6px;">श्री गुंसाई जी महाराज की असीम कृपा से निर्मित</p>
     </footer>
 
-    <!-- JavaScript: Pure App-Style Screen Switcher -->
+    <!-- App Switcher & Calculator Logic Scripts -->
     <script>
+        // Screen Navigation
         function openSection(sectionId) {
-            // Home view hide karein
             document.getElementById('home-view').style.display = 'none';
-
-            // Sabhi detail sections ko hide karein
             const allSections = document.querySelectorAll('.detail-view');
             allSections.forEach(sec => sec.style.display = 'none');
 
-            // Chuna hua detail section show karein
             const target = document.getElementById(sectionId);
             if (target) {
                 target.style.display = 'block';
-                // Screen ko upar le jayein
                 window.scrollTo({ top: 120, behavior: 'smooth' });
             }
         }
 
         function goToHome() {
-            // Sabhi detail views hide karein
             const allSections = document.querySelectorAll('.detail-view');
             allSections.forEach(sec => sec.style.display = 'none');
-
-            // Home view show karein
             document.getElementById('home-view').style.display = 'block';
-
-            // Screen ko wapas options par scroll karein
             window.scrollTo({ top: 120, behavior: 'smooth' });
+        }
+
+        // Calculate Age from DOB
+        function getAge(birthDateString) {
+            const today = new Date();
+            const birthDate = new Date(birthDateString);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        function autoUpdateAge() {
+            const dob = document.getElementById('custDob').value;
+            if (dob) {
+                const age = getAge(dob);
+                document.getElementById('ageDisplay').innerText = `✓ वर्तमान आयु: ${age} वर्ष`;
+            }
+        }
+
+        // Global variable for sharing
+        let latestQuote = null;
+
+        // Premium Calculator Logic
+        function calculatePlan() {
+            const name = document.getElementById('custName').value.trim() || 'सम्मानित ग्राहक';
+            const dob = document.getElementById('custDob').value;
+            const sumAssured = parseFloat(document.getElementById('sumAssured').value);
+            const maturityAge = parseInt(document.getElementById('maturityAge').value);
+            const freq = parseInt(document.getElementById('freq').value);
+
+            if (!dob) {
+                alert('कृपया ग्राहक की जन्मतिथि (DOB) दर्ज करें।');
+                return;
+            }
+
+            const currentAge = getAge(dob);
+
+            if (currentAge < 19) {
+                alert('पॉलिसी प्रवेश के लिए न्यूनतम आयु 19 वर्ष होनी चाहिए।');
+                return;
+            }
+
+            if (currentAge >= maturityAge) {
+                alert('परिपक्वता आयु (Maturity Age) वर्तमान आयु (' + currentAge + ' वर्ष) से अधिक होनी चाहिए।');
+                return;
+            }
+
+            const term = maturityAge - currentAge;
+
+            // Annual Base Rate per 1000 sum assured (approx standard PLI endowment formula)
+            // Premium decreases as term increases, increases slightly with entry age
+            const baseRatePerThousandYearly = ((1000 / term) + (currentAge * 0.45));
+            const annualBasePremium = (sumAssured / 1000) * baseRatePerThousandYearly;
+
+            // Frequency calculation with frequency rebate/rebate factors
+            let installmentPremium = 0;
+            let freqText = '';
+
+            if (freq === 12) {
+                freqText = 'मासिक (Monthly)';
+                installmentPremium = Math.round(annualBasePremium / 12);
+            } else if (freq === 4) {
+                freqText = 'त्रैमासिक (Quarterly)';
+                installmentPremium = Math.round((annualBasePremium * 0.99) / 4);
+            } else if (freq === 2) {
+                freqText = 'छमाही (Half-Yearly)';
+                installmentPremium = Math.round((annualBasePremium * 0.985) / 2);
+            } else {
+                freqText = 'वार्षिक (Yearly)';
+                installmentPremium = Math.round(annualBasePremium * 0.98);
+            }
+
+            const totalInstallments = term * freq;
+            const totalPaid = Math.round(installmentPremium * totalInstallments);
+
+            // Bonus Calculation: Standard PLI rate @ ₹52 per 1000 sum assured per year
+            const annualBonus = (sumAssured / 1000) * 52;
+            const totalBonus = Math.round(annualBonus * term);
+            const maturityAmount = Math.round(sumAssured + totalBonus);
+            const netProfit = Math.round(maturityAmount - totalPaid);
+
+            // Populate Results Table
+            document.getElementById('resName').innerText = name;
+            document.getElementById('resAge').innerText = currentAge + ' वर्ष';
+            document.getElementById('resTerm').innerText = term + ' वर्ष';
+            document.getElementById('resMatAge').innerText = maturityAge + ' वर्ष';
+            document.getElementById('resSumAssured').innerText = '₹ ' + sumAssured.toLocaleString('en-IN');
+            document.getElementById('resFreq').innerText = freqText;
+            document.getElementById('resPremium').innerText = '₹ ' + installmentPremium.toLocaleString('en-IN') + ' (' + freqText + ')';
+            document.getElementById('resTotalPaid').innerText = '₹ ' + totalPaid.toLocaleString('en-IN');
+            document.getElementById('resBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN');
+            document.getElementById('resMaturity').innerText = '₹ ' + maturityAmount.toLocaleString('en-IN');
+            document.getElementById('resNetProfit').innerText = '₹ ' + netProfit.toLocaleString('en-IN');
+
+            // Save Quote Object for WhatsApp
+            latestQuote = {
+                name,
+                currentAge,
+                term,
+                maturityAge,
+                sumAssured: sumAssured.toLocaleString('en-IN'),
+                freqText,
+                installmentPremium: installmentPremium.toLocaleString('en-IN'),
+                totalPaid: totalPaid.toLocaleString('en-IN'),
+                totalBonus: totalBonus.toLocaleString('en-IN'),
+                maturityAmount: maturityAmount.toLocaleString('en-IN'),
+                netProfit: netProfit.toLocaleString('en-IN')
+            };
+
+            // Show result box
+            const resBox = document.getElementById('printable-quotation');
+            resBox.style.display = 'block';
+            resBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // WhatsApp Share Function
+        function shareOnWhatsApp() {
+            if (!latestQuote) return;
+
+            const text = 
+`📋 *बीमा प्रस्ताव कोटेशन (Insurance Quotation)*
+👤 *ग्राहक का नाम:* ${latestQuote.name}
+🎂 *वर्तमान आयु:* ${latestQuote.currentAge} वर्ष
+🎯 *परिपक्वता आयु:* ${latestQuote.maturityAge} वर्ष (अवधि: ${latestQuote.term} वर्ष)
+💰 *बीमा राशि (Sum Assured):* ₹${latestQuote.sumAssured}
+----------------------------------
+💳 *किस्त प्रीमियम:* ₹${latestQuote.installmentPremium} (${latestQuote.freqText})
+💵 *कुल जमा प्रीमियम:* ₹${latestQuote.totalPaid}
+🎁 *अनुमानित बोनस:* ₹${latestQuote.totalBonus}
+🏆 *कुल मैच्योरिटी लाभ:* ₹${latestQuote.maturityAmount}
+📈 *शुद्ध लाभ:* ₹${latestQuote.netProfit}
+----------------------------------
+*परामर्शदाता:* रमेश सारस्वत
+📍 शेरेराँ, बीकानेर (राजस्थान)
+📞 फ़ोन / WhatsApp: +91 8949126572
+🌐 वेबसाइट: https://RameshSaraswat21.github.io/My-website/`;
+
+            const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
         }
     </script>
 
