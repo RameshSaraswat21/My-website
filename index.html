@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>रमेश सारस्वत | आधिकारिक वेबसाइट | शेरेराँ, बीकानेर</title>
-    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। डिजिटल मीडिया, तकनीकी समाधान, प्रेस कवरेज एवं श्री गुंसाई जी महाराज की आरती।">
+    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया एवं प्रेस कवरेज, फ़ोटो गैलरी, श्री गुंसाई जी महाराज आरती एवं संपर्क विवरण।">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #c2410c;
@@ -19,6 +20,10 @@
             --bg-light: #fafaf9;
             --white: #ffffff;
             --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -42,23 +47,72 @@
             text-align: center;
             padding: 8px 15px;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.5px;
+        }
+
+        /* Sticky Navigation Bar (5 Options) */
+        .sticky-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #fed7aa;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 12px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: #f1f5f9;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .nav-link:hover, .nav-link:active {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
         }
 
         /* Hero / Header Section */
         .hero {
             background: radial-gradient(circle at top right, #fff7ed 0%, #ffedd5 50%, #ffffff 100%);
-            padding: 45px 20px 35px;
+            padding: 40px 20px 30px;
             text-align: center;
-            border-bottom: 2px solid #fed7aa;
+            border-bottom: 1px solid #fed7aa;
         }
 
         .profile-container {
             position: relative;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 18px;
+            width: 135px;
+            height: 135px;
+            margin: 0 auto 16px;
         }
 
         .profile-img {
@@ -73,17 +127,17 @@
 
         .badge-verified {
             position: absolute;
-            bottom: 6px;
-            right: 6px;
+            bottom: 5px;
+            right: 5px;
             background: #16a34a;
             color: white;
             border-radius: 50%;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 15px;
+            font-size: 14px;
             border: 2px solid white;
         }
 
@@ -98,68 +152,46 @@
             font-size: 1.15rem;
             color: var(--primary);
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .hero .location {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
             color: var(--gray);
             font-size: 1rem;
             margin-bottom: 18px;
         }
 
-        /* Action Buttons */
-        .btn-group {
+        /* Quick Header Buttons */
+        .header-btn-group {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 22px;
-            border-radius: 30px;
+            padding: 9px 18px;
+            border-radius: 25px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-aarti {
-            background: linear-gradient(135deg, #d97706, #b45309);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.45);
-            border: 2px solid #fef3c7;
-            font-size: 1.05rem;
-            width: 100%;
-            max-width: 340px;
-            justify-content: center;
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: white;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
         }
 
         .btn-call {
             background-color: var(--primary);
             color: white;
-            box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35);
-        }
-
-        .btn-email {
-            background-color: #0284c7;
-            color: white;
-            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+            box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3);
         }
 
         .btn:hover {
@@ -167,30 +199,32 @@
             filter: brightness(1.05);
         }
 
-        /* Container & Cards */
+        /* Main Container */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 30px 18px 80px;
+            padding: 25px 16px 80px;
         }
 
-        .card {
+        /* General Section Card */
+        .card-section {
             background: var(--white);
             border-radius: 20px;
-            padding: 30px 24px;
-            margin-bottom: 30px;
+            padding: 30px 22px;
+            margin-bottom: 35px;
             box-shadow: var(--shadow);
             border: 1px solid #f1f5f9;
+            scroll-margin-top: 75px; /* Sticky navbar offset */
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 22px;
+            margin-bottom: 18px;
             position: relative;
         }
 
         .section-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             color: var(--primary-dark);
             font-weight: 800;
         }
@@ -209,15 +243,14 @@
             text-align: center;
             color: var(--gray);
             margin-bottom: 25px;
-            font-size: 1.02rem;
+            font-size: 1rem;
         }
 
-        /* Newspaper Articles Grid */
+        /* 1. Media & Newspaper Grid (10 Items) */
         .news-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
+            gap: 18px;
         }
 
         .news-item {
@@ -225,7 +258,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
@@ -233,8 +266,7 @@
 
         .news-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            border-color: #cbd5e1;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
         }
 
         .news-link {
@@ -265,28 +297,27 @@
             right: 0;
             background: linear-gradient(transparent, rgba(15, 23, 42, 0.85));
             color: #ffffff;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 700;
             text-align: center;
-            padding: 20px 10px 8px;
+            padding: 18px 5px 6px;
         }
 
         .news-caption {
-            padding: 10px 12px;
+            padding: 10px;
             font-size: 0.92rem;
             font-weight: 700;
             color: var(--dark);
             text-align: center;
-            border-top: 1px solid #f1f5f9;
             background: #fafaf9;
+            border-top: 1px solid #f1f5f9;
         }
 
-        /* Photo Gallery Grid (17 Photos) */
+        /* 2. Picture Gallery (17 Items) */
         .photo-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
         }
 
         .gallery-card {
@@ -294,21 +325,20 @@
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease;
         }
 
         .gallery-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-            border-color: #cbd5e1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
 
         .gallery-link {
             position: relative;
             display: block;
             width: 100%;
-            height: 180px;
+            height: 170px;
             background: #f1f5f9;
             overflow: hidden;
         }
@@ -331,143 +361,41 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
             color: #ffffff;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
             text-align: center;
-            padding: 18px 5px 6px;
+            padding: 16px 5px 6px;
         }
 
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
-            margin-top: 15px;
-        }
-
-        .service-item {
-            background: #f8fafc;
-            border-radius: 14px;
-            padding: 20px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
-        }
-
-        .service-item:hover {
-            transform: translateY(-3px);
-            background: #ffffff;
-            border-color: #cbd5e1;
-        }
-
-        .service-item h3 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-
-        .service-item p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        /* Contact Details */
-        .contact-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .contact-list li {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 0;
-            border-bottom: 1px solid #f1f5f9;
-            font-size: 1.05rem;
-        }
-
-        .contact-list li:last-child {
-            border-bottom: none;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #ffedd5;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.2rem;
-        }
-
-        /* Aarti Popup Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.85);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-box {
+        /* 3. Gusai Ji Aarti Section */
+        .aarti-special-card {
             background: #fffbeb;
-            border: 2px solid #f59e0b;
-            border-radius: 18px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 22px 18px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            animation: modalFade 0.3s ease;
-            position: relative;
+            border: 2px solid #fde68a;
         }
 
-        @keyframes modalFade {
-            from { opacity: 0; transform: scale(0.92); }
-            to { opacity: 1; transform: scale(1); }
+        .aarti-poster-wrapper {
+            text-align: center;
+            margin-bottom: 22px;
         }
 
-        .modal-close-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #9a3412;
-            color: white;
-            border: none;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
+        .aarti-poster {
+            max-width: 100%;
+            width: 340px;
+            border-radius: 14px;
+            box-shadow: 0 10px 22px rgba(217, 119, 6, 0.25);
+            border: 3px solid #f59e0b;
         }
 
         .aarti-text-box {
             background: var(--white);
             border-radius: 16px;
-            padding: 22px 16px;
+            padding: 24px 18px;
             text-align: center;
             border: 1px solid #fed7aa;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
-            margin-top: 15px;
         }
 
         .aarti-title {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #b45309;
             font-weight: 800;
             margin-bottom: 16px;
@@ -482,7 +410,7 @@
         }
 
         .aarti-chorus {
-            font-size: 1.2rem;
+            font-size: 1.22rem;
             color: #c2410c;
             font-weight: 800;
             margin: 15px 0;
@@ -509,24 +437,86 @@
             border-radius: 30px;
             font-weight: 700;
             font-size: 1.05rem;
-            box-shadow: 0 4px 10px rgba(180, 83, 9, 0.3);
+        }
+
+        /* 4. About Us Section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            font-size: 1.05rem;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .about-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .feature-box h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        /* 5. Contact Info Section */
+        .contact-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 1.05rem;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffedd5;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
         }
 
         /* Floating WhatsApp Button */
         .floating-wa {
             position: fixed;
-            bottom: 22px;
-            right: 22px;
+            bottom: 20px;
+            right: 20px;
             background: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-            z-index: 100;
+            box-shadow: 0 10px 22px rgba(37, 211, 102, 0.5);
+            z-index: 999;
             text-decoration: none;
             transition: transform 0.2s ease;
         }
@@ -547,124 +537,7 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8rem; }
             .aarti-line { font-size: 1.05rem; }
-            .btn { width: 100%; justify-content: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Top Bar -->
-    <div class="top-notice">
-        ॥ जय श्री गुंसाई जी महाराज की ॥
-    </div>
-
-    <!-- Header / Hero Section -->
-    <header class="hero">
-        <div class="profile-container">
-            <img src="profile.png" alt="Ramesh Saraswat" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ramesh+Saraswat&size=200&background=c2410c&color=fff'">
-            <div class="badge-verified">✓</div>
-        </div>
-        <h1>रमेश सारस्वत</h1>
-        <div class="subtitle">डिजिटल मीडिया | तकनीकी प्रबंधन | सामाजिक एवं धार्मिक संकलन</div>
-        <div class="location">
-            📍 ग्राम: शेरेराँ, ज़िला: बीकानेर (राजस्थान)
-        </div>
-
-        <div class="btn-group">
-            <!-- आरती एवं दर्शन बटन -->
-            <button type="button" onclick="openAartiModal()" class="btn btn-aarti">
-                🪔 ॥ आरती श्री गुंसाई जी महाराज की ॥
-            </button>
-            
-            <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="btn btn-whatsapp">
-                💬 WhatsApp पर जुड़ें
-            </a>
-            <a href="tel:8949126572" class="btn btn-call">
-                📞 8949126572
-            </a>
-            <a href="mailto:rksaraswat21@gmail.com" class="btn btn-email">
-                ✉️ ईमेल भेजें
-            </a>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-
-        <!-- Section 1: Newspaper Articles (10 Photos) -->
-        <section class="card">
-            <div class="section-header">
-                <h2>समाचार पत्रों में प्रकाशित आलेख एवं कवरेज</h2>
-            </div>
-            <p class="section-subtitle">
-                दैनिक समाचार पत्रों में प्रकाशित आलेख, विचार एवं विशेष रिपोर्ट्स (पूरा पढ़ने के लिए फ़ोटो पर टैप करें)
-            </p>
-
-            <div class="news-gallery-grid">
-                <!-- 1 -->
-                <div class="news-item">
-                    <a href="IMG_20260425_074036.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260425_074036.jpg" alt="प्रेस कवरेज 1" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रेस कवरेज / प्रकाशित समाचार #1</div>
-                </div>
-
-                <!-- 2 -->
-                <div class="news-item">
-                    <a href="IMG_20260406_074902.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260406_074902.jpg" alt="प्रेस कवरेज 2" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रेस कवरेज / प्रकाशित समाचार #2</div>
-                </div>
-
-                <!-- 3 -->
-                <div class="news-item">
-                    <a href="IMG_20260405_080422.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260405_080422.jpg" alt="प्रेस कवरेज 3" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रेस कवरेज / प्रकाशित समाचार #3</div>
-                </div>
-
-                <!-- 4 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_092632.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_092632.jpg" alt="प्रेस कवरेज 4" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रेस कवरेज / प्रकाशित समाचार #4</div>
-                </div>
-
-                <!-- 5 -->
-                <div class="news-item">
-                    <a href="IMG_20260405_075515.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260405_075515.jpg" alt="प्रेस कवरेज 5" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रेस कवरेज / प्रकाशित समाचार #5</div>
-                </div>
-
-                <!-- 6 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_092336.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_092336.jpg" alt="प्रेस कवरेज 6" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रेस कवरेज / प्रकाशित समाचार #6</div>
-                </div>
-
-                <!-- 7 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_092204.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_092204.jpg" alt="प्रेस कवरेज 7" class="news-thu          color: #ef4444;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .aarti-line { font-size: 1.08rem; }
-            .aarti-chorus { font-size: 1.15rem; }
+            .nav-link { font-size: 0.88rem; padding: 7px 11px; }
         }
     </style>
 </head>
@@ -675,43 +548,256 @@
         ॥ जय श्री गुंसाई जी महाराज की ॥
     </div>
 
-    <!-- Hero Header -->
+    <!-- Sticky Navigation Bar (5 Options) -->
+    <nav class="sticky-navbar">
+        <div class="nav-container">
+            <a href="#media" class="nav-link">📰 Media & News</a>
+            <a href="#gallery" class="nav-link">🖼️ Picture Gallery</a>
+            <a href="#aarti" class="nav-link">🪔 Gusai Ji Aarti</a>
+            <a href="#about" class="nav-link">👤 About Us</a>
+            <a href="#contact" class="nav-link">📞 Contact Info</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
     <header class="hero">
         <div class="profile-container">
             <img src="profile.png" alt="Ramesh Saraswat" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ramesh+Saraswat&size=200&background=c2410c&color=fff'">
             <div class="badge-verified">✓</div>
         </div>
         <h1>रमेश सारस्वत</h1>
-        <div class="subtitle">डिजिटल मीडिया | तकनीकी प्रबंधन | सामाजिक एवं धार्मिक संकलन</div>
-        <div class="location">
-            📍 ग्राम: शेरेराँ, ज़िला: बीकानेर (राजस्थान)
-        </div>
+        <div class="subtitle">डिजिटल मीडिया | सामाजिक एवं धार्मिक संकलन | तकनीकी प्रबंधन</div>
+        <div class="location">📍 ग्राम: शेरेराँ, ज़िला: बीकानेर (राजस्थान)</div>
 
-        <div class="btn-group">
+        <div class="header-btn-group">
             <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="btn btn-whatsapp">
                 💬 WhatsApp पर जुड़ें
             </a>
             <a href="tel:8949126572" class="btn btn-call">
                 📞 8949126572
             </a>
-            <a href="mailto:rksaraswat21@gmail.com" class="btn btn-email">
-                ✉️ ईमेल भेजें
-            </a>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- 1 Page Content Container -->
     <div class="container">
 
-        <!-- Shri Gusai Ji Maharaj Section -->
-        <section class="card aarti-card">
+        <!-- OPTION 1: Media and News Paper -->
+        <section id="media" class="card-section">
             <div class="section-header">
-                <h2>श्री गुंसाई जी महाराज</h2>
+                <h2>1. Media & Newspaper (प्रेस कवरेज)</h2>
+            </div>
+            <p class="section-subtitle">
+                प्रमुख समाचार पत्रों में प्रकाशित आलेख, समाचार एवं विचार (पूरा पढ़ने के लिए फ़ोटो पर टैप करें)
+            </p>
+
+            <div class="news-gallery-grid">
+                <div class="news-item">
+                    <a href="IMG_20260425_074036.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260425_074036.jpg" alt="प्रेस कवरेज 1" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #1</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260406_074902.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260406_074902.jpg" alt="प्रेस कवरेज 2" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #2</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260405_080422.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260405_080422.jpg" alt="प्रेस कवरेज 3" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #3</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260404_092632.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260404_092632.jpg" alt="प्रेस कवरेज 4" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #4</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260405_075515.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260405_075515.jpg" alt="प्रेस कवरेज 5" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #5</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260404_092336.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260404_092336.jpg" alt="प्रेस कवरेज 6" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #6</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260404_092204.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260404_092204.jpg" alt="प्रेस कवरेज 7" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #7</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260404_071727.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260404_071727.jpg" alt="प्रेस कवरेज 8" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #8</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20260317_081419.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20260317_081419.jpg" alt="प्रेस कवरेज 9" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #9</div>
+                </div>
+
+                <div class="news-item">
+                    <a href="IMG_20251119_203733.jpg" target="_blank" class="news-link">
+                        <img src="IMG_20251119_203733.jpg" alt="प्रेस कवरेज 10" class="news-thumb" loading="lazy">
+                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
+                    </a>
+                    <div class="news-caption">प्रकाशित आलेख #10</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPTION 2: Picture Gallery -->
+        <section id="gallery" class="card-section">
+            <div class="section-header">
+                <h2>2. Picture Gallery (फ़ोटो गैलरी)</h2>
+            </div>
+            <p class="section-subtitle">
+                धार्मिक, सामाजिक एवं व्यक्तिगत पलों की सुंदर स्मृतियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
+            </p>
+
+            <div class="photo-gallery-grid">
+                <div class="gallery-card">
+                    <a href="IMG_20260629_094402.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20260629_094402.jpg" alt="फ़ोटो 1" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20260317_190031.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20260317_190031.jpg" alt="फ़ोटो 2" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20251010_162612.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20251010_162612.jpg" alt="फ़ोटो 3" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20251011_084639.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20251011_084639.jpg" alt="फ़ोटो 4" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20251005_201432.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20251005_201432.jpg" alt="फ़ोटो 5" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20251006_190831.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20251006_190831.jpg" alt="फ़ोटो 6" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20250925_130521.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20250925_130521.jpg" alt="फ़ोटो 7" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20251005_201047.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20251005_201047.jpg" alt="फ़ोटो 8" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20250923_190045.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20250923_190045.jpg" alt="फ़ोटो 9" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20250919_071648.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20250919_071648.jpg" alt="फ़ोटो 10" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20250919_115940.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20250919_115940.jpg" alt="फ़ोटो 11" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20250917_100541.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20250917_100541.jpg" alt="फ़ोटो 12" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="IMG_20250917_100611.jpg" target="_blank" class="gallery-link">
+                        <img src="IMG_20250917_100611.jpg" alt="फ़ोटो 13" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="Collage_20250701_070735.jpg" target="_blank" class="gallery-link">
+                        <img src="Collage_20250701_070735.jpg" alt="कोलाज 1" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="Collage_20250703_080604.jpg" target="_blank" class="gallery-link">
+                        <img src="Collage_20250703_080604.jpg" alt="कोलाज 2" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="Collage_20250616_183152.jpg" target="_blank" class="gallery-link">
+                        <img src="Collage_20250616_183152.jpg" alt="कोलाज 3" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+                <div class="gallery-card">
+                    <a href="Collage_20250622_082842.jpg" target="_blank" class="gallery-link">
+                        <img src="Collage_20250622_082842.jpg" alt="कोलाज 4" class="gallery-img" loading="lazy">
+                        <div class="gallery-overlay">🔍 पूरा देखें</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPTION 3: Gusai Ji aarti -->
+        <section id="aarti" class="card-section aarti-special-card">
+            <div class="section-header">
+                <h2>3. श्री गुंसाई जी महाराज दर्शन एवं आरती</h2>
             </div>
 
-            <!-- Gusai Ji Image Display -->
+            <!-- Gusai Ji Photo -->
             <div class="aarti-poster-wrapper">
-                <img src="gusaiji.png" alt="आरती श्री गुंसाई जी महाराज" class="aarti-poster" onerror="this.style.display='none'">
+                <img src="gusaiji.png" alt="श्री गुंसाई जी महाराज" class="aarti-poster" onerror="this.style.display='none'">
             </div>
 
             <!-- Aarti Text -->
@@ -772,221 +858,53 @@
                 </div>
 
                 <div>
-                    <span class="dedication-badge">रमेश सारस्वत </span>
+                    <span class="dedication-badge">रमेश सारस्वत</span>
                 </div>
             </div>
         </section>
 
-        <!-- Services & Works -->
-        <section class="card">
+        <!-- OPTION 4: About Us -->
+        <section id="about" class="card-section">
             <div class="section-header">
-                <h2>कार्यक्षेत्र एवं सेवाएँ</h2>
+                <h2>4. About Us (परिचय)</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>🎨 डिजिटल मीडिया एवं पोस्टर</h3>
-                    <p>धार्मिक उत्सवों, सामाजिक आयोजनों और संस्थाओं के लिए आकर्षक बैनर व पोस्टर निर्माण।</p>
-                </div>
-                <div class="service-item">
-                    <h3>💻 तकनीकी एवं वेब समाधान</h3>
-                    <p>वेबसाइट प्रबंधन, सोशल मीडिया और दैनिक डिजिटल आवश्यकताओं का समाधान।</p>
-                </div>
-                <div class="service-item">
-                    <h3>📖 धार्मिक एवं सांस्कृतिक साहित्य</h3>
-                    <p>स्थानीय भजनों, आरतियों एवं देव स्थलों के प्रामाणिक साहित्य का संरक्षण एवं संकलन।</p>
+            <div class="about-content">
+                <p>
+                    <strong>सादर जय श्री कृष्णा / जय श्री गुंसाई जी री सा,</strong>
+                </p>
+                <p>
+                    मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, धार्मिक संस्कृति के संरक्षण, मीडिया लेखन एवं डिजिटल नवाचारों के प्रति सदैव समर्पित रहा हूँ।
+                </p>
+                <p>
+                    स्थानीय स्तर पर सनातन संस्कृति के प्रचार-प्रसार, श्री गुंसाई जी महाराज की महिमा को डिजिटल माध्यमों से जन-जन तक पहुँचाने और समाचार पत्रों में सामयिक विषयों पर विचार साझा करने में मेरी निरंतर रुचि रही है।
+                </p>
+
+                <div class="about-feature-grid">
+                    <div class="feature-box">
+                        <h4>📰 मीडिया एवं लेखन</h4>
+                        <p>दैनिक समाचार पत्रों में नियमित आलेख, स्तंभ व समाचार संपादन।</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>💻 डिजिटल व तकनीक</h4>
+                        <p>वेबसाइट प्रबंधन, डेटा विश्लेषण व डिजिटल मीडिया प्रचार।</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🪔 सांस्कृतिक संकलन</h4>
+                        <p>पारंपरिक भजनों, आरतियों एवं लोक संस्कृति का संरक्षण।</p>
+                    </div>
                 </div>
             </div>
         </section>
-                <!-- Newspaper Articles Section -->
-        <section class="card">
+
+        <!-- OPTION 5: Contact Info -->
+        <section id="contact" class="card-section">
             <div class="section-header">
-                <h2>समाचार पत्रों में प्रकाशित आलेख एवं कवरेज</h2>
+                <h2>5. Contact Info (संपर्क सूत्र)</h2>
             </div>
-            <p style="text-align: center; color: var(--gray); margin-bottom: 25px; font-size: 1.05rem;">
-                प्रमुख दैनिक समाचार पत्रों में प्रकाशित आलेख, विचार एवं विशेष रिपोर्ट्स (फ़ोटो पर क्लिक करके पूरा देखें)
+            <p class="section-subtitle">
+                किसी भी विचार-विमर्श, सहयोग अथवा जानकारी के लिए आप मुझसे सीधे संपर्क कर सकते हैं:
             </p>
 
-            <div class="news-gallery-grid">
-                
-                <!-- Article 1 -->
-                <div class="news-item">
-                    <a href="IMG_20260425_074036.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260425_074036.jpg" alt="समाचार आलेख 1" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #1</div>
-                </div>
-
-                <!-- Article 2 -->
-                <div class="news-item">
-                    <a href="IMG_20260406_074902.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260406_074902.jpg" alt="समाचार आलेख 2" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #2</div>
-                </div>
-
-                <!-- Article 3 -->
-                <div class="news-item">
-                    <a href="IMG_20260405_080422.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260405_080422.jpg" alt="समाचार आलेख 3" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #3</div>
-                </div>
-
-                <!-- Article 4 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_092632.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_092632.jpg" alt="समाचार आलेख 4" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #4</div>
-                </div>
-
-                <!-- Article 5 -->
-                <div class="news-item">
-                    <a href="IMG_20260405_075515.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260405_075515.jpg" alt="समाचार आलेख 5" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #5</div>
-                </div>
-
-                <!-- Article 6 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_092336.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_092336.jpg" alt="समाचार आलेख 6" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #6</div>
-                </div>
-
-                <!-- Article 7 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_092204.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_092204.jpg" alt="समाचार आलेख 7" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #7</div>
-                </div>
-
-                <!-- Article 8 -->
-                <div class="news-item">
-                    <a href="IMG_20260404_071727.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260404_071727.jpg" alt="समाचार आलेख 8" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #8</div>
-                </div>
-
-                <!-- Article 9 -->
-                <div class="news-item">
-                    <a href="IMG_20260317_081419.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20260317_081419.jpg" alt="समाचार आलेख 9" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #9</div>
-                </div>
-
-                <!-- Article 10 -->
-                <div class="news-item">
-                    <a href="IMG_20251119_203733.jpg" target="_blank" class="news-link">
-                        <img src="IMG_20251119_203733.jpg" alt="समाचार आलेख 10" class="news-thumb" loading="lazy">
-                        <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                    </a>
-                    <div class="news-caption">प्रकाशित आलेख / प्रेस कवरेज #10</div>
-                </div>
-
-            </div>
-        </section>
-                <!-- Photo Gallery Section -->
-        <section class="card">
-            <div class="section-header">
-                <h2>फ़ोटो एवं मीडिया गैलरी</h2>
-            </div>
-            <p style="text-align: center; color: var(--gray); margin-bottom: 25px; font-size: 1.05rem;">
-                धार्मिक, सामाजिक एवं व्यक्तिगत आयोजनों की मुख्य झलकियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
-            </p>
-
-            <div class="photo-gallery-grid">
-                
-                <!-- 1 -->
-                <div class="gallery-card">
-                    <a href="IMG_20260629_094402.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20260629_094402.jpg" alt="Gallery Photo 1" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 2 -->
-                <div class="gallery-card">
-                    <a href="IMG_20260317_190031.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20260317_190031.jpg" alt="Gallery Photo 2" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 3 -->
-                <div class="gallery-card">
-                    <a href="IMG_20251010_162612.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20251010_162612.jpg" alt="Gallery Photo 3" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 4 -->
-                <div class="gallery-card">
-                    <a href="IMG_20251011_084639.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20251011_084639.jpg" alt="Gallery Photo 4" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 5 -->
-                <div class="gallery-card">
-                    <a href="IMG_20251005_201432.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20251005_201432.jpg" alt="Gallery Photo 5" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 6 -->
-                <div class="gallery-card">
-                    <a href="IMG_20251006_190831.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20251006_190831.jpg" alt="Gallery Photo 6" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 7 -->
-                <div class="gallery-card">
-                    <a href="IMG_20250925_130521.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20250925_130521.jpg" alt="Gallery Photo 7" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 8 -->
-                <div class="gallery-card">
-                    <a href="IMG_20251005_201047.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20251005_201047.jpg" alt="Gallery Photo 8" class="gallery-img" loading="lazy">
-                        <div class="gallery-overlay">🔍 फ़ुल स्क्रीन देखें</div>
-                    </a>
-                </div>
-
-                <!-- 9 -->
-                <div class="gallery-card">
-                    <a href="IMG_20250923_190045.jpg" target="_blank" class="gallery-link">
-                        <img src="IMG_20250923_
-
-
-
-        <!-- Contact Section -->
-        <section class="card">
-            <div class="section-header">
-                <h2>संपर्क सूत्र</h2>
-            </div>
             <ul class="contact-list">
                 <li>
                     <span class="contact-icon">📍</span>
@@ -998,8 +916,15 @@
                 <li>
                     <span class="contact-icon">📱</span>
                     <div>
-                        <strong>फ़ोन / WhatsApp:</strong><br>
+                        <strong>फ़ोन नंबर:</strong><br>
                         <a href="tel:8949126572" style="color: var(--primary); text-decoration: none; font-weight: bold;">+91 8949126572</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="contact-icon">💬</span>
+                    <div>
+                        <strong>WhatsApp संपर्क:</strong><br>
+                        <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">+91 8949126572 (सीधे चैट करें)</a>
                     </div>
                 </li>
                 <li>
@@ -1016,7 +941,7 @@
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="floating-wa" title="WhatsApp Chat">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="white">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
             <path d="M12.031 2C6.511 2 2.016 6.484 2.016 11.984c0 1.902.532 3.684 1.455 5.215L2 22l4.98-1.425a9.92 9.92 0 005.051 1.378c5.52 0 10.016-4.484 10.016-9.969 0-5.5-4.496-9.984-10.016-9.984zm5.82 14.156c-.244.688-1.22 1.264-1.708 1.343-.464.075-1.07.135-3.155-.726-2.668-1.103-4.385-3.818-4.52-3.996-.134-.18-1.085-1.442-1.085-2.75 0-1.309.687-1.954.93-2.218.245-.264.536-.33.716-.33.18 0 .36 0 .518.008.167.009.39-.064.61.464.226.544.77 1.884.838 2.02.067.137.112.298.022.477-.089.18-.134.293-.267.45-.134.158-.282.353-.404.473-.134.135-.274.282-.118.55.157.268.697 1.15 1.493 1.86 1.026.914 1.89 1.196 2.158 1.33.27.135.426.113.583-.067.158-.18.67-.78.85-1.047.179-.268.358-.224.6-.134.246.09 1.558.735 1.826.87.268.134.447.201.514.312.067.112.067.649-.177 1.337z"/>
         </svg>
     </a>
