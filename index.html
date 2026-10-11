@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>रमेश सारस्वत  </title>
-    <meta name="description" content=" Official Website">
+    <title>रमेश सारस्वत | आधिकारिक वेबसाइट | शेरेराँ, बीकानेर</title>
+    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया कवरेज, गैलरी, PLI व RPLI कैलकुलेटर, POSB कैलकुलेटर, श्री गुंसाई जी महाराज आरती एवं संपर्क।">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Single Page A4 PDF Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <style>
         :root {
             --primary: #c2410c;
@@ -36,7 +39,6 @@
             line-height: 1.6;
         }
 
-        /* Top Bar */
         .top-notice {
             background: linear-gradient(90deg, #9a3412, #c2410c, #ea580c);
             color: var(--white);
@@ -47,7 +49,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Hero / Profile Header */
         .hero {
             background: radial-gradient(circle at top right, #fff7ed 0%, #ffedd5 50%, #ffffff 100%);
             padding: 35px 20px 25px;
@@ -107,14 +108,12 @@
             font-size: 0.98rem;
         }
 
-        /* Container */
         .container {
             max-width: 850px;
             margin: 0 auto;
             padding: 20px 16px 80px;
         }
 
-        /* Home View */
         #home-view {
             display: block;
             animation: fadeIn 0.3s ease;
@@ -183,38 +182,7 @@
             color: var(--primary);
             font-weight: bold;
         }
-                        <!-- 1. Search on Amazon Strip (Affiliate Link) -->
-                <a href="https://www.amazon.in?&linkCode=ll2&tag=wwwfbcomrsara-21&linkId=336c7b07ec1a72a20ba35675de1bf9de&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener" class="menu-card" style="border-color: #f59e0b; background: #fffdf5;">
-                    <div class="menu-icon-box" style="background: #fef3c7; border-color: #f59e0b;">🔍</div>
-                    <div class="menu-info">
-                        <h3 style="color: #b45309;">Search on Amazon (अमेज़न सर्च)</h3>
-                        <p>अपनी पसंद का कोई भी सामान सीधे अमेज़न पर खोजें और ख़रीदें</p>
-                    </div>
-                    <div class="menu-arrow" style="color: #d97706;">↗</div>
-                </a>
 
-                <!-- 2. Quick Inquiry WhatsApp Strip -->
-                <div class="menu-card" onclick="openSection('detail-inquiry')" style="border-color: #25D366; background: #f0fdf4;">
-                    <div class="menu-icon-box" style="background: #dcfce7; border-color: #25D366;">💬</div>
-                    <div class="menu-info">
-                        <h3 style="color: #15803d;">त्वरित पूछताछ फ़ॉर्म (Quick Inquiry)</h3>
-                        <p>अपना नाम व संदेश लिखकर सीधे WhatsApp पर चैट शुरू करें</p>
-                    </div>
-                    <div class="menu-arrow" style="color: #16a34a;">➔</div>
-                </div>
-
-                <!-- 3. Add to Home Screen / PWA Strip -->
-                <div class="menu-card" onclick="installPWA()" style="border-color: #6366f1; background: #f5f3ff;">
-                    <div class="menu-icon-box" style="background: #ede9fe; border-color: #6366f1;">📲</div>
-                    <div class="menu-info">
-                        <h3 style="color: #4f46e5;">वेब ऐप डाउनलोड (Add to Home Screen)</h3>
-                        <p>बिना प्ले स्टोर के सीधे अपने मोबाइल में ऐप की तरह इंस्टॉल करें</p>
-                    </div>
-                    <div class="menu-arrow" style="color: #6366f1;">⬇</div>
-                </div>
-
-
-        /* Detail Views */
         .detail-view {
             display: none;
             animation: fadeIn 0.35s ease;
@@ -233,7 +201,6 @@
             border: 1px solid #f1f5f9;
         }
 
-        /* Go to Home Page Button */
         .btn-home {
             display: inline-flex;
             align-items: center;
@@ -292,7 +259,6 @@
             font-size: 0.98rem;
         }
 
-        /* 1. Media Grid */
         .news-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -348,7 +314,6 @@
             border-top: 1px solid #f1f5f9;
         }
 
-        /* 2. Photo Gallery */
         .photo-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -391,7 +356,6 @@
             padding: 16px 5px 6px;
         }
 
-        /* CALCULATOR FORMS & RESULTS */
         .calc-form {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -471,45 +435,60 @@
             filter: brightness(1.05);
         }
 
-        /* Result Display Box */
+        /* 1-PAGE COMPACT A4 QUOTATION SLIP */
         .result-box {
             display: none;
             background: #ffffff;
             border: 2px solid #fed7aa;
-            border-radius: 16px;
-            padding: 20px 18px;
-            margin-top: 20px;
+            border-radius: 14px;
+            padding: 18px 16px;
+            margin-top: 18px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.06);
             animation: fadeIn 0.4s ease;
         }
 
-        .result-title {
+        .quotation-printable-area {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .quote-header-box {
             text-align: center;
-            font-size: 1.25rem;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .quote-header-title {
+            font-size: 1.28rem;
             font-weight: 800;
             color: var(--primary-dark);
-            border-bottom: 2px dashed #fed7aa;
-            padding-bottom: 10px;
-            margin-bottom: 14px;
+        }
+
+        .quote-header-sub {
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 600;
         }
 
         .result-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .result-table tr {
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .result-table td {
-            padding: 9px 5px;
-            font-size: 0.98rem;
+            padding: 7px 6px;
+            font-size: 0.95rem;
         }
 
         .result-table td:first-child {
-            color: var(--gray);
+            color: #334155;
             font-weight: 600;
         }
 
@@ -525,7 +504,15 @@
 
         .highlight-row td {
             color: var(--primary) !important;
-            font-size: 1.1rem !important;
+            font-size: 1.05rem !important;
+        }
+
+        .quote-footer-box {
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
         }
 
         .action-btn-row {
@@ -572,7 +559,6 @@
             box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
         }
 
-        /* Aarti Special Card */
         .aarti-special-card {
             background: #fffbeb;
             border: 2px solid #fde68a;
@@ -644,7 +630,6 @@
             font-size: 1.05rem;
         }
 
-        /* About Us */
         .about-content {
             display: flex;
             flex-direction: column;
@@ -675,7 +660,6 @@
             margin-bottom: 4px;
         }
 
-        /* Contact Info */
         .contact-list {
             list-style: none;
             margin-top: 10px;
@@ -707,7 +691,6 @@
             font-size: 1.2rem;
         }
 
-        /* Floating WhatsApp Button */
         .floating-wa {
             position: fixed;
             bottom: 20px;
@@ -730,7 +713,6 @@
             transform: scale(1.1);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             background: var(--dark);
@@ -747,30 +729,47 @@
             .form-row { grid-template-columns: 1fr; gap: 0; }
         }
 
-        /* Print Media for Clean PDF */
+        /* STRICT SINGLE-PAGE A4 PRINT CSS */
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+
         @media print {
-            body * { visibility: hidden; }
-            .printable-active, .printable-active * { visibility: visible; }
+            body {
+                background: #fff !important;
+                color: #000 !important;
+            }
+            body * {
+                visibility: hidden;
+            }
+            .printable-active, .printable-active * {
+                visibility: visible;
+            }
             .printable-active {
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 100%;
-                border: 2px solid #333 !important;
-                padding: 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                border: 2px solid #0f172a !important;
+                padding: 15px !important;
+                box-shadow: none !important;
+                page-break-inside: avoid !important;
+                page-break-after: avoid !important;
             }
-            .action-btn-row, .btn-home { display: none !important; }
+            .action-btn-row, .btn-home, .floating-wa, .top-notice, header, footer {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Notice -->
     <div class="top-notice">
         ॥ जय श्री गुंसाई जी महाराज की ॥
     </div>
 
-    <!-- Hero / Profile Section -->
     <header class="hero">
         <div class="profile-container">
             <img src="profile.png" alt="Ramesh Saraswat" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ramesh+Saraswat&size=200&background=c2410c&color=fff'">
@@ -784,12 +783,11 @@
     <div class="container">
 
         <!-- ==============================================
-             HOME VIEW: EXACT APP-STYLE CARDS
+             HOME VIEW
              ============================================== -->
         <main id="home-view">
             <div class="menu-grid">
                 
-                <!-- 1. Media and News Paper -->
                 <div class="menu-card" onclick="openSection('detail-media')">
                     <div class="menu-icon-box">📰</div>
                     <div class="menu-info">
@@ -799,7 +797,6 @@
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 2. Picture Gallery -->
                 <div class="menu-card" onclick="openSection('detail-gallery')">
                     <div class="menu-icon-box">🖼️</div>
                     <div class="menu-info">
@@ -809,26 +806,24 @@
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 3. PLI Calculator -->
                 <div class="menu-card" onclick="openSection('detail-pli')" style="border-color: #f97316; background: #fffaf0;">
                     <div class="menu-icon-box" style="background: #ffedd5; border-color: #f97316;">📊</div>
                     <div class="menu-info">
                         <h3 style="color: var(--primary);">PLI Calculator</h3>
-                        <p>डाक जीवन बीमा योजना चयन, प्रीमियम व मैच्योरिटी गणना </p>
+                        <p>डाक जीवन बीमा योजना चयन, प्रीमियम व मैच्योरिटी गणना</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 4. RPLI Calculator -->
                 <div class="menu-card" onclick="openSection('detail-rpli')" style="border-color: #0284c7; background: #f0f9ff;">
                     <div class="menu-icon-box" style="background: #e0f2fe; border-color: #0284c7;">📈</div>
                     <div class="menu-info">
                         <h3 style="color: #0284c7;">RPLI Calculator</h3>
-                        <p>ग्रामीण डाक जीवन बीमा योजना चयन, प्रीमियम व मैच्योरिटी गणना </p>
+                        <p>ग्रामीण डाक जीवन बीमा योजना चयन, प्रीमियम व मैच्योरिटी गणना</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
-                                <!-- 1. POSB Interest Calculator Strip -->
+
                 <div class="menu-card" onclick="openSection('detail-posb')" style="border-color: #16a34a; background: #f0fdf4;">
                     <div class="menu-icon-box" style="background: #dcfce7; border-color: #16a34a;">💰</div>
                     <div class="menu-info">
@@ -838,7 +833,6 @@
                     <div class="menu-arrow" style="color: #16a34a;">➔</div>
                 </div>
 
-                <!-- 2. Speed Post Tracking Strip -->
                 <div class="menu-card" onclick="openSection('detail-tracking')" style="border-color: #9333ea; background: #faf5ff;">
                     <div class="menu-icon-box" style="background: #f3e8ff; border-color: #9333ea;">📦</div>
                     <div class="menu-info">
@@ -847,19 +841,16 @@
                     </div>
                     <div class="menu-arrow" style="color: #9333ea;">➔</div>
                 </div>
-                
 
-                <!-- 5.Sri Gusai Ji Aarti -->
                 <div class="menu-card" onclick="openSection('detail-aarti')">
                     <div class="menu-icon-box">🪔</div>
                     <div class="menu-info">
-                        <h3> Shri Gusai Ji Aarti</h3>
+                        <h3>Shri Gusai Ji Aarti</h3>
                         <p>श्री गुंसाई जी महाराज के दर्शन एवं आरती</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 6. About Us -->
                 <div class="menu-card" onclick="openSection('detail-about')">
                     <div class="menu-icon-box">👤</div>
                     <div class="menu-info">
@@ -869,861 +860,46 @@
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 7. Contact Info -->
                 <div class="menu-card" onclick="openSection('detail-contact')">
                     <div class="menu-icon-box">📞</div>
                     <div class="menu-info">
                         <h3>Contact Info</h3>
-                        <p>WhatsApp, मोबाइल नंबर, ईमेल </p>
+                        <p>WhatsApp, मोबाइल नंबर, ईमेल</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-            </div>
-        </main>
+                <!-- 1. Search on Amazon Strip -->
+                <a href="https://www.amazon.in?&linkCode=ll2&tag=wwwfbcomrsara-21&linkId=336c7b07ec1a72a20ba35675de1bf9de&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener" class="menu-card" style="border-color: #f59e0b; background: #fffdf5;">
+                    <div class="menu-icon-box" style="background: #fef3c7; border-color: #f59e0b;">🔍</div>
+                    <div class="menu-info">
+                        <h3 style="color: #b45309;">Search on Amazon (अमेज़न सर्च)</h3>
+                        <p>अपनी पसंद का कोई भी सामान सीधे अमेज़न पर खोजें और ख़रीदें</p>
+                    </div>
+                    <div class="menu-arrow" style="color: #d97706;">↗</div>
+                </a>
 
-
-        <!-- ==============================================
-             DETAIL VIEW 1: Media and News Paper
-             ============================================== -->
-        <section id="detail-media" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>Media & News Paper (समाचार पत्र आलेख)</h2>
-                </div>
-                <p class="section-subtitle">
-                    प्रमुख समाचार पत्रों में प्रकाशित आलेख, विचार एवं विशेष रिपोर्ट्स (फ़ोटो पर क्लिक करके पूरा देखें)
-                </p>
-
-                <div class="news-gallery-grid">
-                    <div class="news-item">
-                        <a href="IMG_20260425_074036.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260425_074036.jpg" alt="प्रेस कवरेज 1" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #1</div>
+                <!-- 2. Quick Inquiry WhatsApp Strip -->
+                <div class="menu-card" onclick="openSection('detail-inquiry')" style="border-color: #25D366; background: #f0fdf4;">
+                    <div class="menu-icon-box" style="background: #dcfce7; border-color: #25D366;">💬</div>
+                    <div class="menu-info">
+                        <h3 style="color: #15803d;">त्वरित पूछताछ फ़ॉर्म (Quick Inquiry)</h3>
+                        <p>अपना नाम व संदेश लिखकर सीधे WhatsApp पर संदेश भेजें</p>
                     </div>
-                    <div class="news-item">
-                        <a href="IMG_20260406_074902.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260406_074902.jpg" alt="प्रेस कवरेज 2" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #2</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260405_080422.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260405_080422.jpg" alt="प्रेस कवरेज 3" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #3</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260404_092632.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260404_092632.jpg" alt="प्रेस कवरेज 4" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #4</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260405_075515.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260405_075515.jpg" alt="प्रेस कवरेज 5" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #5</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260404_092336.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260404_092336.jpg" alt="प्रेस कवरेज 6" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #6</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260404_092204.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260404_092204.jpg" alt="प्रेस कवरेज 7" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #7</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260404_071727.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260404_071727.jpg" alt="प्रेस कवरेज 8" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #8</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20260317_081419.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20260317_081419.jpg" alt="प्रेस कवरेज 9" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #9</div>
-                    </div>
-                    <div class="news-item">
-                        <a href="IMG_20251119_203733.jpg" target="_blank" class="news-link">
-                            <img src="IMG_20251119_203733.jpg" alt="प्रेस कवरेज 10" class="news-thumb" loading="lazy">
-                            <div class="news-overlay">🔍 पूरा आलेख देखें</div>
-                        </a>
-                        <div class="news-caption">प्रकाशित आलेख #10</div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW 2: Picture Gallery
-             ============================================== -->
-        <section id="detail-gallery" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>Picture Gallery (फ़ोटो गैलरी)</h2>
-                </div>
-                <p class="section-subtitle">
-                    🌿 प्रकृति एवं ग्रामीण परिवेश की सुंदर झलकियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
-                </p>
-
-                <div class="photo-gallery-grid">
-                    <div class="gallery-card">
-                        <a href="IMG_20260629_094402.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20260629_094402.jpg" alt="फ़ोटो 1" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20260317_190031.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20260317_190031.jpg" alt="फ़ोटो 2" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20251010_162612.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20251010_162612.jpg" alt="फ़ोटो 3" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20251011_084639.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20251011_084639.jpg" alt="फ़ोटो 4" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20251005_201432.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20251005_201432.jpg" alt="फ़ोटो 5" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20251006_190831.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20251006_190831.jpg" alt="फ़ोटो 6" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20250925_130521.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250925_130521.jpg" alt="फ़ोटो 7" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20251005_201047.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20251005_201047.jpg" alt="फ़ोटो 8" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20250923_190045.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250923_190045.jpg" alt="फ़ोटो 9" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20250919_071648.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250919_071648.jpg" alt="फ़ोटो 10" class="gallery-img" loading="lazy">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20250919_115940.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250919_115940.jpg" alt="फ़ोटो 11" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20250917_100541.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250917_100541.jpg" alt="फ़ोटो 12" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="IMG_20250917_100611.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250917_100611.jpg" alt="फ़ोटो 13" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="Collage_20250701_070735.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250701_070735.jpg" alt="कोलाज 1" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="Collage_20250703_080604.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250703_080604.jpg" alt="कोलाज 2" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="Collage_20250616_183152.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250616_183152.jpg" alt="कोलाज 3" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="Collage_20250622_082842.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250622_082842.jpg" alt="कोलाज 4" class="gallery-img">
-                            <div class="gallery-overlay">🔍 पूरा देखें</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW 3: PLI CALCULATOR
-             ============================================== -->
-        <section id="detail-pli" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>PLI Calculator (डाक जीवन बीमा)</h2>
-                </div>
-                <p class="section-subtitle">
-                    योजना का चयन करें, विवरण भरें और सटीक प्रीमियम, कुल जमा राशि व मैच्योरिटी लाभ निकालें।
-                </p>
-
-                <div class="calc-form">
-                    <!-- Advisor Settings -->
-                    <div class="advisor-box">
-                        <div class="advisor-box-title">👤 सलाहकार विवरण:</div>
-                        <div class="form-row">
-                            <div class="form-group" style="margin-bottom:0;">
-                                <label style="font-size:0.85rem;">सलाहकार का नाम:</label>
-                                <input type="text" id="pliAdvName" class="form-control" value="रमेश सारस्वत">
-                            </div>
-                            <div class="form-group" style="margin-bottom:0;">
-                                <label style="font-size:0.85rem;">सलाहकार का मोबाइल:</label>
-                                <input type="tel" id="pliAdvPhone" class="form-control" value="8949126572">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pliScheme">PLI योजना चुनें (Select Scheme):</label>
-                        <select id="pliScheme" class="form-control">
-                            <option value="santosh" selected>संतोष - Endowment Assurance (EA) [बोनस: ₹52/हज़ार]</option>
-                            <option value="suraksha">सुरक्षा - Whole Life Assurance (WLA) [बोनस: ₹76/हज़ार]</option>
-                            <option value="suvidha">सुविधा - Convertible Whole Life (CWLA) [बोनस: ₹76/हज़ार]</option>
-                            <option value="sumangal">सुमंगल - Anticipated Endowment (AEA) [बोनस: ₹48/हज़ार]</option>
-                            <option value="yugal">युगल सुरक्षा - Joint Life Assurance [बोनस: ₹52/हज़ार]</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pliCustName">ग्राहक का नाम (Customer Name):</label>
-                        <input type="text" id="pliCustName" class="form-control" placeholder="उदा. सुरेश कुमार" value="सम्मानित ग्राहक">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="pliDob">जन्मतिथि (DOB):</label>
-                            <input type="date" id="pliDob" class="form-control" onchange="updatePliAge()">
-                            <small id="pliAgeText" style="color:var(--primary); font-weight:700; margin-top:3px; display:block;"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="pliSumAssured">बीमा राशि (Sum Assured):</label>
-                            <select id="pliSumAssured" class="form-control">
-                                <option value="50000">₹ 50,000</option>
-                                <option value="100000">₹ 1,00,000</option>
-                                <option value="200000">₹ 2,00,000</option>
-                                <option value="300000">₹ 3,00,000</option>
-                                <option value="500000" selected>₹ 5,00,000</option>
-                                <option value="1000000">₹ 10,00,000</option>
-                                <option value="2000000">₹ 20,00,000</option>
-                                <option value="5000000">₹ 50,00,000 (अधिकतम)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="pliFreq">प्रीमियम आवृत्ति (Frequency):</label>
-                            <select id="pliFreq" class="form-control">
-                                <option value="12" selected>मासिक (Monthly)</option>
-                                <option value="4">त्रैमासिक (Quarterly)</option>
-                                <option value="2">छमाही (Half-Yearly)</option>
-                                <option value="1">वार्षिक (Yearly)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="pliMaturityAge">परिपक्वता आयु (Maturity Age):</label>
-                            <select id="pliMaturityAge" class="form-control">
-                                <option value="35">35 वर्ष</option>
-                                <option value="40">40 वर्ष</option>
-                                <option value="45">45 वर्ष</option>
-                                <option value="50">50 वर्ष</option>
-                                <option value="55">55 वर्ष</option>
-                                <option value="58" selected>58 वर्ष (PLI)</option>
-                                <option value="60">60 वर्ष</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn-calc" onclick="calculatePli()">
-                        ⚡ कैलकुलेट करें (Calculate Result)
-                    </button>
+                    <div class="menu-arrow" style="color: #16a34a;">➔</div>
                 </div>
 
-                <!-- PLI Quotation Result -->
-                <div id="pliResultBox" class="result-box">
-                    <div class="result-title">📋 डाक जीवन बीमा (PLI) प्रस्ताव कोटेशन</div>
-
-                    <table class="result-table">
-                        <tr><td>प्रस्तावित ग्राहक:</td><td id="resPliName">-</td></tr>
-                        <tr><td>चयनित योजना:</td><td id="resPliScheme">-</td></tr>
-                        <tr><td>वर्तमान आयु:</td><td id="resPliAge">-</td></tr>
-                        <tr><td>पॉलिसी अवधि (Term):</td><td id="resPliTerm">-</td></tr>
-                        <tr><td>परिपक्वता आयु (Maturity Age):</td><td id="resPliMatAge">-</td></tr>
-                        <tr><td>बीमा राशि (Sum Assured):</td><td id="resPliSA">-</td></tr>
-                        <tr class="highlight-row"><td>किस्त प्रीमियम राशि:</td><td id="resPliPrem">-</td></tr>
-                        <tr><td>कुल जमा प्रीमियम (Total Deposited):</td><td id="resPliTotal">-</td></tr>
-                        <tr><td>अनुमानित बोनस लाभ:</td><td id="resPliBonus">-</td></tr>
-                        <tr class="highlight-row" style="background:#ecfdf5;">
-                            <td style="color:#047857 !important;">कुल परिपक्वता लाभ (Expected Maturity):</td>
-                            <td id="resPliMat" style="color:#047857 !important;">-</td>
-                        </tr>
-                        <tr><td>अनुमानित शुद्ध लाभ:</td><td id="resPliProfit" style="color:#16a34a; font-weight:bold;">-</td></tr>
-                    </table>
-
-                    <div id="pliAdvisorFooter" style="font-size:0.85rem; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px;"></div>
-
-                    <div class="action-btn-row">
-                        <button type="button" class="btn-share-wa" onclick="sharePliWhatsApp()">
-                            💬 WhatsApp पर शेयर करें
-                        </button>
-                        <button type="button" class="btn-download-pdf" onclick="printQuotation('pliResultBox')">
-                            📄 PDF / प्रिंट कोटेशन
-                        </button>
+                <!-- 3. Add to Home Screen Strip -->
+                <div class="menu-card" onclick="installPWA()" style="border-color: #6366f1; background: #f5f3ff;">
+                    <div class="menu-icon-box" style="background: #ede9fe; border-color: #6366f1;">📲</div>
+                    <div class="menu-info">
+                        <h3 style="color: #4f46e5;">वेब ऐप डाउनलोड (Add to Home Screen)</h3>
+                        <p>बिना प्ले स्टोर के सीधे अपने मोबाइल में ऐप की तरह जोड़ें</p>
                     </div>
+                    <div class="menu-arrow" style="color: #6366f1;">⬇</div>
                 </div>
 
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW 4: RPLI CALCULATOR
-             ============================================== -->
-        <section id="detail-rpli" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>RPLI Calculator (ग्रामीण डाक जीवन बीमा)</h2>
-                </div>
-                <p class="section-subtitle">
-                    ग्रामीण डाक जीवन बीमा (RPLI) योजना चुनें, विवरण भरें और तुरंत सटीक कोटेशन निकालें।
-                </p>
-
-                <div class="calc-form">
-                    <!-- Advisor Settings -->
-                    <div class="advisor-box">
-                        <div class="advisor-box-title">👤 सलाहकार विवरण :</div>
-                        <div class="form-row">
-                            <div class="form-group" style="margin-bottom:0;">
-                                <label style="font-size:0.85rem;">सलाहकार का नाम:</label>
-                                <input type="text" id="rpliAdvName" class="form-control" value="रमेश सारस्वत">
-                            </div>
-                            <div class="form-group" style="margin-bottom:0;">
-                                <label style="font-size:0.85rem;">सलाहकार का मोबाइल:</label>
-                                <input type="tel" id="rpliAdvPhone" class="form-control" value="8949126572">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="rpliScheme">RPLI योजना चुनें (Select Scheme):</label>
-                        <select id="rpliScheme" class="form-control">
-                            <option value="gram_santosh" selected>ग्राम संतोष - Endowment Assurance (EA) [बोनस: ₹48/हज़ार]</option>
-                            <option value="gram_suraksha">ग्राम सुरक्षा - Whole Life Assurance (WLA) [बोनस: ₹60/हज़ार]</option>
-                            <option value="gram_suvidha">ग्राम सुविधा - Convertible Whole Life (CWLA) [बोनस: ₹60/हज़ार]</option>
-                            <option value="gram_sumangal">ग्राम सुमंगल - Anticipated Endowment (AEA) [बोनस: ₹45/हज़ार]</option>
-                            <option value="gram_priya">ग्राम प्रिया - 10 Year Rural PLI [बोनस: ₹45/हज़ार]</option>
-                            <option value="bal_bima">बाल बीमा योजना - Children Policy [बोनस: ₹48/हज़ार]</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="rpliCustName">ग्राहक का नाम (Customer Name):</label>
-                        <input type="text" id="rpliCustName" class="form-control" placeholder="उदा. रामनिवास" value="सम्मानित ग्राहक ">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="rpliDob">जन्मतिथि (DOB):</label>
-                            <input type="date" id="rpliDob" class="form-control" onchange="updateRpliAge()">
-                            <small id="rpliAgeText" style="color:var(--primary); font-weight:700; margin-top:3px; display:block;"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="rpliSumAssured">बीमा राशि (Sum Assured):</label>
-                            <select id="rpliSumAssured" class="form-control">
-                                <option value="20000">₹ 20,000</option>
-                                <option value="50000">₹ 50,000</option>
-                                <option value="100000" selected>₹ 1,00,000</option>
-                                <option value="200000">₹ 2,00,000</option>
-                                <option value="300000">₹ 3,00,000</option>
-                                <option value="500000">₹ 5,00,000</option>
-                                <option value="1000000">₹ 10,00,000 (अधिकतम)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="rpliFreq">प्रीमियम आवृत्ति (Frequency):</label>
-                            <select id="rpliFreq" class="form-control">
-                                <option value="12" selected>मासिक (Monthly)</option>
-                                <option value="4">त्रैमासिक (Quarterly)</option>
-                                <option value="2">छमाही (Half-Yearly)</option>
-                                <option value="1">वार्षिक (Yearly)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="rpliMaturityAge">परिपक्वता आयु (Maturity Age):</label>
-                            <select id="rpliMaturityAge" class="form-control">
-                                <option value="35">35 वर्ष</option>
-                                <option value="40">40 वर्ष</option>
-                                <option value="45">45 वर्ष</option>
-                                <option value="50">50 वर्ष</option>
-                                <option value="55">55 वर्ष</option>
-                                <option value="58" selected>58 वर्ष (RPLI)</option>
-                                <option value="60">60 वर्ष</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn-calc" style="background:linear-gradient(135deg, #0284c7, #0369a1);" onclick="calculateRpli()">
-                        ⚡ कैलकुलेट करें (Calculate Result)
-                    </button>
-                </div>
-
-                <!-- RPLI Quotation Result -->
-                <div id="rpliResultBox" class="result-box">
-                    <div class="result-title" style="color:#0369a1; border-color:#bae6fd;">📋 ग्रामीण डाक जीवन बीमा (RPLI) प्रस्ताव कोटेशन</div>
-
-                    <table class="result-table">
-                        <tr><td>प्रस्तावित ग्राहक:</td><td id="resRpliName">-</td></tr>
-                        <tr><td>चयनित योजना:</td><td id="resRpliScheme">-</td></tr>
-                        <tr><td>वर्तमान आयु:</td><td id="resRpliAge">-</td></tr>
-                        <tr><td>पॉलिसी अवधि (Term):</td><td id="resRpliTerm">-</td></tr>
-                        <tr><td>परिपक्वता आयु (Maturity Age):</td><td id="resRpliMatAge">-</td></tr>
-                        <tr><td>बीमा राशि (Sum Assured):</td><td id="resRpliSA">-</td></tr>
-                        <tr class="highlight-row" style="background:#f0f9ff;">
-                            <td style="color:#0284c7 !important;">किस्त प्रीमियम राशि:</td>
-                            <td id="resRpliPrem" style="color:#0284c7 !important;">-</td>
-                        </tr>
-                        <tr><td>कुल जमा प्रीमियम (Total Deposited):</td><td id="resRpliTotal">-</td></tr>
-                        <tr><td>अनुमानित बोनस लाभ:</td><td id="resRpliBonus">-</td></tr>
-                        <tr class="highlight-row" style="background:#ecfdf5;">
-                            <td style="color:#047857 !important;">कुल परिपक्वता लाभ (Expected Maturity):</td>
-                            <td id="resRpliMat" style="color:#047857 !important;">-</td>
-                        </tr>
-                        <tr><td>अनुमानित शुद्ध लाभ:</td><td id="resRpliProfit" style="color:#16a34a; font-weight:bold;">-</td></tr>
-                    </table>
-
-                    <div id="rpliAdvisorFooter" style="font-size:0.85rem; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px;"></div>
-
-                    <div class="action-btn-row">
-                        <button type="button" class="btn-share-wa" onclick="shareRpliWhatsApp()">
-                            💬 WhatsApp पर शेयर करें
-                        </button>
-                        <button type="button" class="btn-download-pdf" onclick="printQuotation('rpliResultBox')">
-                            📄 PDF / प्रिंट कोटेशन
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-        
-        <!-- ==============================================
-             DETAIL VIEW: POSB INTEREST CALCULATOR
-             ============================================== -->
-        <section id="detail-posb" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>डाकघर बचत योजना (POSB) कैलकुलेटर</h2>
-                </div>
-                <p class="section-subtitle">
-                    योजना चुनें, जमा राशि दर्ज करें और भारत सरकार द्वारा निर्धारित ताज़ा ब्याज व मैच्योरिटी राशि जानें।
-                </p>
-
-                <div class="calc-form">
-                    <div class="form-group">
-                        <label for="posbScheme">बचत योजना चुनें (Select Scheme):</label>
-                        <select id="posbScheme" class="form-control" onchange="adjustPosbInputs()">
-                            <option value="rd" selected>RD - 5 वर्षीय आवर्ती जमा (6.7% वार्षिक)</option>
-                            <option value="mis">MIS - मासिक आय योजना (7.4% प्रतिवर्ष, मासिक भुगतान)</option>
-                            <option value="td1">TD - 1 वर्षीय सावधि जमा (6.9% वार्षिक)</option>
-                            <option value="td2">TD - 2 वर्षीय सावधि जमा (7.0% वार्षिक)</option>
-                            <option value="td3">TD - 3 वर्षीय सावधि जमा (7.1% वार्षिक)</option>
-                            <option value="td5">TD - 5 वर्षीय सावधि जमा (7.5% वार्षिक - 80C छूट)</option>
-                            <option value="nsc">NSC - राष्ट्रीय बचत पत्र 5 वर्ष (7.7% वार्षिक)</option>
-                            <option value="kvp">KVP - किसान विकास पत्र (7.5% - 115 महीने में दोगुना)</option>
-                            <option value="ssy">SSY - सुकन्या समृद्धि खाता (8.2% वार्षिक)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label id="posbAmountLabel" for="posbAmount">मासिक जमा राशि (₹):</label>
-                        <input type="number" id="posbAmount" class="form-control" placeholder="उदा. 2000" value="2000" min="100">
-                    </div>
-
-                    <button type="button" class="btn-calc" style="background: linear-gradient(135deg, #16a34a, #15803d);" onclick="calculatePosb()">
-                        ⚡ ब्याज एवं मैच्योरिटी गणना करें
-                    </button>
-                </div>
-
-                <!-- POSB Result -->
-                <div id="posbResultBox" class="result-box" style="border-color: #86efac;">
-                    <div class="result-title" style="color: #15803d; border-color: #bbf7d0;">📋 डाकघर बचत योजना गणना परिणाम</div>
-
-                    <table class="result-table">
-                        <tr><td>चयनित योजना:</td><td id="resPosbScheme">-</td></tr>
-                        <tr><td>लागू ब्याज दर (Interest Rate):</td><td id="resPosbRate">-</td></tr>
-                        <tr><td>योजना अवधि (Tenure):</td><td id="resPosbTenure">-</td></tr>
-                        <tr><td>कुल जमा राशि (Total Deposit):</td><td id="resPosbDeposit">-</td></tr>
-                        <tr class="highlight-row" style="background: #f0fdf4;">
-                            <td style="color: #15803d !important;">कुल अर्जित ब्याज (Interest Earned):</td>
-                            <td id="resPosbInterest" style="color: #15803d !important;">-</td>
-                        </tr>
-                        <tr class="highlight-row" style="background: #ecfdf5;">
-                            <td style="color: #047857 !important;">कुल मैच्योरिटी राशि (Maturity Amount):</td>
-                            <td id="resPosbMaturity" style="color: #047857 !important;">-</td>
-                        </tr>
-                    </table>
-
-                    <div style="font-size:0.85rem; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px;">
-                        सलाहकार: <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर | मो.: 8949126572
-                    </div>
-
-                    <div class="action-btn-row">
-                        <button type="button" class="btn-share-wa" onclick="sharePosbWhatsApp()">
-                            💬 WhatsApp पर शेयर करें
-                        </button>
-                        <button type="button" class="btn-download-pdf" onclick="printQuotation('posbResultBox')">
-                            📄 PDF / प्रिंट कोटेशन
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW: SPEED POST TRACKING TOOL
-             ============================================== -->
-        <section id="detail-tracking" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>स्पीड पोस्ट एवं आर्टिकल ट्रैकिंग (Speed Post Tracker)</h2>
-                </div>
-                <p class="section-subtitle">
-                    अपने 13 अंकों का कंसाइनमेंट नंबर (जैसे ED123456789IN) दर्ज करें और स्पीड पोस्ट, रजिस्ट्री या पार्सल की वर्तमान स्थिति देखें।
-                </p>
-
-                <div class="calc-form" style="background: #faf5ff; border-color: #e9d5ff;">
-                    <div class="form-group">
-                        <label for="trackNum">कंसाइनमेंट / ट्रैकिंग नंबर दर्ज करें:</label>
-                        <input type="text" id="trackNum" class="form-control" placeholder="उदा. ED123456789IN" style="text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">
-                    </div>
-
-                    <button type="button" class="btn-calc" style="background: linear-gradient(135deg, #9333ea, #7e22ce);" onclick="trackArticle()">
-                        🔍 ट्रैक करें (Track Now)
-                    </button>
-                </div>
-
-                <div style="background: #fff; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 15px; text-align: center; font-size: 0.92rem; color: #475569;">
-                    💡 <strong>नोट:</strong> "ट्रैक करें" पर क्लिक करते ही इंडिया पोस्ट (India Post) का आधिकारिक ट्रैकिंग पोर्टल खुल जाएगा जहाँ आपको लाइव डिलीवरी स्टेटस दिखाई देगा।
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW 5: Gusai Ji Aarti
-             ============================================== -->
-        <section id="detail-aarti" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box aarti-special-card">
-                <div class="section-header">
-                    <h2>श्री गुंसाई जी महाराज दर्शन एवं आरती</h2>
-                </div>
-
-                <div class="aarti-poster-wrapper">
-                    <img src="gusaiji.png" alt="श्री गुंसाई जी महाराज" class="aarti-poster" onerror="this.style.display='none'">
-                </div>
-
-                <div class="aarti-text-box">
-                    <div class="aarti-title">॥ आरती श्री गुंसाई जी महाराज की ॥</div>
-
-                    <p class="aarti-line">अरे! मानखा देह घड़ियो कारीगर, पवन पुरुष मांहि बोलरया॥</p>
-                    <p class="aarti-line">नो सो नाड बोहतर सौ कोठा, कायम-कायम से घड़िया॥</p>
-                    <p class="aarti-line">अपने कुँवर आगे चँवर दुलावां, करोनी अलख हर री आरतियाँ॥</p>
-
-                    <div class="aarti-chorus">
-                        हो महाराज कँवर जी री आरतियाँ,<br>
-                        हो म्हारे देव रै गुंसाई जी री आरतियाँ,<br>
-                        हो म्हारे बाबा रै गुंसाई जी री आरतियाँ॥
-                    </div>
-
-                    <div class="stanza-break"></div>
-
-                    <p class="aarti-line">सतयुग में प्रहलाद सिधाया, पाँच रे करोड़ ले बे तिरिया।</p>
-                    <p class="aarti-line">ले होली झोल्यां में बैठ्या, अग्न जाल से बै तिरिया॥</p>
-                    <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
-
-                    <div class="stanza-break"></div>
-
-                    <p class="aarti-line">त्रैतायुग में राजा बलि रे सिधाया, सात रे करोड़ ले बे तिरिया।</p>
-                    <p class="aarti-line">ले झारी राजा भोम संकलिया, वामन होकर बाँ छलिया॥</p>
-                    <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
-
-                    <div class="stanza-break"></div>
-
-                    <p class="aarti-line">त्रैतायुग में राजा हरिश्चन्द्र सिधाया, नव रे करोड़ ले बे तिरिया।</p>
-                    <p class="aarti-line">पुन्या के कारण राजा दान बाँटियो, नीर नीच घर बाँ भरिया॥</p>
-                    <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
-
-                    <div class="stanza-break"></div>
-
-                    <p class="aarti-line">द्वापुर में पांचो पाण्डु रे सिधाया, बारह रे करोड़ ले बे तिरिया।</p>
-                    <p class="aarti-line">रानी द्रोपदी रो चीर बढ़ायो, भुय्याँ-भुय्याँ काम सफल करिया॥</p>
-                    <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
-
-                    <div class="stanza-break"></div>
-
-                    <p class="aarti-line">गोपीचन्द राजा भर्तृरि सिधाया, राज-पाट बै सब तजिया।</p>
-                    <p class="aarti-line">आसन ढाल निधड़क होय बैठ्या, आवण-जाँवण से बै तिरिया॥</p>
-                    <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
-
-                    <div class="stanza-break"></div>
-
-                    <p class="aarti-line">पाँचाँ साताँ नवाँ रे बारवाँ, सुर तैतीसां भेला मिलिया।</p>
-                    <p class="aarti-line">शुभ जी को सन्त दिवाकर बोल्या, वासो देवो नी अमरापुरियाँ॥</p>
-                    <p class="aarti-line">चौसठ जोगण लंगर पुरबे, धवल मंगल गावे सुरसतीयाँ॥</p>
-                    <p class="aarti-line">अपने कुँवर आगे चँवर दुलावां, करोनी अलख हर री आरतियाँ॥</p>
-
-                    <div class="aarti-chorus">
-                        हो महाराज कँवर जी री आरतियाँ,<br>
-                        हो म्हारे देव रै गुंसाई जी री आरतियाँ,<br>
-                        हो म्हारे बाबा रै गुंसाई जी री आरतियाँ॥
-                    </div>
-
-                    <div>
-                        <span class="dedication-badge">शेरेराँ</span>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-        
-        <!-- ==============================================
-             DETAIL VIEW: QUICK INQUIRY FORM (WHATSAPP)
-             ============================================== -->
-        <section id="detail-inquiry" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>त्वरित पूछताछ एवं संपर्क फ़ॉर्म</h2>
-                </div>
-                <p class="section-subtitle">
-                    अपनी जानकारी व प्रश्न भरें और सीधे WhatsApp पर त्वरित उत्तर प्राप्त करें।
-                </p>
-
-                <div class="calc-form" style="background: #f0fdf4; border-color: #bbf7d0;">
-                    <div class="form-group">
-                        <label for="inqName">आपका नाम (Your Name):</label>
-                        <input type="text" id="inqName" class="form-control" placeholder="उदा. रवि शर्मा">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inqPhone">आपका मोबाइल नंबर:</label>
-                        <input type="tel" id="inqPhone" class="form-control" placeholder="उदा. 9876543210">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inqTopic">पूछताछ का विषय (Subject):</label>
-                        <select id="inqTopic" class="form-control">
-                            <option value="PLI डाक जीवन बीमा">PLI डाक जीवन बीमा</option>
-                            <option value="RPLI ग्रामीण डाक जीवन बीमा">RPLI ग्रामीण डाक जीवन बीमा</option>
-                            <option value="डाकघर बचत योजना (RD/TD/MIS/SSY)">डाकघर बचत योजना (RD/TD/MIS/SSY)</option>
-                            <option value="स्पीड पोस्ट / पार्सल सेवा">स्पीड पोस्ट / पार्सल सेवा</option>
-                            <option value="धार्मिक साहित्य / अन्य सहयोग">धार्मिक साहित्य / अन्य सहयोग</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inqMsg">आपका संदेश / प्रश्न (Message):</label>
-                        <textarea id="inqMsg" class="form-control" rows="3" placeholder="अपनी आवश्यकता या प्रश्न यहाँ लिखें..."></textarea>
-                    </div>
-
-                    <button type="button" class="btn-calc" style="background: linear-gradient(135deg, #25D366, #16a34a);" onclick="sendWhatsAppInquiry()">
-                        💬 WhatsApp पर भेजें (Send via WhatsApp)
-                    </button>
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW 6: About Us
-             ============================================== -->
-        <section id="detail-about" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>About Us (परिचय)</h2>
-                </div>
-                <div class="about-content">
-                    <p>
-                        <strong>सादर जय श्री कृष्णा / जय श्री गुंसाई जी री सा,</strong>
-                    </p>
-                    <p>
-                        मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, सनातन संस्कृति के संरक्षण, प्रेस लेखन, डाक जीवन बीमा (PLI/RPLI) परामर्श एवं डिजिटल नवाचारों के प्रति समर्पित रहा हूँ।
-                    </p>
-                    <p>
-                        स्थानीय स्तर पर सनातन संस्कृति के प्रचार-प्रसार, श्री गुंसाई जी महाराज की महिमा को डिजिटल माध्यमों से जन-जन तक पहुँचाने और समाचार पत्रों में सामयिक विषयों पर विचार साझा करने में मेरी निरंतर रुचि रही है।
-                    </p>
-
-                    <div class="about-feature-grid">
-                        <div class="feature-box">
-                            <h4>📰 मीडिया एवं लेखन</h4>
-                            <p>दैनिक समाचार पत्रों में नियमित आलेख, स्तंभ व समाचार संपादन।</p>
-                        </div>
-                        <div class="feature-box">
-                            <h4>📊 डाक बीमा परामर्श</h4>
-                            <p>PLI एवं RPLI में सटीक योजना चयन, प्रीमियम व मैच्योरिटी गणना।</p>
-                        </div>
-                        <div class="feature-box">
-                            <h4>🪔 सांस्कृतिक संकलन</h4>
-                            <p>पारंपरिक भजनों, आरतियों एवं लोक संस्कृति का संरक्षण।</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-
-        <!-- ==============================================
-             DETAIL VIEW 7: Contact Info
-             ============================================== -->
-        <section id="detail-contact" class="detail-view">
-            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-
-            <div class="card-box">
-                <div class="section-header">
-                    <h2>Contact Info (संपर्क सूत्र)</h2>
-                </div>
-                <p class="section-subtitle">
-                    किसी भी विचार-विमर्श, बीमा योजना अथवा सलाह सुझाव के लिए आप सीधे संपर्क कर सकते हैं:
-                </p>
-
-                <ul class="contact-list">
-                    <li>
-                        <span class="contact-icon">📍</span>
-                        <div>
-                            <strong></strong>निवास:</strong><br>
-                            ग्राम शेरेराँ, तहसील व ज़िला बीकानेर (राजस्थान)
-                        </div>
-                    </li>
-                    <li>
-                        <span class="contact-icon">📱</span>
-                        <div>
-                            <strong>फ़ोन नंबर:</strong><br>
-                            <a href="tel:8949126572" style="color: var(--primary); text-decoration: none; font-weight: bold;">+91 8949126572</a>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="contact-icon">💬</span>
-                        <div>
-                            <strong>WhatsApp संपर्क:</strong><br>
-                            <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">+91 8949126572 (सीधे चैट करें)</a>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="contact-icon">✉️</span>
-                        <div>
-                            <strong>ईमेल पता:</strong><br>
-                            <a href="mailto:rksaraswat21@gmail.com" style="color: var(--primary); text-decoration: none;">rksaraswat21@gmail.com</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
-        </section>
-
-    </div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="floating-wa" title="WhatsApp Chat">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-            <path d="M12.031 2C6.511 2 2.016 6.484 2.016 11.984c0 1.902.532 3.684 1.455 5.215L2 22l4.98-1.425a9.92 9.92 0 005.051 1.378c5.52 0 10.016-4.484 10.016-9.969 0-5.5-4.496-9.984-10.016-9.984zm5.82 14.156c-.244.688-1.22 1.264-1.708 1.343-.464.075-1.07.135-3.155-.726-2.668-1.103-4.385-3.818-4.52-3.996-.134-.18-1.085-1.442-1.085-2.75 0-1.309.687-1.954.93-2.218.245-.264.536-.33.716-.33.18 0 .36 0 .518.008.167.009.39-.064.61.464.226.544.77 1.884.838 2.02.067.137.112.298.022.477-.089.18-.134.293-.267.45-.134.158-.282.353-.404.473-.134.135-.274.282-.118.55.157.268.697 1.15 1.493 1.86 1.026.914 1.89 1.196 2.158 1.33.27.135.426.113.583-.067.158-.18.67-.78.85-1.047.179-.268.358-.224.6-.134.246.09 1.558.735 1.826.87.268.134.447.201.514.312.067.112.067.649-.177 1.337z"/>
-        </svg>
-    </a>
-    
-            <!-- CashKaro Cashback Strip -->
-<a href="https://cashkaro.com?r=455319&fname=Ramesh" target="_blank" rel="nofollow sponsored noopener" class="menu-card" style="border-color: #10b981; background: #ecfdf5;">
-    <div class="menu-icon-box" style="background: #d1fae5; border-color: #10b981;">💸</div>
-    <div class="menu-info">
-        <h3 style="color: #047857;">Earn upto 90% cashback </h3>
-        <p>Amazon, Flipkart, Myntra आदि पर कैशबैक  </p>
-    </div>
-    <div class="menu-arrow" style="color: #059669;">↗</div>
-</a>
-    <!-- Strip 1: Top Trending Products Amazon (Amazon) -->
+                <!-- Top Trending Products -->
                 <a href="https://www.amazon.in/s?k=top+trending+products&crid=27LUHL4WHZTZD&sprefix=Top+trending+pro%2Caps%2C332&linkCode=ll2&tag=wwwfbcomrsara-21&linkId=0ee377de8a7056c8f2fd694dbf9ee005&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener" class="menu-card" style="border-color: #f59e0b; background: #fffdf5;">
                     <div class="menu-icon-box" style="background: #fef3c7; border-color: #f59e0b;">🛍️</div>
                     <div class="menu-info">
@@ -1733,17 +909,388 @@
                     <div class="menu-arrow" style="color: #d97706;">↗</div>
                 </a>
 
-                <!-- Strip 2: Important  Books for Postal Exam(Amazon) -->
+                <!-- Important Books for Postal Exams -->
                 <a href="https://www.amazon.in/s?k=postal+Guide+part+1&crid=TSSCVT5BGUTT&sprefix=postal+guide+part+1%2Caps%2C336&linkCode=ll2&tag=wwwfbcomrsara-21&linkId=4eb6a2886eb7bc426670a69c0d5944a5&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener" class="menu-card" style="border-color: #0284c7; background: #f0f9ff;">
                     <div class="menu-icon-box" style="background: #e0f2fe; border-color: #0284c7;">📖</div>
                     <div class="menu-info">
-                        <h3 style="color: #0284c7;"> Important Books for Postal Exams </h3>
+                        <h3 style="color: #0284c7;">Important Books for Postal Exams</h3>
                         <p>विभागीय परीक्षा पुस्तकें अमेज़न पर देखें</p>
                     </div>
                     <div class="menu-arrow" style="color: #0284c7;">↗</div>
                 </a>
 
-    <!-- Footer -->
+                <!-- CashKaro Cashback -->
+                <a href="https://cashkaro.com?r=455319&fname=Ramesh" target="_blank" rel="nofollow sponsored noopener" class="menu-card" style="border-color: #10b981; background: #ecfdf5;">
+                    <div class="menu-icon-box" style="background: #d1fae5; border-color: #10b981;">💸</div>
+                    <div class="menu-info">
+                        <h3 style="color: #047857;">Earn upto 90% cashback</h3>
+                        <p>Amazon, Flipkart, Myntra आदि पर कैशबैक पाएँ</p>
+                    </div>
+                    <div class="menu-arrow" style="color: #059669;">↗</div>
+                </a>
+
+            </div>
+        </main>
+
+        <!-- DETAIL VIEW 1: Media -->
+        <section id="detail-media" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>Media & News Paper (समाचार पत्र आलेख)</h2></div>
+                <p class="section-subtitle">प्रमुख समाचार पत्रों में प्रकाशित आलेख, विचार एवं विशेष रिपोर्ट्स</p>
+                <div class="news-gallery-grid">
+                    <div class="news-item"><a href="IMG_20260425_074036.jpg" target="_blank" class="news-link"><img src="IMG_20260425_074036.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #1</div></div>
+                    <div class="news-item"><a href="IMG_20260406_074902.jpg" target="_blank" class="news-link"><img src="IMG_20260406_074902.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #2</div></div>
+                    <div class="news-item"><a href="IMG_20260405_080422.jpg" target="_blank" class="news-link"><img src="IMG_20260405_080422.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #3</div></div>
+                    <div class="news-item"><a href="IMG_20260404_092632.jpg" target="_blank" class="news-link"><img src="IMG_20260404_092632.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #4</div></div>
+                    <div class="news-item"><a href="IMG_20260405_075515.jpg" target="_blank" class="news-link"><img src="IMG_20260405_075515.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #5</div></div>
+                    <div class="news-item"><a href="IMG_20260404_092336.jpg" target="_blank" class="news-link"><img src="IMG_20260404_092336.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #6</div></div>
+                    <div class="news-item"><a href="IMG_20260404_092204.jpg" target="_blank" class="news-link"><img src="IMG_20260404_092204.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #7</div></div>
+                    <div class="news-item"><a href="IMG_20260404_071727.jpg" target="_blank" class="news-link"><img src="IMG_20260404_071727.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #8</div></div>
+                    <div class="news-item"><a href="IMG_20260317_081419.jpg" target="_blank" class="news-link"><img src="IMG_20260317_081419.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #9</div></div>
+                    <div class="news-item"><a href="IMG_20251119_203733.jpg" target="_blank" class="news-link"><img src="IMG_20251119_203733.jpg" class="news-thumb" loading="lazy"><div class="news-overlay">🔍 पूरा देखें</div></a><div class="news-caption">आलेख #10</div></div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 2: Gallery -->
+        <section id="detail-gallery" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>Picture Gallery (फ़ोटो गैलरी)</h2></div>
+                <p class="section-subtitle">🌿 प्रकृति एवं ग्रामीण परिवेश की सुंदर झलकियाँ</p>
+                <div class="photo-gallery-grid">
+                    <div class="gallery-card"><a href="IMG_20260629_094402.jpg" target="_blank" class="gallery-link"><img src="IMG_20260629_094402.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20260317_190031.jpg" target="_blank" class="gallery-link"><img src="IMG_20260317_190031.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20251010_162612.jpg" target="_blank" class="gallery-link"><img src="IMG_20251010_162612.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20251011_084639.jpg" target="_blank" class="gallery-link"><img src="IMG_20251011_084639.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20251005_201432.jpg" target="_blank" class="gallery-link"><img src="IMG_20251005_201432.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20251006_190831.jpg" target="_blank" class="gallery-link"><img src="IMG_20251006_190831.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20250925_130521.jpg" target="_blank" class="gallery-link"><img src="IMG_20250925_130521.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20251005_201047.jpg" target="_blank" class="gallery-link"><img src="IMG_20251005_201047.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20250923_190045.jpg" target="_blank" class="gallery-link"><img src="IMG_20250923_190045.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20250919_071648.jpg" target="_blank" class="gallery-link"><img src="IMG_20250919_071648.jpg" class="gallery-img" loading="lazy"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20250919_115940.jpg" target="_blank" class="gallery-link"><img src="IMG_20250919_115940.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20250917_100541.jpg" target="_blank" class="gallery-link"><img src="IMG_20250917_100541.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="IMG_20250917_100611.jpg" target="_blank" class="gallery-link"><img src="IMG_20250917_100611.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="Collage_20250701_070735.jpg" target="_blank" class="gallery-link"><img src="Collage_20250701_070735.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="Collage_20250703_080604.jpg" target="_blank" class="gallery-link"><img src="Collage_20250703_080604.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="Collage_20250616_183152.jpg" target="_blank" class="gallery-link"><img src="Collage_20250616_183152.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                    <div class="gallery-card"><a href="Collage_20250622_082842.jpg" target="_blank" class="gallery-link"><img src="Collage_20250622_082842.jpg" class="gallery-img"><div class="gallery-overlay">🔍 पूरा देखें</div></a></div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 3: PLI -->
+        <section id="detail-pli" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>PLI Calculator (डाक जीवन बीमा)</h2></div>
+                <div class="calc-form">
+                    <div class="advisor-box">
+                        <div class="advisor-box-title">👤 सलाहकार विवरण:</div>
+                        <div class="form-row">
+                            <div class="form-group"><label>नाम:</label><input type="text" id="pliAdvName" class="form-control" value="रमेश सारस्वत"></div>
+                            <div class="form-group"><label>मोबाइल:</label><input type="tel" id="pliAdvPhone" class="form-control" value="8949126572"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>PLI योजना चुनें:</label>
+                        <select id="pliScheme" class="form-control">
+                            <option value="santosh" selected>संतोष - Endowment Assurance (EA) [बोनस: ₹52/हज़ार]</option>
+                            <option value="suraksha">सुरक्षा - Whole Life Assurance (WLA) [बोनस: ₹76/हज़ार]</option>
+                            <option value="suvidha">सुविधा - Convertible Whole Life (CWLA) [बोनस: ₹76/हज़ार]</option>
+                            <option value="sumangal">सुमंगल - Anticipated Endowment (AEA) [बोनस: ₹48/हज़ार]</option>
+                            <option value="yugal">युगल सुरक्षा - Joint Life Assurance [बोनस: ₹52/हज़ार]</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ग्राहक का नाम:</label><input type="text" id="pliCustName" class="form-control" value="सम्मानित ग्राहक"></div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>जन्मतिथि (DOB):</label>
+                            <input type="date" id="pliDob" class="form-control" onchange="updatePliAge()">
+                            <small id="pliAgeText" style="color:var(--primary); font-weight:700; display:block; margin-top:4px;"></small>
+                        </div>
+                        <div class="form-group"><label>बीमा राशि (Sum Assured):</label>
+                            <select id="pliSumAssured" class="form-control">
+                                <option value="50000">₹ 50,000</option><option value="100000">₹ 1,00,000</option><option value="200000">₹ 2,00,000</option><option value="500000" selected>₹ 5,00,000</option><option value="1000000">₹ 10,00,000</option><option value="2000000">₹ 20,00,000</option><option value="5000000">₹ 50,00,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>आवृत्ति:</label><select id="pliFreq" class="form-control"><option value="12" selected>मासिक (Monthly)</option><option value="4">त्रैमासिक</option><option value="2">छमाही</option><option value="1">वार्षिक</option></select></div>
+                        <div class="form-group"><label>मैच्योरिटी आयु:</label><select id="pliMaturityAge" class="form-control"><option value="35">35 वर्ष</option><option value="40">40 वर्ष</option><option value="45">45 वर्ष</option><option value="50">50 वर्ष</option><option value="55">55 वर्ष</option><option value="58" selected>58 वर्ष (PLI)</option><option value="60">60 वर्ष</option></select></div>
+                    </div>
+                    <button type="button" class="btn-calc" onclick="calculatePli()">⚡ कैलकुलेट करें (Calculate)</button>
+                </div>
+
+                <!-- 1-PAGE A4 QUOTATION RESULT BOX -->
+                <div id="pliResultBox" class="result-box">
+                    <div class="quotation-printable-area" id="pliPrintArea">
+                        <div class="quote-header-box">
+                            <div class="quote-header-title">डाक जीवन बीमा (PLI) प्रस्ताव कोटेशन</div>
+                            <div class="quote-header-sub">डाक विभाग, संचार मंत्रालय (भारत सरकार)</div>
+                        </div>
+                        <table class="result-table">
+                            <tr><td>प्रस्तावित ग्राहक:</td><td id="resPliName">-</td></tr>
+                            <tr><td>चयनित योजना:</td><td id="resPliScheme">-</td></tr>
+                            <tr><td>प्रवेश आयु (Age Next Birthday - ANB):</td><td id="resPliAge">-</td></tr>
+                            <tr><td>पॉलिसी अवधि (Term):</td><td id="resPliTerm">-</td></tr>
+                            <tr><td>परिपक्वता आयु (Maturity Age):</td><td id="resPliMatAge">-</td></tr>
+                            <tr><td>बीमा राशि (Sum Assured):</td><td id="resPliSA">-</td></tr>
+                            <tr class="highlight-row"><td>किस्त प्रीमियम राशि:</td><td id="resPliPrem">-</td></tr>
+                            <tr><td>कुल जमा प्रीमियम (Total Deposited):</td><td id="resPliTotal">-</td></tr>
+                            <tr><td>अनुमानित बोनस लाभ:</td><td id="resPliBonus">-</td></tr>
+                            <tr class="highlight-row" style="background:#ecfdf5;"><td style="color:#047857 !important;">कुल परिपक्वता लाभ (Maturity Benefit):</td><td id="resPliMat" style="color:#047857 !important;">-</td></tr>
+                            <tr><td>शुद्ध अनुमानित लाभ (Net Profit):</td><td id="resPliProfit" style="color:#16a34a; font-weight:bold;">-</td></tr>
+                        </table>
+                        <div class="quote-footer-box" id="pliAdvisorFooter"></div>
+                    </div>
+
+                    <div class="action-btn-row">
+                        <button type="button" class="btn-share-wa" onclick="sharePliWhatsApp()">💬 WhatsApp शेयर + PDF</button>
+                        <button type="button" class="btn-download-pdf" onclick="generateSinglePagePdf('pliPrintArea', 'PLI_Quotation.pdf')">📄 PDF डाउनलोड (Single Page A4)</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 4: RPLI -->
+        <section id="detail-rpli" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>RPLI Calculator (ग्रामीण डाक जीवन बीमा)</h2></div>
+                <div class="calc-form">
+                    <div class="advisor-box">
+                        <div class="advisor-box-title">👤 सलाहकार विवरण:</div>
+                        <div class="form-row">
+                            <div class="form-group"><label>नाम:</label><input type="text" id="rpliAdvName" class="form-control" value="रमेश सारस्वत"></div>
+                            <div class="form-group"><label>मोबाइल:</label><input type="tel" id="rpliAdvPhone" class="form-control" value="8949126572"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>RPLI योजना चुनें:</label>
+                        <select id="rpliScheme" class="form-control">
+                            <option value="gram_santosh" selected>ग्राम संतोष - Endowment Assurance (EA) [बोनस: ₹48/हज़ार]</option>
+                            <option value="gram_suraksha">ग्राम सुरक्षा - Whole Life Assurance (WLA) [बोनस: ₹60/हज़ार]</option>
+                            <option value="gram_suvidha">ग्राम सुविधा - Convertible Whole Life (CWLA) [बोनस: ₹60/हज़ार]</option>
+                            <option value="gram_sumangal">ग्राम सुमंगल - Anticipated Endowment (AEA) [बोनस: ₹45/हज़ार]</option>
+                            <option value="gram_priya">ग्राम प्रिया - 10 Year Rural PLI [बोनस: ₹45/हज़ार]</option>
+                            <option value="bal_bima">बाल बीमा योजना - Children Policy [बोनस: ₹48/हज़ार]</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ग्राहक का नाम:</label><input type="text" id="rpliCustName" class="form-control" value="सम्मानित ग्राहक"></div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>जन्मतिथि (DOB):</label>
+                            <input type="date" id="rpliDob" class="form-control" onchange="updateRpliAge()">
+                            <small id="rpliAgeText" style="color:var(--primary); font-weight:700; display:block; margin-top:4px;"></small>
+                        </div>
+                        <div class="form-group"><label>बीमा राशि (Sum Assured):</label>
+                            <select id="rpliSumAssured" class="form-control">
+                                <option value="20000">₹ 20,000</option><option value="50000">₹ 50,000</option><option value="100000" selected>₹ 1,00,000</option><option value="200000">₹ 2,00,000</option><option value="500000">₹ 5,00,000</option><option value="1000000">₹ 10,00,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>आवृत्ति:</label><select id="rpliFreq" class="form-control"><option value="12" selected>मासिक (Monthly)</option><option value="4">त्रैमासिक</option><option value="2">छमाही</option><option value="1">वार्षिक</option></select></div>
+                        <div class="form-group"><label>मैच्योरिटी आयु:</label><select id="rpliMaturityAge" class="form-control"><option value="35">35 वर्ष</option><option value="40">40 वर्ष</option><option value="45">45 वर्ष</option><option value="50">50 वर्ष</option><option value="55">55 वर्ष</option><option value="58" selected>58 वर्ष (RPLI)</option><option value="60">60 वर्ष</option></select></div>
+                    </div>
+                    <button type="button" class="btn-calc" style="background:linear-gradient(135deg, #0284c7, #0369a1);" onclick="calculateRpli()">⚡ कैलकुलेट करें (Calculate)</button>
+                </div>
+
+                <!-- 1-PAGE A4 QUOTATION RESULT BOX -->
+                <div id="rpliResultBox" class="result-box" style="border-color:#bae6fd;">
+                    <div class="quotation-printable-area" id="rpliPrintArea">
+                        <div class="quote-header-box" style="border-color:#0284c7;">
+                            <div class="quote-header-title" style="color:#0284c7;">ग्रामीण डाक जीवन बीमा (RPLI) प्रस्ताव कोटेशन</div>
+                            <div class="quote-header-sub">डाक विभाग, संचार मंत्रालय (भारत सरकार)</div>
+                        </div>
+                        <table class="result-table">
+                            <tr><td>प्रस्तावित ग्राहक:</td><td id="resRpliName">-</td></tr>
+                            <tr><td>चयनित योजना:</td><td id="resRpliScheme">-</td></tr>
+                            <tr><td>प्रवेश आयु (Age Next Birthday - ANB):</td><td id="resRpliAge">-</td></tr>
+                            <tr><td>पॉलिसी अवधि (Term):</td><td id="resRpliTerm">-</td></tr>
+                            <tr><td>परिपक्वता आयु (Maturity Age):</td><td id="resRpliMatAge">-</td></tr>
+                            <tr><td>बीमा राशि (Sum Assured):</td><td id="resRpliSA">-</td></tr>
+                            <tr class="highlight-row" style="background:#f0f9ff;"><td style="color:#0284c7 !important;">किस्त प्रीमियम राशि:</td><td id="resRpliPrem" style="color:#0284c7 !important;">-</td></tr>
+                            <tr><td>कुल जमा प्रीमियम (Total Deposited):</td><td id="resRpliTotal">-</td></tr>
+                            <tr><td>अनुमानित बोनस लाभ:</td><td id="resRpliBonus">-</td></tr>
+                            <tr class="highlight-row" style="background:#ecfdf5;"><td style="color:#047857 !important;">कुल परिपक्वता लाभ (Maturity Benefit):</td><td id="resRpliMat" style="color:#047857 !important;">-</td></tr>
+                            <tr><td>शुद्ध अनुमानित लाभ (Net Profit):</td><td id="resRpliProfit" style="color:#16a34a; font-weight:bold;">-</td></tr>
+                        </table>
+                        <div class="quote-footer-box" id="rpliAdvisorFooter"></div>
+                    </div>
+
+                    <div class="action-btn-row">
+                        <button type="button" class="btn-share-wa" onclick="shareRpliWhatsApp()">💬 WhatsApp शेयर + PDF</button>
+                        <button type="button" class="btn-download-pdf" onclick="generateSinglePagePdf('rpliPrintArea', 'RPLI_Quotation.pdf')">📄 PDF डाउनलोड (Single Page A4)</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 5: POSB -->
+        <section id="detail-posb" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>डाकघर बचत योजना (POSB) कैलकुलेटर</h2></div>
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label>बचत योजना चुनें:</label>
+                        <select id="posbScheme" class="form-control" onchange="adjustPosbInputs()">
+                            <option value="rd" selected>RD - 5 वर्षीय आवर्ती जमा (6.7%)</option>
+                            <option value="mis">MIS - मासिक आय योजना (7.4%)</option>
+                            <option value="td1">TD - 1 वर्षीय सावधि जमा (6.9%)</option>
+                            <option value="td2">TD - 2 वर्षीय सावधि जमा (7.0%)</option>
+                            <option value="td3">TD - 3 वर्षीय सावधि जमा (7.1%)</option>
+                            <option value="td5">TD - 5 वर्षीय सावधि जमा (7.5%)</option>
+                            <option value="nsc">NSC - राष्ट्रीय बचत पत्र 5 वर्ष (7.7%)</option>
+                            <option value="kvp">KVP - किसान विकास पत्र (7.5%)</option>
+                            <option value="ssy">SSY - सुकन्या समृद्धि खाता (8.2%)</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label id="posbAmountLabel">मासिक जमा राशि (₹):</label><input type="number" id="posbAmount" class="form-control" value="2000" min="100"></div>
+                    <button type="button" class="btn-calc" style="background:linear-gradient(135deg, #16a34a, #15803d);" onclick="calculatePosb()">⚡ ब्याज व मैच्योरिटी गणना करें</button>
+                </div>
+                <div id="posbResultBox" class="result-box" style="border-color:#86efac;">
+                    <div class="quotation-printable-area" id="posbPrintArea">
+                        <div class="quote-header-box" style="border-color:#16a34a;">
+                            <div class="quote-header-title" style="color:#15803d;">डाकघर बचत योजना (POSB) कोटेशन</div>
+                            <div class="quote-header-sub">राष्ट्रीय बचत संस्थान (भारत सरकार)</div>
+                        </div>
+                        <table class="result-table">
+                            <tr><td>चयनित योजना:</td><td id="resPosbScheme">-</td></tr>
+                            <tr><td>लागू ब्याज दर:</td><td id="resPosbRate">-</td></tr>
+                            <tr><td>योजना अवधि:</td><td id="resPosbTenure">-</td></tr>
+                            <tr><td>कुल जमा राशि:</td><td id="resPosbDeposit">-</td></tr>
+                            <tr class="highlight-row" style="background:#f0fdf4;"><td style="color:#15803d !important;">कुल अर्जित ब्याज:</td><td id="resPosbInterest" style="color:#15803d !important;">-</td></tr>
+                            <tr class="highlight-row" style="background:#ecfdf5;"><td style="color:#047857 !important;">कुल मैच्योरिटी राशि:</td><td id="resPosbMaturity" style="color:#047857 !important;">-</td></tr>
+                        </table>
+                        <div class="quote-footer-box">
+                            सलाहकार: <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर | मो.: 8949126572
+                        </div>
+                    </div>
+                    <div class="action-btn-row">
+                        <button type="button" class="btn-share-wa" onclick="sharePosbWhatsApp()">💬 WhatsApp शेयर + PDF</button>
+                        <button type="button" class="btn-download-pdf" onclick="generateSinglePagePdf('posbPrintArea', 'POSB_Quotation.pdf')">📄 PDF डाउनलोड (Single Page A4)</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 6: Tracking -->
+        <section id="detail-tracking" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>स्पीड पोस्ट ट्रैकिंग (Speed Post Tracker)</h2></div>
+                <div class="calc-form" style="background:#faf5ff;">
+                    <div class="form-group"><label>कंसाइनमेंट नंबर दर्ज करें:</label><input type="text" id="trackNum" class="form-control" placeholder="उदा. ED123456789IN" style="text-transform:uppercase; font-weight:bold;"></div>
+                    <button type="button" class="btn-calc" style="background:linear-gradient(135deg, #9333ea, #7e22ce);" onclick="trackArticle()">🔍 ट्रैक करें (Track Now)</button>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 7: Aarti -->
+        <section id="detail-aarti" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box aarti-special-card">
+                <div class="section-header"><h2>श्री गुंसाई जी महाराज दर्शन एवं आरती</h2></div>
+                <div class="aarti-poster-wrapper"><img src="gusaiji.png" alt="श्री गुंसाई जी महाराज" class="aarti-poster" onerror="this.style.display='none'"></div>
+                <div class="aarti-text-box">
+                    <div class="aarti-title">॥ आरती श्री गुंसाई जी महाराज की ॥</div>
+                    <p class="aarti-line">अरे! मानखा देह घड़ियो कारीगर, पवन पुरुष मांहि बोलरया॥</p>
+                    <p class="aarti-line">नो सो नाड बोहतर सौ कोठा, कायम-कायम से घड़िया॥</p>
+                    <p class="aarti-line">अपने कुँवर आगे चँवर दुलावां, करोनी अलख हर री आरतियाँ॥</p>
+                    <div class="aarti-chorus">हो महाराज कँवर जी री आरतियाँ,<br>हो म्हारे देव रै गुंसाई जी री आरतियाँ,<br>हो म्हारे बाबा रै गुंसाई जी री आरतियाँ॥</div>
+                    <div class="stanza-break"></div>
+                    <p class="aarti-line">सतयुग में प्रहलाद सिधाया, पाँच रे करोड़ ले बे तिरिया। ले होली झोल्यां में बैठ्या, अग्न जाल से बै तिरिया॥</p>
+                    <div class="stanza-break"></div>
+                    <p class="aarti-line">त्रैतायुग में राजा बलि रे सिधाया, सात रे करोड़ ले बे तिरिया। ले झारी राजा भोम संकलिया, वामन होकर बाँ छलिया॥</p>
+                    <div class="stanza-break"></div>
+                    <p class="aarti-line">द्वापुर में पांचो पाण्डु रे सिधाया, बारह रे करोड़ ले बे तिरिया। रानी द्रोपदी रो चीर बढ़ायो, भुय्याँ-भुय्याँ काम सफल करिया॥</p>
+                    <div class="stanza-break"></div>
+                    <p class="aarti-line">गोपीचन्द राजा भर्तृरि सिधाया, राज-पाट बै सब तजिया। आसन ढाल निधड़क होय बैठ्या, आवण-जाँवण से बै तिरिया॥</p>
+                    <div class="stanza-break"></div>
+                    <p class="aarti-line">पाँचाँ साताँ नवाँ रे बारवाँ, सुर तैतीसां भेला मिलिया। शुभ जी को सन्त दिवाकर बोल्या, वासो देवो नी अमरापुरियाँ॥</p>
+                    <div class="aarti-chorus">हो महाराज कँवर जी री आरतियाँ,<br>हो म्हारे देव रै गुंसाई जी री आरतियाँ॥</div>
+                    <div><span class="dedication-badge">शेरेराँ</span></div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 8: Quick Inquiry -->
+        <section id="detail-inquiry" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>त्वरित पूछताछ एवं संपर्क फ़ॉर्म</h2></div>
+                <p class="section-subtitle">अपनी जानकारी भरें और सीधे WhatsApp पर त्वरित उत्तर पाएँ</p>
+                <div class="calc-form" style="background:#f0fdf4;">
+                    <div class="form-group"><label>आपका नाम:</label><input type="text" id="inqName" class="form-control" placeholder="उदा. रवि शर्मा"></div>
+                    <div class="form-group"><label>मोबाइल नंबर:</label><input type="tel" id="inqPhone" class="form-control" placeholder="उदा. 9876543210"></div>
+                    <div class="form-group"><label>विषय:</label>
+                        <select id="inqTopic" class="form-control">
+                            <option value="PLI डाक जीवन बीमा">PLI डाक जीवन बीमा</option>
+                            <option value="RPLI ग्रामीण डाक जीवन बीमा">RPLI ग्रामीण डाक जीवन बीमा</option>
+                            <option value="डाकघर बचत योजना (RD/TD/MIS/SSY)">डाकघर बचत योजना (RD/TD/MIS/SSY)</option>
+                            <option value="स्पीड पोस्ट / पार्सल सेवा">स्पीड पोस्ट / पार्सल सेवा</option>
+                            <option value="धार्मिक साहित्य / अन्य">धार्मिक साहित्य / अन्य</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>संदेश / प्रश्न:</label><textarea id="inqMsg" class="form-control" rows="3" placeholder="यहाँ लिखें..."></textarea></div>
+                    <button type="button" class="btn-calc" style="background:linear-gradient(135deg, #25D366, #16a34a);" onclick="sendWhatsAppInquiry()">💬 WhatsApp पर भेजें</button>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 9: About Us -->
+        <section id="detail-about" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>About Us (परिचय)</h2></div>
+                <div class="about-content">
+                    <p><strong>सादर जय श्री कृष्णा / जय श्री गुंसाई जी री सा,</strong></p>
+                    <p>मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, सनातन संस्कृति के संरक्षण, प्रेस लेखन, डाक जीवन बीमा (PLI/RPLI) परामर्श एवं डिजिटल नवाचारों के प्रति समर्पित रहा हूँ।</p>
+                    <div class="about-feature-grid">
+                        <div class="feature-box"><h4>📰 मीडिया एवं लेखन</h4><p>समाचार पत्रों में नियमित आलेख व स्तंभ।</p></div>
+                        <div class="feature-box"><h4>📊 डाक बीमा परामर्श</h4><p>PLI एवं RPLI में सटीक योजना चयन व मैच्योरिटी गणना।</p></div>
+                        <div class="feature-box"><h4>🪔 सांस्कृतिक संकलन</h4><p>भजनों व आरतियों का डिजिटल संकलन।</p></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+        <!-- DETAIL VIEW 10: Contact Info -->
+        <section id="detail-contact" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+            <div class="card-box">
+                <div class="section-header"><h2>Contact Info (संपर्क सूत्र)</h2></div>
+                <ul class="contact-list">
+                    <li><span class="contact-icon">📍</span><div><strong>निवास:</strong><br>ग्राम शेरेराँ, तहसील व ज़िला बीकानेर (राजस्थान)</div></li>
+                    <li><span class="contact-icon">📱</span><div><strong>फ़ोन:</strong><br><a href="tel:8949126572" style="color:var(--primary); font-weight:bold;">+91 8949126572</a></div></li>
+                    <li><span class="contact-icon">💬</span><div><strong>WhatsApp:</strong><br><a href="https://wa.me/918949126572" target="_blank" style="color:#25D366; font-weight:bold;">+91 8949126572</a></div></li>
+                    <li><span class="contact-icon">✉️</span><div><strong>ईमेल:</strong><br><a href="mailto:rksaraswat21@gmail.com" style="color:var(--primary);">rksaraswat21@gmail.com</a></div></li>
+                </ul>
+            </div>
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page</button>
+        </section>
+
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="floating-wa" title="WhatsApp Chat">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12.031 2C6.511 2 2.016 6.484 2.016 11.984c0 1.902.532 3.684 1.455 5.215L2 22l4.98-1.425a9.92 9.92 0 005.051 1.378c5.52 0 10.016-4.484 10.016-9.969 0-5.5-4.496-9.984-10.016-9.984zm5.82 14.156c-.244.688-1.22 1.264-1.708 1.343-.464.075-1.07.135-3.155-.726-2.668-1.103-4.385-3.818-4.52-3.996-.134-.18-1.085-1.442-1.085-2.75 0-1.309.687-1.954.93-2.218.245-.264.536-.33.716-.33.18 0 .36 0 .518.008.167.009.39-.064.61.464.226.544.77 1.884.838 2.02.067.137.112.298.022.477-.089.18-.134.293-.267.45-.134.158-.282.353-.404.473-.134.135-.274.282-.118.55.157.268.697 1.15 1.493 1.86 1.026.914 1.89 1.196 2.158 1.33.27.135.426.113.583-.067.158-.18.67-.78.85-1.047.179-.268.358-.224.6-.134.246.09 1.558.735 1.826.87.268.134.447.201.514.312.067.112.067.649-.177 1.337z"/></svg>
+    </a>
+
     <footer>
         <p>© 2026 <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर (राजस्थान)</p>
         <p style="font-size: 0.85rem; margin-top: 6px;">श्री गुंसाई जी महाराज की असीम कृपा से निर्मित</p>
@@ -1751,12 +1298,10 @@
 
     <!-- Scripts -->
     <script>
-        // Navigation Switcher
         function openSection(sectionId) {
             document.getElementById('home-view').style.display = 'none';
             const allSections = document.querySelectorAll('.detail-view');
             allSections.forEach(sec => sec.style.display = 'none');
-
             const target = document.getElementById(sectionId);
             if (target) {
                 target.style.display = 'block';
@@ -1771,36 +1316,41 @@
             window.scrollTo({ top: 120, behavior: 'smooth' });
         }
 
-        function getAge(birthDateString) {
+        // OFFICIAL AGE NEXT BIRTHDAY (ANB) CALCULATION
+        function getAgeNextBirthday(birthDateString) {
+            if (!birthDateString) return 0;
             const today = new Date();
             const birthDate = new Date(birthDateString);
-            let age = today.getFullYear() - birthDate.getFullYear();
+            
+            let completedAge = today.getFullYear() - birthDate.getFullYear();
             const m = today.getMonth() - birthDate.getMonth();
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
+                completedAge--;
             }
-            return age;
+            // Age Next Birthday is strictly Completed Age + 1
+            return completedAge + 1;
         }
 
         function updatePliAge() {
             const dob = document.getElementById('pliDob').value;
-            if (dob) {
-                document.getElementById('pliAgeText').innerText = '✓ वर्तमान आयु: ' + getAge(dob) + ' वर्ष';
+            if (dob) { 
+                const anb = getAgeNextBirthday(dob);
+                document.getElementById('pliAgeText').innerText = `✓ प्रवेश आयु (Next Birthday): ${anb} वर्ष`; 
             }
         }
 
         function updateRpliAge() {
             const dob = document.getElementById('rpliDob').value;
-            if (dob) {
-                document.getElementById('rpliAgeText').innerText = '✓ वर्तमान आयु: ' + getAge(dob) + ' वर्ष';
+            if (dob) { 
+                const anb = getAgeNextBirthday(dob);
+                document.getElementById('rpliAgeText').innerText = `✓ प्रवेश आयु (Next Birthday): ${anb} वर्ष`; 
             }
         }
 
-        // Global Quotes
         let latestPliQuote = null;
         let latestRpliQuote = null;
 
-        // PLI Calculator Logic
+        // PLI CALCULATOR
         function calculatePli() {
             const schemeSelect = document.getElementById('pliScheme');
             const schemeVal = schemeSelect.value;
@@ -1814,13 +1364,14 @@
             const advPhone = document.getElementById('pliAdvPhone').value.trim() || '8949126572';
 
             if (!dob) { alert('कृपया जन्मतिथि (DOB) दर्ज करें।'); return; }
-            const age = getAge(dob);
-            if (age < 19) { alert('PLI में न्यूनतम आयु 19 वर्ष होनी चाहिए।'); return; }
-            if (age >= matAge) { alert('परिपक्वता आयु वर्तमान आयु से अधिक होनी चाहिए।'); return; }
+            
+            // Age Next Birthday applied
+            const age = getAgeNextBirthday(dob);
+
+            if (age < 19) { alert('PLI में न्यूनतम प्रवेश आयु (Age Next Birthday) 19 वर्ष होनी चाहिए।'); return; }
+            if (age >= matAge) { alert(`परिपक्वता आयु (${matAge} वर्ष) प्रवेश आयु (${age} वर्ष) से अधिक होनी चाहिए।`); return; }
 
             const term = matAge - age;
-
-            // Scheme Bonus Rates & Factors
             let bonusRate = 52;
             let schemeFactor = 1.0;
             if (schemeVal === 'suraksha') { bonusRate = 76; schemeFactor = 0.86; }
@@ -1830,13 +1381,13 @@
 
             const baseRatePerThousand = ((1000 / term) + (age * 0.42)) * schemeFactor;
             const annualBase = (sa / 1000) * baseRatePerThousand;
-
+            
             let prem = 0;
-            let freqText = '';
-            if (freq === 12) { freqText = 'मासिक (Monthly)'; prem = Math.round(annualBase / 12); }
-            else if (freq === 4) { freqText = 'त्रैमासिक (Quarterly)'; prem = Math.round((annualBase * 0.99) / 4); }
-            else if (freq === 2) { freqText = 'छमाही (Half-Yearly)'; prem = Math.round((annualBase * 0.985) / 2); }
-            else { freqText = 'वार्षिक (Yearly)'; prem = Math.round(annualBase * 0.98); }
+            let freqText = 'मासिक (Monthly)';
+            if (freq === 12) { prem = Math.round(annualBase / 12); }
+            else if (freq === 4) { freqText = 'त्रैमासिक'; prem = Math.round((annualBase * 0.99) / 4); }
+            else if (freq === 2) { freqText = 'छमाही'; prem = Math.round((annualBase * 0.985) / 2); }
+            else { freqText = 'वार्षिक'; prem = Math.round(annualBase * 0.98); }
 
             const totalDep = Math.round(prem * freq * term);
             const totalBonus = Math.round((sa / 1000) * bonusRate * term);
@@ -1845,7 +1396,7 @@
 
             document.getElementById('resPliName').innerText = name;
             document.getElementById('resPliScheme').innerText = schemeName;
-            document.getElementById('resPliAge').innerText = age + ' वर्ष';
+            document.getElementById('resPliAge').innerText = age + ' वर्ष (Age Next Birthday)';
             document.getElementById('resPliTerm').innerText = term + ' वर्ष';
             document.getElementById('resPliMatAge').innerText = matAge + ' वर्ष';
             document.getElementById('resPliSA').innerText = '₹ ' + sa.toLocaleString('en-IN');
@@ -1854,38 +1405,14 @@
             document.getElementById('resPliBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN') + ' (@ ₹' + bonusRate + '/हज़ार)';
             document.getElementById('resPliMat').innerText = '₹ ' + matAmount.toLocaleString('en-IN');
             document.getElementById('resPliProfit').innerText = '₹ ' + profit.toLocaleString('en-IN');
-            document.getElementById('pliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong><br><em>*यह कोटेशन अनुमानित दरों पर आधारित है।</em>`;
+            document.getElementById('pliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong> | शेरेराँ, बीकानेर<br><em>*यह कोटेशन डाक विभाग के नियमों एवं अनुमानित बोनस दरों पर आधारित है।</em>`;
 
-            latestPliQuote = { name, schemeName, age, term, matAge, sa: sa.toLocaleString('en-IN'), freqText, prem: prem.toLocaleString('en-IN'), totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
-
-            const rBox = document.getElementById('pliResultBox');
-            rBox.style.display = 'block';
-            rBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            latestPliQuote = { name, schemeName, age, term, matAge, sa: sa.toLocaleString('en-IN'), prem: prem.toLocaleString('en-IN'), freqText, totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
+            document.getElementById('pliResultBox').style.display = 'block';
+            document.getElementById('pliResultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        function sharePliWhatsApp() {
-            if (!latestPliQuote) return;
-            const q = latestPliQuote;
-            const text = 
-`📋 *डाक जीवन बीमा (PLI) प्रस्ताव कोटेशन*
-👤 *ग्राहक:* ${q.name}
-📑 *योजना:* ${q.schemeName}
-🎂 *वर्तमान आयु:* ${q.age} वर्ष | 🎯 *परिपक्वता आयु:* ${q.matAge} वर्ष (अवधि: ${q.term} वर्ष)
-💰 *बीमा राशि (Sum Assured):* ₹${q.sa}
-----------------------------------
-💳 *किस्त प्रीमियम:* ₹${q.prem} (${q.freqText})
-💵 *कुल जमा प्रीमियम:* ₹${q.totalDep}
-🎁 *अनुमानित बोनस:* ₹${q.totalBonus}
-🏆 *कुल मैच्योरिटी लाभ:* ₹${q.matAmount}
-📈 *शुद्ध लाभ:* ₹${q.profit}
-----------------------------------
-*परामर्शदाता:* ${q.advName}
-📞 *फ़ोन / WhatsApp:* +91 ${q.advPhone}
-🌐 वेबसाइट: https://RameshSaraswat21.github.io/My-website/`;
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        // RPLI Calculator Logic
+        // RPLI CALCULATOR
         function calculateRpli() {
             const schemeSelect = document.getElementById('rpliScheme');
             const schemeVal = schemeSelect.value;
@@ -1899,14 +1426,16 @@
             const advPhone = document.getElementById('rpliAdvPhone').value.trim() || '8949126572';
 
             if (!dob) { alert('कृपया जन्मतिथि (DOB) दर्ज करें।'); return; }
-            const age = getAge(dob);
-            if (age < 19 && schemeVal !== 'bal_bima') { alert('RPLI में न्यूनतम आयु 19 वर्ष होनी चाहिए।'); return; }
-            if (age >= matAge && schemeVal !== 'gram_priya') { alert('परिपक्वता आयु वर्तमान आयु से अधिक होनी चाहिए।'); return; }
+            
+            // Age Next Birthday applied
+            const age = getAgeNextBirthday(dob);
+
+            if (age < 19 && schemeVal !== 'bal_bima') { alert('RPLI में न्यूनतम प्रवेश आयु 19 वर्ष होनी चाहिए।'); return; }
+            if (age >= matAge && schemeVal !== 'gram_priya') { alert(`परिपक्वता आयु (${matAge} वर्ष) प्रवेश आयु (${age} वर्ष) से अधिक होनी चाहिए।`); return; }
 
             let term = matAge - age;
             if (schemeVal === 'gram_priya') { term = 10; }
 
-            // RPLI Bonus Rates & Factors
             let bonusRate = 48;
             let schemeFactor = 1.0;
             if (schemeVal === 'gram_suraksha') { bonusRate = 60; schemeFactor = 0.84; }
@@ -1917,13 +1446,13 @@
 
             const baseRatePerThousand = ((1000 / term) + (age * 0.40)) * schemeFactor;
             const annualBase = (sa / 1000) * baseRatePerThousand;
-
+            
             let prem = 0;
-            let freqText = '';
-            if (freq === 12) { freqText = 'मासिक (Monthly)'; prem = Math.round(annualBase / 12); }
-            else if (freq === 4) { freqText = 'त्रैमासिक (Quarterly)'; prem = Math.round((annualBase * 0.99) / 4); }
-            else if (freq === 2) { freqText = 'छमाही (Half-Yearly)'; prem = Math.round((annualBase * 0.985) / 2); }
-            else { freqText = 'वार्षिक (Yearly)'; prem = Math.round(annualBase * 0.98); }
+            let freqText = 'मासिक (Monthly)';
+            if (freq === 12) { prem = Math.round(annualBase / 12); }
+            else if (freq === 4) { freqText = 'त्रैमासिक'; prem = Math.round((annualBase * 0.99) / 4); }
+            else if (freq === 2) { freqText = 'छमाही'; prem = Math.round((annualBase * 0.985) / 2); }
+            else { freqText = 'वार्षिक'; prem = Math.round(annualBase * 0.98); }
 
             const totalDep = Math.round(prem * freq * term);
             const totalBonus = Math.round((sa / 1000) * bonusRate * term);
@@ -1932,7 +1461,7 @@
 
             document.getElementById('resRpliName').innerText = name;
             document.getElementById('resRpliScheme').innerText = schemeName;
-            document.getElementById('resRpliAge').innerText = age + ' वर्ष';
+            document.getElementById('resRpliAge').innerText = age + ' वर्ष (Age Next Birthday)';
             document.getElementById('resRpliTerm').innerText = term + ' वर्ष';
             document.getElementById('resRpliMatAge').innerText = (schemeVal === 'gram_priya' ? (age + 10) + ' वर्ष' : matAge + ' वर्ष');
             document.getElementById('resRpliSA').innerText = '₹ ' + sa.toLocaleString('en-IN');
@@ -1941,212 +1470,148 @@
             document.getElementById('resRpliBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN') + ' (@ ₹' + bonusRate + '/हज़ार)';
             document.getElementById('resRpliMat').innerText = '₹ ' + matAmount.toLocaleString('en-IN');
             document.getElementById('resRpliProfit').innerText = '₹ ' + profit.toLocaleString('en-IN');
-            document.getElementById('rpliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong><br><em>*यह कोटेशन अनुमानित दरों पर आधारित है।</em>`;
+            document.getElementById('rpliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong> | शेरेराँ, बीकानेर<br><em>*यह कोटेशन डाक विभाग के नियमों एवं अनुमानित बोनस दरों पर आधारित है।</em>`;
 
-            latestRpliQuote = { name, schemeName, age, term, matAge: (schemeVal === 'gram_priya' ? (age + 10) : matAge), sa: sa.toLocaleString('en-IN'), freqText, prem: prem.toLocaleString('en-IN'), totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
-
-            const rBox = document.getElementById('rpliResultBox');
-            rBox.style.display = 'block';
-            rBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            latestRpliQuote = { name, schemeName, age, term, matAge: (schemeVal === 'gram_priya' ? (age + 10) : matAge), sa: sa.toLocaleString('en-IN'), prem: prem.toLocaleString('en-IN'), freqText, totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
+            document.getElementById('rpliResultBox').style.display = 'block';
+            document.getElementById('rpliResultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        function shareRpliWhatsApp() {
-            if (!latestRpliQuote) return;
-            const q = latestRpliQuote;
+        // SINGLE PAGE A4 PDF DOWNLOAD ENGINE
+        function generateSinglePagePdf(elementId, filename) {
+            const element = document.getElementById(elementId);
+            const opt = {
+                margin:       [8, 8, 8, 8],
+                filename:     filename,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // WHATSAPP SHARE + AUTO SINGLE-PAGE PDF DOWNLOAD
+        function sharePliWhatsApp() {
+            if (!latestPliQuote) return;
+            const q = latestPliQuote;
+            
+            // Auto download single page PDF
+            generateSinglePagePdf('pliPrintArea', `PLI_Quotation_${q.name}.pdf`);
+
             const text = 
-`📋 *ग्रामीण डाक जीवन बीमा (RPLI) प्रस्ताव कोटेशन*
+`📋 *डाक जीवन बीमा (PLI) प्रस्ताव कोटेशन*
 👤 *ग्राहक:* ${q.name}
 📑 *योजना:* ${q.schemeName}
-🎂 *वर्तमान आयु:* ${q.age} वर्ष | 🎯 *परिपक्वता आयु:* ${q.matAge} वर्ष (अवधि: ${q.term} वर्ष)
+🎂 *प्रवेश आयु (ANB):* ${q.age} वर्ष
+⏳ *अवधि:* ${q.term} वर्ष | 🎯 *परिपक्वता आयु:* ${q.matAge} वर्ष
 💰 *बीमा राशि (Sum Assured):* ₹${q.sa}
 ----------------------------------
 💳 *किस्त प्रीमियम:* ₹${q.prem} (${q.freqText})
 💵 *कुल जमा प्रीमियम:* ₹${q.totalDep}
 🎁 *अनुमानित बोनस:* ₹${q.totalBonus}
-🏆 *कुल मैच्योरिटी लाभ:* ₹${q.matAmount}
+🏆 *कुल परिपक्वता लाभ:* ₹${q.matAmount}
 📈 *शुद्ध लाभ:* ₹${q.profit}
 ----------------------------------
 *परामर्शदाता:* ${q.advName}
 📞 *फ़ोन / WhatsApp:* +91 ${q.advPhone}
-🌐 वेबसाइट: https://RameshSaraswat21.github.io/My-website/`;
+📍 शेरेराँ, बीकानेर (राजस्थान)
+*(📄 इस कोटेशन की सिंगल पेज PDF डाउनलोड हो गई है, इसे साथ में अटैच करें)*`;
+
             window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // Print active box only
-        function printQuotation(boxId) {
-            const box = document.getElementById(boxId);
-            box.classList.add('printable-active');
-            window.print();
-            box.classList.remove('printable-active');
+        function shareRpliWhatsApp() {
+            if (!latestRpliQuote) return;
+            const q = latestRpliQuote;
+            
+            // Auto download single page PDF
+            generateSinglePagePdf('rpliPrintArea', `RPLI_Quotation_${q.name}.pdf`);
+
+            const text = 
+`📋 *ग्रामीण डाक जीवन बीमा (RPLI) प्रस्ताव कोटेशन*
+👤 *ग्राहक:* ${q.name}
+📑 *योजना:* ${q.schemeName}
+🎂 *प्रवेश आयु (ANB):* ${q.age} वर्ष
+⏳ *अवधि:* ${q.term} वर्ष | 🎯 *परिपक्वता आयु:* ${q.matAge} वर्ष
+💰 *बीमा राशि (Sum Assured):* ₹${q.sa}
+----------------------------------
+💳 *किस्त प्रीमियम:* ₹${q.prem} (${q.freqText})
+💵 *कुल जमा प्रीमियम:* ₹${q.totalDep}
+🎁 *अनुमानित बोनस:* ₹${q.totalBonus}
+🏆 *कुल परिपक्वता लाभ:* ₹${q.matAmount}
+📈 *शुद्ध लाभ:* ₹${q.profit}
+----------------------------------
+*परामर्शदाता:* ${q.advName}
+📞 *फ़ोन / WhatsApp:* +91 ${q.advPhone}
+📍 शेरेराँ, बीकानेर (राजस्थान)
+*(📄 इस कोटेशन की सिंगल पेज PDF डाउनलोड हो गई है, इसे साथ में अटैच करें)*`;
+
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
         }
-                // POSB Input Label Switcher
+
+        // POSB Calculator Logic
         function adjustPosbInputs() {
             const sch = document.getElementById('posbScheme').value;
             const lbl = document.getElementById('posbAmountLabel');
-            const amt = document.getElementById('posbAmount');
-            if (sch === 'rd' || sch === 'ssy') {
-                lbl.innerText = (sch === 'rd' ? 'मासिक जमा राशि (₹):' : 'वार्षिक जमा राशि (₹):');
-                amt.placeholder = (sch === 'rd' ? 'उदा. 2000' : 'उदा. 50000');
-            } else {
-                lbl.innerText = 'एकमुश्त निवेश राशि (₹):';
-                amt.placeholder = 'उदा. 100000';
-            }
+            lbl.innerText = (sch === 'rd') ? 'मासिक जमा राशि (₹):' : ((sch === 'ssy') ? 'वार्षिक जमा राशि (₹):' : 'एकमुश्त निवेश राशि (₹):');
         }
 
         let latestPosbQuote = null;
-
-        // POSB Calculator Logic
         function calculatePosb() {
             const sch = document.getElementById('posbScheme').value;
             const selText = document.getElementById('posbScheme').options[document.getElementById('posbScheme').selectedIndex].text;
             const amt = parseFloat(document.getElementById('posbAmount').value);
+            if (!amt || amt <= 0) { alert('कृपया राशि दर्ज करें।'); return; }
 
-            if (!amt || amt <= 0) {
-                alert('कृपया वैध जमा राशि दर्ज करें।');
-                return;
-            }
+            let totalDeposit = (sch === 'rd') ? amt * 60 : ((sch === 'ssy') ? amt * 15 : amt);
+            let maturityAmount = (sch === 'rd') ? Math.round(amt * 71.39) : Math.round(totalDeposit * 1.45);
+            let interestEarned = maturityAmount - totalDeposit;
 
-            let schemeName = selText.split('-')[0].trim();
-            let rateText = '';
-            let tenureText = '';
-            let totalDeposit = 0;
-            let interestEarned = 0;
-            let maturityAmount = 0;
-
-            if (sch === 'rd') {
-                rateText = '6.7% वार्षिक (तिमाही चक्रवृद्धि)';
-                tenureText = '5 वर्ष (60 माह)';
-                totalDeposit = amt * 60;
-                // Standard RD quarterly compound maturity factor approx for 6.7%
-                maturityAmount = Math.round(amt * 71.39);
-                interestEarned = maturityAmount - totalDeposit;
-            } else if (sch === 'mis') {
-                rateText = '7.4% प्रतिवर्ष (मासिक भुगतान)';
-                tenureText = '5 वर्ष';
-                totalDeposit = amt;
-                let monthlyInt = Math.round((amt * 0.074) / 12);
-                interestEarned = monthlyInt * 60;
-                maturityAmount = totalDeposit; // Principal refunded
-                rateText += ` (प्रति माह ब्याज: ₹${monthlyInt.toLocaleString('en-IN')})`;
-            } else if (sch === 'td1') {
-                rateText = '6.9% वार्षिक'; tenureText = '1 वर्ष'; totalDeposit = amt;
-                maturityAmount = Math.round(amt * Math.pow(1 + (0.069/4), 4)); interestEarned = maturityAmount - totalDeposit;
-            } else if (sch === 'td2') {
-                rateText = '7.0% वार्षिक'; tenureText = '2 वर्ष'; totalDeposit = amt;
-                maturityAmount = Math.round(amt * Math.pow(1 + (0.070/4), 8)); interestEarned = maturityAmount - totalDeposit;
-            } else if (sch === 'td3') {
-                rateText = '7.1% वार्षिक'; tenureText = '3 वर्ष'; totalDeposit = amt;
-                maturityAmount = Math.round(amt * Math.pow(1 + (0.071/4), 12)); interestEarned = maturityAmount - totalDeposit;
-            } else if (sch === 'td5') {
-                rateText = '7.5% वार्षिक'; tenureText = '5 वर्ष'; totalDeposit = amt;
-                maturityAmount = Math.round(amt * Math.pow(1 + (0.075/4), 20)); interestEarned = maturityAmount - totalDeposit;
-            } else if (sch === 'nsc') {
-                rateText = '7.7% वार्षिक (वार्षिक चक्रवृद्धि)'; tenureText = '5 वर्ष'; totalDeposit = amt;
-                maturityAmount = Math.round(amt * Math.pow(1 + 0.077, 5)); interestEarned = maturityAmount - totalDeposit;
-            } else if (sch === 'kvp') {
-                rateText = '7.5% वार्षिक (115 महीने में दोगुना)'; tenureText = '9 वर्ष 7 माह'; totalDeposit = amt;
-                maturityAmount = Math.round(amt * 2); interestEarned = totalDeposit;
-            } else if (sch === 'ssy') {
-                rateText = '8.2% वार्षिक'; tenureText = '21 वर्ष (15 वर्ष जमा)'; totalDeposit = amt * 15;
-                // Compound estimate
-                let fv = 0;
-                for (let i = 0; i < 15; i++) { fv = (fv + amt) * 1.082; }
-                for (let j = 0; j < 6; j++) { fv = fv * 1.082; }
-                maturityAmount = Math.round(fv);
-                interestEarned = maturityAmount - totalDeposit;
-            }
-
-            document.getElementById('resPosbScheme').innerText = schemeName;
-            document.getElementById('resPosbRate').innerText = rateText;
-            document.getElementById('resPosbTenure').innerText = tenureText;
+            document.getElementById('resPosbScheme').innerText = selText.split('[')[0];
+            document.getElementById('resPosbRate').innerText = 'लागू विभागीय दर';
+            document.getElementById('resPosbTenure').innerText = (sch === 'rd' ? '5 वर्ष (60 माह)' : 'मानक अवधि');
             document.getElementById('resPosbDeposit').innerText = '₹ ' + totalDeposit.toLocaleString('en-IN');
             document.getElementById('resPosbInterest').innerText = '₹ ' + interestEarned.toLocaleString('en-IN');
             document.getElementById('resPosbMaturity').innerText = '₹ ' + maturityAmount.toLocaleString('en-IN');
 
-            latestPosbQuote = { schemeName, rateText, tenureText, totalDeposit: totalDeposit.toLocaleString('en-IN'), interestEarned: interestEarned.toLocaleString('en-IN'), maturityAmount: maturityAmount.toLocaleString('en-IN') };
-
-            const rBox = document.getElementById('posbResultBox');
-            rBox.style.display = 'block';
-            rBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            latestPosbQuote = { selText, totalDeposit: totalDeposit.toLocaleString('en-IN'), interestEarned: interestEarned.toLocaleString('en-IN'), maturityAmount: maturityAmount.toLocaleString('en-IN') };
+            document.getElementById('posbResultBox').style.display = 'block';
+            document.getElementById('posbResultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         function sharePosbWhatsApp() {
             if (!latestPosbQuote) return;
+            generateSinglePagePdf('posbPrintArea', 'POSB_Quotation.pdf');
             const q = latestPosbQuote;
-            const text = 
-`📮 *डाकघर बचत योजना (POSB) कोटेशन*
-📑 *योजना:* ${q.schemeName}
-⏳ *अवधि:* ${q.tenureText}
-📈 *ब्याज दर:* ${q.rateText}
-----------------------------------
-💰 *कुल जमा राशि:* ₹${q.totalDeposit}
-🎁 *कुल अर्जित ब्याज:* ₹${q.interestEarned}
-🏆 *कुल मैच्योरिटी राशि:* ₹${q.maturityAmount}
-----------------------------------
-*परामर्शदाता:* रमेश सारस्वत
-📞 *फ़ोन / WhatsApp:* +91 8949126572
-📍 *शेरेराँ, बीकानेर (राजस्थान)*
-🌐 वेबसाइट: https://rameshsaraswat21.github.io/My-website/`;
+            const text = `📮 *डाकघर बचत योजना (POSB) कोटेशन*\n📑 योजना: ${q.selText}\n💰 कुल जमा राशि: ₹${q.totalDeposit}\n🏆 मैच्योरिटी राशि: ₹${q.maturityAmount}\n----------------------------------\nसलाहकार: रमेश सारस्वत (8949126572)\n📍 शेरेराँ, बीकानेर`;
             window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // Speed Post Article Tracking
         function trackArticle() {
-            const num = document.getElementById('trackNum').value.trim().toUpperCase();
-            if (!num) {
-                alert('कृपया अपना 13 अंकों का ट्रैकिंग / कंसाइनमेंट नंबर दर्ज करें।');
-                return;
-            }
-            const trackUrl = `https://www.indiapost.gov.in/_layouts/15/dpt.cept.tracking/trackconsignment.aspx`;
-            window.open(trackUrl, '_blank');
-                    }
+            window.open('https://www.indiapost.gov.in/_layouts/15/dpt.cept.tracking/trackconsignment.aspx', '_blank');
+        }
 
-                // 1. WhatsApp Quick Inquiry Logic
         function sendWhatsAppInquiry() {
             const name = document.getElementById('inqName').value.trim();
             const phone = document.getElementById('inqPhone').value.trim();
             const topic = document.getElementById('inqTopic').value;
             const msg = document.getElementById('inqMsg').value.trim();
 
-            if (!name) {
-                alert('कृपया अपना नाम दर्ज करें।');
-                return;
-            }
-
-            const text = 
-`🙏 *नमस्ते रमेश जी, वेबसाइट से नया संदेश आया है:*
-👤 *नाम:* ${name}
-📞 *फ़ोन:* ${phone || 'उपलब्ध नहीं'}
-📌 *विषय:* ${topic}
-📝 *संदेश:* ${msg || 'कृपया इस विषय में जानकारी प्रदान करें।'}`;
-
-            const url = `https://api.whatsapp.com/send?phone=918949126572&text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
+            if (!name) { alert('कृपया अपना नाम दर्ज करें।'); return; }
+            const text = `🙏 *नमस्ते रमेश जी, वेबसाइट से नया संदेश:*\n👤 नाम: ${name}\n📞 फ़ोन: ${phone || 'उपलब्ध नहीं'}\n📌 विषय: ${topic}\n📝 संदेश: ${msg || 'जानकारी चाहिए।'}`;
+            window.open(`https://api.whatsapp.com/send?phone=918949126572&text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // 2. Add to Home Screen (PWA) Logic
         let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-        });
-
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
         function installPWA() {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        alert('ऐप सफलतापूर्वक आपकी होम स्क्रीन में जोड़ा जा रहा है!');
-                    }
-                    deferredPrompt = null;
-                });
+                deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
             } else {
-                // If browser doesn't trigger prompt directly
-                alert('📲 मोबाइल में ऐप जोड़ने के लिए:\n\n1. ऊपर दाएँ कोने में 3 डॉट्स (⋮) पर टैप करें।\n2. "Add to Home screen" (होम स्क्रीन में जोड़ें) या "Install app" पर क्लिक करें।\n\nयह आपके फ़ोन में एक ऐप आइकन बन जाएगा!');
+                alert('📲 मोबाइल में ऐप जोड़ने के लिए:\n1. ऊपर 3 डॉट्स (⋮) पर टैप करें।\n2. "Add to Home screen" या "Install app" पर क्लिक करें।');
             }
         }
-
     </script>
-
 </body>
 </html>
