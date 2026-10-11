@@ -1768,6 +1768,128 @@
             window.print();
             box.classList.remove('printable-active');
         }
+                // POSB Input Label Switcher
+        function adjustPosbInputs() {
+            const sch = document.getElementById('posbScheme').value;
+            const lbl = document.getElementById('posbAmountLabel');
+            const amt = document.getElementById('posbAmount');
+            if (sch === 'rd' || sch === 'ssy') {
+                lbl.innerText = (sch === 'rd' ? 'मासिक जमा राशि (₹):' : 'वार्षिक जमा राशि (₹):');
+                amt.placeholder = (sch === 'rd' ? 'उदा. 2000' : 'उदा. 50000');
+            } else {
+                lbl.innerText = 'एकमुश्त निवेश राशि (₹):';
+                amt.placeholder = 'उदा. 100000';
+            }
+        }
+
+        let latestPosbQuote = null;
+
+        // POSB Calculator Logic
+        function calculatePosb() {
+            const sch = document.getElementById('posbScheme').value;
+            const selText = document.getElementById('posbScheme').options[document.getElementById('posbScheme').selectedIndex].text;
+            const amt = parseFloat(document.getElementById('posbAmount').value);
+
+            if (!amt || amt <= 0) {
+                alert('कृपया वैध जमा राशि दर्ज करें।');
+                return;
+            }
+
+            let schemeName = selText.split('-')[0].trim();
+            let rateText = '';
+            let tenureText = '';
+            let totalDeposit = 0;
+            let interestEarned = 0;
+            let maturityAmount = 0;
+
+            if (sch === 'rd') {
+                rateText = '6.7% वार्षिक (तिमाही चक्रवृद्धि)';
+                tenureText = '5 वर्ष (60 माह)';
+                totalDeposit = amt * 60;
+                // Standard RD quarterly compound maturity factor approx for 6.7%
+                maturityAmount = Math.round(amt * 71.39);
+                interestEarned = maturityAmount - totalDeposit;
+            } else if (sch === 'mis') {
+                rateText = '7.4% प्रतिवर्ष (मासिक भुगतान)';
+                tenureText = '5 वर्ष';
+                totalDeposit = amt;
+                let monthlyInt = Math.round((amt * 0.074) / 12);
+                interestEarned = monthlyInt * 60;
+                maturityAmount = totalDeposit; // Principal refunded
+                rateText += ` (प्रति माह ब्याज: ₹${monthlyInt.toLocaleString('en-IN')})`;
+            } else if (sch === 'td1') {
+                rateText = '6.9% वार्षिक'; tenureText = '1 वर्ष'; totalDeposit = amt;
+                maturityAmount = Math.round(amt * Math.pow(1 + (0.069/4), 4)); interestEarned = maturityAmount - totalDeposit;
+            } else if (sch === 'td2') {
+                rateText = '7.0% वार्षिक'; tenureText = '2 वर्ष'; totalDeposit = amt;
+                maturityAmount = Math.round(amt * Math.pow(1 + (0.070/4), 8)); interestEarned = maturityAmount - totalDeposit;
+            } else if (sch === 'td3') {
+                rateText = '7.1% वार्षिक'; tenureText = '3 वर्ष'; totalDeposit = amt;
+                maturityAmount = Math.round(amt * Math.pow(1 + (0.071/4), 12)); interestEarned = maturityAmount - totalDeposit;
+            } else if (sch === 'td5') {
+                rateText = '7.5% वार्षिक'; tenureText = '5 वर्ष'; totalDeposit = amt;
+                maturityAmount = Math.round(amt * Math.pow(1 + (0.075/4), 20)); interestEarned = maturityAmount - totalDeposit;
+            } else if (sch === 'nsc') {
+                rateText = '7.7% वार्षिक (वार्षिक चक्रवृद्धि)'; tenureText = '5 वर्ष'; totalDeposit = amt;
+                maturityAmount = Math.round(amt * Math.pow(1 + 0.077, 5)); interestEarned = maturityAmount - totalDeposit;
+            } else if (sch === 'kvp') {
+                rateText = '7.5% वार्षिक (115 महीने में दोगुना)'; tenureText = '9 वर्ष 7 माह'; totalDeposit = amt;
+                maturityAmount = Math.round(amt * 2); interestEarned = totalDeposit;
+            } else if (sch === 'ssy') {
+                rateText = '8.2% वार्षिक'; tenureText = '21 वर्ष (15 वर्ष जमा)'; totalDeposit = amt * 15;
+                // Compound estimate
+                let fv = 0;
+                for (let i = 0; i < 15; i++) { fv = (fv + amt) * 1.082; }
+                for (let j = 0; j < 6; j++) { fv = fv * 1.082; }
+                maturityAmount = Math.round(fv);
+                interestEarned = maturityAmount - totalDeposit;
+            }
+
+            document.getElementById('resPosbScheme').innerText = schemeName;
+            document.getElementById('resPosbRate').innerText = rateText;
+            document.getElementById('resPosbTenure').innerText = tenureText;
+            document.getElementById('resPosbDeposit').innerText = '₹ ' + totalDeposit.toLocaleString('en-IN');
+            document.getElementById('resPosbInterest').innerText = '₹ ' + interestEarned.toLocaleString('en-IN');
+            document.getElementById('resPosbMaturity').innerText = '₹ ' + maturityAmount.toLocaleString('en-IN');
+
+            latestPosbQuote = { schemeName, rateText, tenureText, totalDeposit: totalDeposit.toLocaleString('en-IN'), interestEarned: interestEarned.toLocaleString('en-IN'), maturityAmount: maturityAmount.toLocaleString('en-IN') };
+
+            const rBox = document.getElementById('posbResultBox');
+            rBox.style.display = 'block';
+            rBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function sharePosbWhatsApp() {
+            if (!latestPosbQuote) return;
+            const q = latestPosbQuote;
+            const text = 
+`📮 *डाकघर बचत योजना (POSB) कोटेशन*
+📑 *योजना:* ${q.schemeName}
+⏳ *अवधि:* ${q.tenureText}
+📈 *ब्याज दर:* ${q.rateText}
+----------------------------------
+💰 *कुल जमा राशि:* ₹${q.totalDeposit}
+🎁 *कुल अर्जित ब्याज:* ₹${q.interestEarned}
+🏆 *कुल मैच्योरिटी राशि:* ₹${q.maturityAmount}
+----------------------------------
+*परामर्शदाता:* रमेश सारस्वत
+📞 *फ़ोन / WhatsApp:* +91 8949126572
+📍 *शेरेराँ, बीकानेर (राजस्थान)*
+🌐 वेबसाइट: https://rameshsaraswat21.github.io/My-website/`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Speed Post Article Tracking
+        function trackArticle() {
+            const num = document.getElementById('trackNum').value.trim().toUpperCase();
+            if (!num) {
+                alert('कृपया अपना 13 अंकों का ट्रैकिंग / कंसाइनमेंट नंबर दर्ज करें।');
+                return;
+            }
+            const trackUrl = `https://www.indiapost.gov.in/_layouts/15/dpt.cept.tracking/trackconsignment.aspx`;
+            window.open(trackUrl, '_blank');
+                    }
+        
     </script>
 
 </body>
