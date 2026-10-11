@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>रमेश सारस्वत | आधिकारिक वेबसाइट | शेरेराँ, बीकानेर</title>
-    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया एवं प्रेस कवरेज, फ़ोटो गैलरी, श्री गुंसाई जी महाराज आरती एवं संपर्क विवरण।">
+    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया एवं प्रेस कवरेज, फ़ोटो गैलरी, श्री गुंसाई जी महाराज आरती एवं संपर्क।">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             --gold-light: #fef3c7;
             --dark: #0f172a;
             --gray: #475569;
-            --bg-light: #fafaf9;
+            --bg-light: #f8fafc;
             --white: #ffffff;
             --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
@@ -47,10 +47,10 @@
             letter-spacing: 0.5px;
         }
 
-        /* Hero / Profile Header */
+        /* Header / Hero Section */
         .hero {
             background: radial-gradient(circle at top right, #fff7ed 0%, #ffedd5 50%, #ffffff 100%);
-            padding: 40px 18px 25px;
+            padding: 35px 20px 25px;
             text-align: center;
             border-bottom: 2px solid #fed7aa;
         }
@@ -105,104 +105,159 @@
         .hero .location {
             color: var(--gray);
             font-size: 0.98rem;
-            margin-bottom: 12px;
         }
 
-        /* 5 Main Menu Tabs (Option Switcher) */
-        .tabs-wrapper {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            border-bottom: 2px solid #fed7aa;
-            padding: 10px 0;
-        }
-
-        .tabs-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 0 12px;
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .tabs-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .tab-btn {
-            background: #f1f5f9;
-            color: var(--dark);
-            border: 2px solid transparent;
-            padding: 10px 18px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.25s ease;
-            flex-shrink: 0;
-        }
-
-        .tab-btn:hover {
-            background: #fee2e2;
-            color: var(--primary);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #c2410c, #ea580c);
-            color: #ffffff;
-            border-color: #f97316;
-            box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35);
-            transform: translateY(-1px);
-        }
-
-        /* Container & Content Area */
+        /* Main Container */
         .container {
-            max-width: 1000px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 25px 16px 80px;
         }
 
-        /* Tab Content Section Control */
-        .tab-section {
-            display: none; /* By default hidden */
-            animation: fadeIn 0.35s ease-in-out;
+        /* HOME VIEW: 5 Main Option Cards */
+        #home-view {
+            display: block;
+            animation: fadeIn 0.3s ease;
         }
 
-        .tab-section.active {
-            display: block; /* Show only active tab */
+        .home-heading {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .home-heading h2 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        .home-heading p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .menu-card {
+            background: var(--white);
+            border: 2px solid #fed7aa;
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .menu-card:hover, .menu-card:active {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(194, 65, 12, 0.15);
+            background: #fffaf5;
+        }
+
+        /* Small Icon Image Styling */
+        .menu-icon-box {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: #ffedd5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid #fed7aa;
+            font-size: 26px;
+        }
+
+        .menu-info {
+            flex-grow: 1;
+        }
+
+        .menu-info h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .menu-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.3;
+        }
+
+        .menu-arrow {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* DETAIL VIEWS */
+        .detail-view {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.35s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Card Box */
         .card-box {
             background: var(--white);
             border-radius: 20px;
-            padding: 30px 22px;
+            padding: 26px 20px;
             box-shadow: var(--shadow);
             border: 1px solid #f1f5f9;
         }
 
+        /* Go to Home Page Button */
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: linear-gradient(135deg, #0f172a, #334155);
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+            transition: all 0.25s ease;
+            margin-bottom: 22px;
+        }
+
+        .btn-home:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-home-bottom {
+            margin-top: 25px;
+            margin-bottom: 0;
+        }
+
         .section-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             position: relative;
         }
 
         .section-header h2 {
-            font-size: 1.85rem;
+            font-size: 1.8rem;
             color: var(--primary-dark);
             font-weight: 800;
         }
@@ -220,15 +275,15 @@
         .section-subtitle {
             text-align: center;
             color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 1rem;
+            margin-bottom: 22px;
+            font-size: 0.98rem;
         }
 
         /* 1. Media Grid (10 Items) */
         .news-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
         }
 
         .news-item {
@@ -237,14 +292,8 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
-        }
-
-        .news-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
         }
 
         .news-link {
@@ -261,11 +310,6 @@
             height: 100%;
             object-fit: cover;
             object-position: top center;
-            transition: transform 0.3s ease;
-        }
-
-        .news-link:hover .news-thumb {
-            transform: scale(1.05);
         }
 
         .news-overlay {
@@ -278,7 +322,7 @@
             font-size: 0.88rem;
             font-weight: 700;
             text-align: center;
-            padding: 18px 5px 6px;
+            padding: 16px 5px 6px;
         }
 
         .news-caption {
@@ -294,8 +338,8 @@
         /* 2. Photo Gallery (17 Items) */
         .photo-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 14px;
         }
 
         .gallery-card {
@@ -304,12 +348,6 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.25s ease;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
 
         .gallery-link {
@@ -325,11 +363,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-link:hover .gallery-img {
-            transform: scale(1.08);
         }
 
         .gallery-overlay {
@@ -353,12 +386,12 @@
 
         .aarti-poster-wrapper {
             text-align: center;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .aarti-poster {
             max-width: 100%;
-            width: 330px;
+            width: 320px;
             border-radius: 14px;
             box-shadow: 0 10px 22px rgba(217, 119, 6, 0.25);
             border: 3px solid #f59e0b;
@@ -367,13 +400,13 @@
         .aarti-text-box {
             background: var(--white);
             border-radius: 16px;
-            padding: 24px 18px;
+            padding: 24px 16px;
             text-align: center;
             border: 1px solid #fed7aa;
         }
 
         .aarti-title {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             color: #b45309;
             font-weight: 800;
             margin-bottom: 16px;
@@ -388,7 +421,7 @@
         }
 
         .aarti-chorus {
-            font-size: 1.22rem;
+            font-size: 1.2rem;
             color: #c2410c;
             font-weight: 800;
             margin: 15px 0;
@@ -421,7 +454,7 @@
         .about-content {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 16px;
             font-size: 1.05rem;
             color: #334155;
             line-height: 1.8;
@@ -430,7 +463,7 @@
         .about-feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            gap: 14px;
             margin-top: 15px;
         }
 
@@ -508,14 +541,15 @@
             text-align: center;
             background: var(--dark);
             color: #94a3b8;
-            padding: 30px 15px;
+            padding: 25px 15px;
             font-size: 0.95rem;
         }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.75rem; }
-            .tab-btn { font-size: 0.88rem; padding: 8px 14px; }
-            .aarti-line { font-size: 1.05rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .menu-card { padding: 14px 16px; }
+            .menu-icon-box { width: 48px; height: 48px; font-size: 22px; }
+            .menu-info h3 { font-size: 1.12rem; }
         }
     </style>
 </head>
@@ -537,38 +571,85 @@
         <div class="location">📍 ग्राम: शेरेराँ, ज़िला: बीकानेर (राजस्थान)</div>
     </header>
 
-    <!-- 5 Option Switcher Menu (Home Page Controls) -->
-    <div class="tabs-wrapper">
-        <div class="tabs-container">
-            <button class="tab-btn active" onclick="switchTab('media', this)">
-                📰 Media & News Paper
-            </button>
-            <button class="tab-btn" onclick="switchTab('gallery', this)">
-                🖼️ Picture Gallery
-            </button>
-            <button class="tab-btn" onclick="switchTab('aarti', this)">
-                🪔 Gusai Ji Aarti
-            </button>
-            <button class="tab-btn" onclick="switchTab('about', this)">
-                👤 About Us
-            </button>
-            <button class="tab-btn" onclick="switchTab('contact', this)">
-                📞 Contact Info
-            </button>
-        </div>
-    </div>
+    <div class="container">
 
-    <!-- Main Container For Tab Details -->
-    <div class="container" id="content-container">
+        <!-- ==============================================
+             HOME VIEW: EXACT 5 CLEAN OPTIONS WITH SMALL ICONS
+             ============================================== -->
+        <main id="home-view">
+            <div class="home-heading">
+                <h2>मुख्य विकल्प (मेनू)</h2>
+                <p>विवरण देखने के लिए नीचे दिए गए किसी भी विकल्प पर क्लिक करें:</p>
+            </div>
 
-        <!--  Media and News Paper Section -->
-        <section id="tab-media" class="tab-section active">
+            <div class="menu-grid">
+                
+                <!-- Option 1: Media and News Paper -->
+                <div class="menu-card" onclick="openSection('detail-media')">
+                    <div class="menu-icon-box">📰</div>
+                    <div class="menu-info">
+                        <h3>Media and News Paper</h3>
+                        <p>समाचार पत्रों में प्रकाशित आलेख एवं कवरेज</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+                <!-- Option 2: Picture Gallery -->
+                <div class="menu-card" onclick="openSection('detail-gallery')">
+                    <div class="menu-icon-box">🖼️</div>
+                    <div class="menu-info">
+                        <h3>Picture Gallery</h3>
+                        <p>धार्मिक एवं सामाजिक कार्यक्रमों की फ़ोटो गैलरी</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+                <!-- Option 3: Gusai Ji Aarti -->
+                <div class="menu-card" onclick="openSection('detail-aarti')">
+                    <div class="menu-icon-box">🪔</div>
+                    <div class="menu-info">
+                        <h3>Gusai Ji Aarti</h3>
+                        <p>श्री गुंसाई जी महाराज के दर्शन एवं संपूर्ण आरती</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+                <!-- Option 4: About Us -->
+                <div class="menu-card" onclick="openSection('detail-about')">
+                    <div class="menu-icon-box">👤</div>
+                    <div class="menu-info">
+                        <h3>About Us</h3>
+                        <p>व्यक्तिगत परिचय, कार्यक्षेत्र एवं सामाजिक सेवाएँ</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+                <!-- Option 5: Contact Info -->
+                <div class="menu-card" onclick="openSection('detail-contact')">
+                    <div class="menu-icon-box">📞</div>
+                    <div class="menu-info">
+                        <h3>Contact Info</h3>
+                        <p>WhatsApp, मोबाइल नंबर, ईमेल एवं निवास का पता</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+            </div>
+        </main>
+
+
+        <!-- ==============================================
+             DETAIL VIEW 1: Media and News Paper
+             ============================================== -->
+        <section id="detail-media" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
             <div class="card-box">
                 <div class="section-header">
                     <h2>Media & News Paper (समाचार पत्र आलेख)</h2>
                 </div>
                 <p class="section-subtitle">
-                    प्रमुख समाचार पत्रों में प्रकाशित आलेख, विचार एवं विशेष रिपोर्ट्स (पूरा पढ़ने के लिए फ़ोटो पर टैप करें)
+                    प्रमुख समाचार पत्रों में प्रकाशित आलेख, विचार एवं विशेष रिपोर्ट्स (फ़ोटो पर क्लिक करके पूरा देखें)
                 </p>
 
                 <div class="news-gallery-grid">
@@ -653,10 +734,17 @@
                     </div>
                 </div>
             </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
         </section>
 
-        <!-- Picture Gallery Section -->
-        <section id="tab-gallery" class="tab-section">
+
+        <!-- ==============================================
+             DETAIL VIEW 2: Picture Gallery
+             ============================================== -->
+        <section id="detail-gallery" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
             <div class="card-box">
                 <div class="section-header">
                     <h2>Picture Gallery (फ़ोटो गैलरी)</h2>
@@ -728,52 +816,59 @@
                     </div>
                     <div class="gallery-card">
                         <a href="IMG_20250919_115940.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250919_115940.jpg" alt="फ़ोटो 11" class="gallery-img" loading="lazy">
+                            <img src="IMG_20250919_115940.jpg" alt="फ़ोटो 11" class="gallery-link">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                     <div class="gallery-card">
                         <a href="IMG_20250917_100541.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250917_100541.jpg" alt="फ़ोटो 12" class="gallery-img" loading="lazy">
+                            <img src="IMG_20250917_100541.jpg" alt="फ़ोटो 12" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                     <div class="gallery-card">
                         <a href="IMG_20250917_100611.jpg" target="_blank" class="gallery-link">
-                            <img src="IMG_20250917_100611.jpg" alt="फ़ोटो 13" class="gallery-img" loading="lazy">
+                            <img src="IMG_20250917_100611.jpg" alt="फ़ोटो 13" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                     <div class="gallery-card">
                         <a href="Collage_20250701_070735.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250701_070735.jpg" alt="कोलाज 1" class="gallery-img" loading="lazy">
+                            <img src="Collage_20250701_070735.jpg" alt="कोलाज 1" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                     <div class="gallery-card">
                         <a href="Collage_20250703_080604.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250703_080604.jpg" alt="कोलाज 2" class="gallery-img" loading="lazy">
+                            <img src="Collage_20250703_080604.jpg" alt="कोलाज 2" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                     <div class="gallery-card">
                         <a href="Collage_20250616_183152.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250616_183152.jpg" alt="कोलाज 3" class="gallery-img" loading="lazy">
+                            <img src="Collage_20250616_183152.jpg" alt="कोलाज 3" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                     <div class="gallery-card">
                         <a href="Collage_20250622_082842.jpg" target="_blank" class="gallery-link">
-                            <img src="Collage_20250622_082842.jpg" alt="कोलाज 4" class="gallery-img" loading="lazy">
+                            <img src="Collage_20250622_082842.jpg" alt="कोलाज 4" class="gallery-img">
                             <div class="gallery-overlay">🔍 पूरा देखें</div>
                         </a>
                     </div>
                 </div>
             </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
         </section>
 
-        <!--  Gusai Ji Aarti Section -->
-        <section id="tab-aarti" class="tab-section">
+
+        <!-- ==============================================
+             DETAIL VIEW 3: Gusai Ji Aarti
+             ============================================== -->
+        <section id="detail-aarti" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
             <div class="card-box aarti-special-card">
                 <div class="section-header">
                     <h2>श्री गुंसाई जी महाराज दर्शन एवं आरती</h2>
@@ -846,10 +941,17 @@
                     </div>
                 </div>
             </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
         </section>
 
-        <!--  About Us Section -->
-        <section id="tab-about" class="tab-section">
+
+        <!-- ==============================================
+             DETAIL VIEW 4: About Us
+             ============================================== -->
+        <section id="detail-about" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
             <div class="card-box">
                 <div class="section-header">
                     <h2>About Us (परिचय)</h2>
@@ -881,10 +983,17 @@
                     </div>
                 </div>
             </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
         </section>
 
-        <!--  Contact Info Section -->
-        <section id="tab-contact" class="tab-section">
+
+        <!-- ==============================================
+             DETAIL VIEW 5: Contact Info
+             ============================================== -->
+        <section id="detail-contact" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
             <div class="card-box">
                 <div class="section-header">
                     <h2>Contact Info (संपर्क सूत्र)</h2>
@@ -924,6 +1033,8 @@
                     </li>
                 </ul>
             </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
         </section>
 
     </div>
@@ -941,33 +1052,35 @@
         <p style="font-size: 0.85rem; margin-top: 6px;">श्री गुंसाई जी महाराज की असीम कृपा से निर्मित</p>
     </footer>
 
-    <!-- JavaScript To Switch Tabs Dynamically -->
+    <!-- JavaScript: Pure App-Style Screen Switcher -->
     <script>
-        function switchTab(tabName, clickedBtn) {
-            // 1. Sabhi sections ko hide karein
-            const allSections = document.querySelectorAll('.tab-section');
-            allSections.forEach(sec => sec.classList.remove('active'));
+        function openSection(sectionId) {
+            // Home view hide karein
+            document.getElementById('home-view').style.display = 'none';
 
-            // 2. Sabhi buttons se active class hatayein
-            const allButtons = document.querySelectorAll('.tab-btn');
-            allButtons.forEach(btn => btn.classList.remove('active'));
+            // Sabhi detail sections ko hide karein
+            const allSections = document.querySelectorAll('.detail-view');
+            allSections.forEach(sec => sec.style.display = 'none');
 
-            // 3. Chune huye section aur button ko active karein
-            const targetSection = document.getElementById('tab-' + tabName);
-            if (targetSection) {
-                targetSection.classList.add('active');
+            // Chuna hua detail section show karein
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.style.display = 'block';
+                // Screen ko upar le jayein
+                window.scrollTo({ top: 120, behavior: 'smooth' });
             }
-            if (clickedBtn) {
-                clickedBtn.classList.add('active');
-            }
+        }
 
-            // 4. Mobile par smooth scroll karke content dikhayein
-            const contentBox = document.getElementById('content-container');
-            if (contentBox) {
-                const yOffset = -70; 
-                const y = contentBox.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
+        function goToHome() {
+            // Sabhi detail views hide karein
+            const allSections = document.querySelectorAll('.detail-view');
+            allSections.forEach(sec => sec.style.display = 'none');
+
+            // Home view show karein
+            document.getElementById('home-view').style.display = 'block';
+
+            // Screen ko wapas options par scroll karein
+            window.scrollTo({ top: 120, behavior: 'smooth' });
         }
     </script>
 
