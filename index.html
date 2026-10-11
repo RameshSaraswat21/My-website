@@ -1320,6 +1320,117 @@
 
             <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
         </section>
+        
+        <!-- ==============================================
+             DETAIL VIEW: POSB INTEREST CALCULATOR
+             ============================================== -->
+        <section id="detail-posb" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
+            <div class="card-box">
+                <div class="section-header">
+                    <h2>डाकघर बचत योजना (POSB) कैलकुलेटर</h2>
+                </div>
+                <p class="section-subtitle">
+                    योजना चुनें, जमा राशि दर्ज करें और भारत सरकार द्वारा निर्धारित ताज़ा ब्याज व मैच्योरिटी राशि जानें।
+                </p>
+
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label for="posbScheme">बचत योजना चुनें (Select Scheme):</label>
+                        <select id="posbScheme" class="form-control" onchange="adjustPosbInputs()">
+                            <option value="rd" selected>RD - 5 वर्षीय आवर्ती जमा (6.7% वार्षिक)</option>
+                            <option value="mis">MIS - मासिक आय योजना (7.4% प्रतिवर्ष, मासिक भुगतान)</option>
+                            <option value="td1">TD - 1 वर्षीय सावधि जमा (6.9% वार्षिक)</option>
+                            <option value="td2">TD - 2 वर्षीय सावधि जमा (7.0% वार्षिक)</option>
+                            <option value="td3">TD - 3 वर्षीय सावधि जमा (7.1% वार्षिक)</option>
+                            <option value="td5">TD - 5 वर्षीय सावधि जमा (7.5% वार्षिक - 80C छूट)</option>
+                            <option value="nsc">NSC - राष्ट्रीय बचत पत्र 5 वर्ष (7.7% वार्षिक)</option>
+                            <option value="kvp">KVP - किसान विकास पत्र (7.5% - 115 महीने में दोगुना)</option>
+                            <option value="ssy">SSY - सुकन्या समृद्धि खाता (8.2% वार्षिक)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="posbAmountLabel" for="posbAmount">मासिक जमा राशि (₹):</label>
+                        <input type="number" id="posbAmount" class="form-control" placeholder="उदा. 2000" value="2000" min="100">
+                    </div>
+
+                    <button type="button" class="btn-calc" style="background: linear-gradient(135deg, #16a34a, #15803d);" onclick="calculatePosb()">
+                        ⚡ ब्याज एवं मैच्योरिटी गणना करें
+                    </button>
+                </div>
+
+                <!-- POSB Result -->
+                <div id="posbResultBox" class="result-box" style="border-color: #86efac;">
+                    <div class="result-title" style="color: #15803d; border-color: #bbf7d0;">📋 डाकघर बचत योजना गणना परिणाम</div>
+
+                    <table class="result-table">
+                        <tr><td>चयनित योजना:</td><td id="resPosbScheme">-</td></tr>
+                        <tr><td>लागू ब्याज दर (Interest Rate):</td><td id="resPosbRate">-</td></tr>
+                        <tr><td>योजना अवधि (Tenure):</td><td id="resPosbTenure">-</td></tr>
+                        <tr><td>कुल जमा राशि (Total Deposit):</td><td id="resPosbDeposit">-</td></tr>
+                        <tr class="highlight-row" style="background: #f0fdf4;">
+                            <td style="color: #15803d !important;">कुल अर्जित ब्याज (Interest Earned):</td>
+                            <td id="resPosbInterest" style="color: #15803d !important;">-</td>
+                        </tr>
+                        <tr class="highlight-row" style="background: #ecfdf5;">
+                            <td style="color: #047857 !important;">कुल मैच्योरिटी राशि (Maturity Amount):</td>
+                            <td id="resPosbMaturity" style="color: #047857 !important;">-</td>
+                        </tr>
+                    </table>
+
+                    <div style="font-size:0.85rem; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px;">
+                        सलाहकार: <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर | मो.: 8949126572
+                    </div>
+
+                    <div class="action-btn-row">
+                        <button type="button" class="btn-share-wa" onclick="sharePosbWhatsApp()">
+                            💬 WhatsApp पर शेयर करें
+                        </button>
+                        <button type="button" class="btn-download-pdf" onclick="printQuotation('posbResultBox')">
+                            📄 PDF / प्रिंट कोटेशन
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+        </section>
+
+
+        <!-- ==============================================
+             DETAIL VIEW: SPEED POST TRACKING TOOL
+             ============================================== -->
+        <section id="detail-tracking" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
+            <div class="card-box">
+                <div class="section-header">
+                    <h2>स्पीड पोस्ट एवं आर्टिकल ट्रैकिंग (Speed Post Tracker)</h2>
+                </div>
+                <p class="section-subtitle">
+                    अपने 13 अंकों का कंसाइनमेंट नंबर (जैसे ED123456789IN) दर्ज करें और स्पीड पोस्ट, रजिस्ट्री या पार्सल की वर्तमान स्थिति देखें।
+                </p>
+
+                <div class="calc-form" style="background: #faf5ff; border-color: #e9d5ff;">
+                    <div class="form-group">
+                        <label for="trackNum">कंसाइनमेंट / ट्रैकिंग नंबर दर्ज करें:</label>
+                        <input type="text" id="trackNum" class="form-control" placeholder="उदा. ED123456789IN" style="text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">
+                    </div>
+
+                    <button type="button" class="btn-calc" style="background: linear-gradient(135deg, #9333ea, #7e22ce);" onclick="trackArticle()">
+                        🔍 ट्रैक करें (Track Now)
+                    </button>
+                </div>
+
+                <div style="background: #fff; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 15px; text-align: center; font-size: 0.92rem; color: #475569;">
+                    💡 <strong>नोट:</strong> "ट्रैक करें" पर क्लिक करते ही इंडिया पोस्ट (India Post) का आधिकारिक ट्रैकिंग पोर्टल खुल जाएगा जहाँ आपको लाइव डिलीवरी स्टेटस दिखाई देगा।
+                </div>
+            </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+        </section>
 
 
         <!-- ==============================================
