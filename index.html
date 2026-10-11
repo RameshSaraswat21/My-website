@@ -3,357 +3,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramesh Saraswat | Official Website</title>
-    <!-- Google Fonts -->
+    <title>रमेश सारस्वत | आधिकारिक वेबसाइट | शेरेराँ, बीकानेर</title>
+    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। डिजिटल मीडिया, तकनीकी समाधान एवं श्री गुंसाई जी महाराज की आरती।">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #d97706;
-            --accent-hover: #b45309;
-            --bg-light: #f8fafc;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
+            --primary: #c2410c;
+            --primary-dark: #9a3412;
+            --gold: #d97706;
+            --gold-light: #fef3c7;
+            --dark: #0f172a;
+            --gray: #475569;
+            --bg-light: #fafaf9;
             --white: #ffffff;
-            --card-border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
-            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            font-family: 'Mukta', 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg-light);
-            color: var(--text-dark);
+            color: var(--dark);
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--card-border);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+        /* Top Bar */
+        .top-notice {
+            background: linear-gradient(90deg, #9a3412, #c2410c, #ea580c);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
             letter-spacing: 0.5px;
         }
 
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
+        /* Header / Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--white);
-            padding: 5rem 1.5rem;
+            background: radial-gradient(circle at top right, #fff7ed 0%, #ffedd5 50%, #ffffff 100%);
+            padding: 50px 20px 40px;
             text-align: center;
+            border-bottom: 2px solid #fed7aa;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
+        .profile-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 10px 20px rgba(194, 65, 12, 0.25);
+            background: #fff;
+        }
+
+        .badge-verified {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: #16a34a;
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            border: 2px solid white;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 4px;
         }
 
-        .hero p {
+        .hero .subtitle {
             font-size: 1.15rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 6px;
         }
 
+        .hero .location {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Action Buttons */
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 12px;
             flex-wrap: wrap;
+            margin-top: 15px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--white);
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
         }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
+        .btn-call {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35);
         }
 
-        .btn-outline {
-            border: 2px solid #cbd5e1;
-            color: var(--white);
+        .btn-email {
+            background-color: #0284c7;
+            color: white;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
         }
 
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
         }
 
-        /* Section Layout */
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 4.5rem 1.5rem;
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 18px 80px;
         }
 
-        .section-title {
+        /* Card Section */
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px 24px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid #f1f5f9;
+        }
+
+        .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 25px;
+            position: relative;
         }
 
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-weight: 800;
         }
 
-        .section-title .bar {
+        .section-header::after {
+            content: "";
+            display: block;
             width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: auto;
+            height: 3px;
+            background: var(--gold);
+            margin: 8px auto 0;
             border-radius: 2px;
         }
 
-        /* Cards Grid */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        /* Religious / Aarti Special Card */
+        .aarti-card {
+            background: #fffbeb;
+            border: 2px solid #fde68a;
+            position: relative;
+            overflow: hidden;
         }
 
-        .card {
+        .aarti-poster-wrapper {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .aarti-poster {
+            max-width: 100%;
+            width: 380px;
+            border-radius: 14px;
+            box-shadow: 0 12px 25px rgba(217, 119, 6, 0.25);
+            border: 3px solid #f59e0b;
+        }
+
+        .aarti-text-box {
             background: var(--white);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 1px solid #fed7aa;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        .aarti-title {
+            font-size: 1.9rem;
+            color: #b45309;
+            font-weight: 800;
+            margin-bottom: 18px;
         }
 
-        .card-icon {
-            font-size: 2.2rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
+        .aarti-line {
+            font-size: 1.18rem;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.7;
         }
 
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
+        .aarti-chorus {
+            font-size: 1.25rem;
+            color: #c2410c;
+            font-weight: 800;
+            margin: 16px 0;
+            background: #fff7ed;
+            padding: 10px;
+            border-radius: 10px;
+            border-left: 4px solid #ea580c;
+            border-right: 4px solid #ea580c;
+        }
+
+        .stanza-break {
+            margin: 20px auto;
+            width: 40px;
+            height: 2px;
+            background: #fcd34d;
+        }
+
+        .dedication-badge {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #b45309, #d97706);
+            color: white;
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(180, 83, 9, 0.3);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .service-item {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            background: #ffffff;
+            border-color: #cbd5e1;
+        }
+
+        .service-item h3 {
+            font-size: 1.2rem;
             color: var(--primary);
+            margin-bottom: 6px;
+            font-weight: 700;
         }
 
-        .card p {
-            color: var(--text-muted);
+        .service-item p {
+            color: var(--gray);
             font-size: 0.95rem;
         }
 
-        /* Contact Section */
-        .contact-box {
-            background: var(--white);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 2.5rem;
-            max-width: 700px;
-            margin: auto;
-            text-align: center;
+        /* Contact Box */
+        .contact-list {
+            list-style: none;
+            margin-top: 15px;
         }
 
-        .contact-box p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 1.05rem;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ffedd5;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
         footer {
-            background: var(--primary);
-            color: #94a3b8;
             text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid #334155;
-            font-size: 0.9rem;
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 30px 15px;
+            font-size: 0.95rem;
         }
 
-        footer a {
-            color: #f1f5f9;
-            text-decoration: none;
+        footer p {
+            margin: 4px 0;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.9rem; }
-            .nav-links { display: none; }
+        footer .heart {
+            color: #ef4444;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .aarti-line { font-size: 1.08rem; }
+            .aarti-chorus { font-size: 1.15rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Ramesh<span>Saraswat</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">परिचय</a></li>
-                <li><a href="#services">कार्यक्षेत्र</a></li>
-                <li><a href="#articles">रचनाएँ व विचार</a></li>
-                <li><a href="#contact">संपर्क</a></li>
-            </ul>
+    <!-- Top Notice -->
+    <div class="top-notice">
+        ॥ जय श्री गुंसाई जी महाराज की ॥
+    </div>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="profile-container">
+            <img src="profile.png" alt="Ramesh Saraswat" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ramesh+Saraswat&size=200&background=c2410c&color=fff'">
+            <div class="badge-verified">✓</div>
+        </div>
+        <h1>रमेश सारस्वत</h1>
+        <div class="subtitle">डिजिटल मीडिया | तकनीकी प्रबंधन | सामाजिक एवं धार्मिक संकलन</div>
+        <div class="location">
+            📍 ग्राम: शेरेराँ, ज़िला: बीकानेर (राजस्थान)
+        </div>
+
+        <div class="btn-group">
+            <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="btn btn-whatsapp">
+                💬 WhatsApp पर जुड़ें
+            </a>
+            <a href="tel:8949126572" class="btn btn-call">
+                📞 8949126572
+            </a>
+            <a href="mailto:rksaraswat21@gmail.com" class="btn btn-email">
+                ✉️ ईमेल भेजें
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>नमस्कार, मैं रमेश सारस्वत</h1>
-            <p>डिजिटल मीडिया, लोक संस्कृति एवं तकनीकी प्रबंधन का एक साझा मंच। सत्य, सेवा और सकारात्मक संवाद के प्रति समर्पित।</p>
-            <div class="btn-group">
-                <a href="#contact" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> संपर्क करें</a>
-                <a href="https://wa.me/919999999999" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> व्हाट्सएप संदेश</a>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="container">
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-title">
-            <h2>परिचय (About Me)</h2>
-            <div class="bar"></div>
-        </div>
-        <div style="max-width: 800px; margin: auto; text-align: center; color: var(--text-dark); font-size: 1.05rem;">
-            <p>
-                इस  वेबसाइट पर आपका हार्दिक स्वागत है। यह मंच लोक-संस्कृति, समाजोपयोगी जानकारियों, निष्पक्ष संवाद और तकनीकी समाधानों को एक साथ लाने का एक निजी प्रयास है। यहाँ आपको नवीनतम समाचार विश्लेषण, पारंपरिक भक्ति एवं सांस्कृतिक पद, तथा डिजिटल प्रबंधन से जुड़े उपयोगी विचार मिलेंगे।
-            </p>
-        </div>
-    </section>
+        <!-- Shri Gusai Ji Maharaj Section -->
+        <section class="card aarti-card">
+            <div class="section-header">
+                <h2>श्री गुंसाई जी महाराज</h2>
+            </div>
 
-    <!-- Verticals / Features -->
-    <section id="services" style="background-color: #f1f5f9; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
-        <div class="section-title">
-            <h2>कार्य एवं अभिरुचि</h2>
-            <div class="bar"></div>
-        </div>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-newspaper"></i></div>
-                <h3>डिजिटल मीडिया व विचार</h3>
-                <p>क्षेत्रीय व राष्ट्रीय घटनाओं का निष्पक्ष विश्लेषण, सामाजिक मुद्दे और जन-सरोकार से जुड़ी प्रामाणिक खबरें।</p>
+            <!-- Gusai Ji Image Display -->
+            <div class="aarti-poster-wrapper">
+                <img src="gusaiji.png" alt="आरती श्री गुंसाई जी महाराज" class="aarti-poster" onerror="this.style.display='none'">
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-om"></i></div>
-                <h3>संस्कृति व लोक-भक्ति</h3>
-                <p>श्री गुंसाई जी महाराज की आरती, पारंपरिक राजस्थानी भजन, धार्मिक उत्सव और सनातन संस्कृति का शुद्ध संकलन।</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>तकनीक एवं प्रबंधन</h3>
-                <p>दैनिक कार्यालयी कार्यों के लिए ऑटोमेशन, डेटाबेस समाधान और उपयोगी डिजिटल टूल्स का प्रभावी उपयोग।</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Content / Articles -->
-    <section id="articles">
-        <div class="section-title">
-            <h2>नवीनतम संकलन</h2>
-            <div class="bar"></div>
-        </div>
-        <div class="grid-3">
-            <div class="card">
-                <h3>आरती श्री गुंसाई जी महाराज</h3>
-                <p>धाम गुंजाला के दिव्य स्वरूप और लोक-परंपरा के शुद्ध पदों सहित पूर्ण आरती का पाठ व संकलन।</p>
-            </div>
-            <div class="card">
-                <h3>समाज और सकारात्मक पत्रकारिता</h3>
-                <p>वर्तमान दौर में डिजिटल मीडिया की भूमिका और प्रामाणिक सूचनाओं के महत्व पर एक विशेष दृष्टिकोण।</p>
-            </div>
-            <div class="card">
-                <h3>डिजिटल कार्यकुशलता</h3>
-                <p>सरकारी व निजी कार्यालयों में आधुनिक कंप्यूटर टूल्स और प्रक्रियाओं से समय बचाने के व्यावहारिक तरीके।</p>
-            </div>
-        </div>
-    </section>
+            <!-- Aarti Text -->
+            <div class="aarti-text-box">
+                <div class="aarti-title">॥ आरती श्री गुंसाई जी महाराज की ॥</div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>संपर्क सूत्र</h2>
-            <div class="bar"></div>
-        </div>
-        <div class="contact-box">
-            <p>किसी भी सुझाव, सहयोग अथवा विचार-विमर्श के लिए आप सीधे संपर्क कर सकते हैं।</p>
-            <div class="btn-group">
-                <a href="rksaraswat21@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> ईमेल भेजें</a>
-                <a href="https://wa.me/8949126572" target="_blank" class="btn btn-primary" style="background-color: #25D366;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <p class="aarti-line">अरे! मानखा देह घड़ियो कारीगर, पवन पुरुष मांहि बोलरया॥</p>
+                <p class="aarti-line">नो सो नाड बोहतर सौ कोठा, कायम-कायम से घड़िया॥</p>
+                <p class="aarti-line">अपने कुँवर आगे चँवर दुलावां, करोनी अलख हर री आरतियाँ॥</p>
+
+                <div class="aarti-chorus">
+                    हो महाराज कँवर जी री आरतियाँ,<br>
+                    हो म्हारे देव रै गुंसाई जी री आरतियाँ,<br>
+                    हो म्हारे बाबा रै गुंसाई जी री आरतियाँ॥
+                </div>
+
+                <div class="stanza-break"></div>
+
+                <p class="aarti-line">सतयुग में प्रहलाद सिधाया, पाँच रे करोड़ ले बे तिरिया।</p>
+                <p class="aarti-line">ले होली झोल्यां में बैठ्या, अग्न जाल से बै तिरिया॥</p>
+                <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
+
+                <div class="stanza-break"></div>
+
+                <p class="aarti-line">त्रैतायुग में राजा बलि रे सिधाया, सात रे करोड़ ले बे तिरिया।</p>
+                <p class="aarti-line">ले झारी राजा भोम संकलिया, वामन होकर बाँ छलिया॥</p>
+                <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
+
+                <div class="stanza-break"></div>
+
+                <p class="aarti-line">त्रैतायुग में राजा हरिश्चन्द्र सिधाया, नव रे करोड़ ले बे तिरिया।</p>
+                <p class="aarti-line">पुन्या के कारण राजा दान बाँटियो, नीर नीच घर बाँ भरिया॥</p>
+                <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
+
+                <div class="stanza-break"></div>
+
+                <p class="aarti-line">द्वापुर में पांचो पाण्डु रे सिधाया, बारह रे करोड़ ले बे तिरिया।</p>
+                <p class="aarti-line">रानी द्रोपदी रो चीर बढ़ायो, भुय्याँ-भुय्याँ काम सफल करिया॥</p>
+                <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
+
+                <div class="stanza-break"></div>
+
+                <p class="aarti-line">गोपीचन्द राजा भर्तृरि सिधाया, राज-पाट बै सब तजिया।</p>
+                <p class="aarti-line">आसन ढाल निधड़क होय बैठ्या, आवण-जाँवण से बै तिरिया॥</p>
+                <p class="aarti-line" style="color: #9a3412;">अपने कुँवर आगे चँवर दुलावां...</p>
+
+                <div class="stanza-break"></div>
+
+                <p class="aarti-line">पाँचाँ साताँ नवाँ रे बारवाँ, सुर तैतीसां भेला मिलिया।</p>
+                <p class="aarti-line">शुभ जी को सन्त दिवाकर बोल्या, वासो देवो नी अमरापुरियाँ॥</p>
+                <p class="aarti-line">चौसठ जोगण लंगर पुरबे, धवल मंगल गावे सुरसतीयाँ॥</p>
+                <p class="aarti-line">अपने कुँवर आगे चँवर दुलावां, करोनी अलख हर री आरतियाँ॥</p>
+
+                <div class="aarti-chorus">
+                    हो महाराज कँवर जी री आरतियाँ,<br>
+                    हो म्हारे देव रै गुंसाई जी री आरतियाँ,<br>
+                    हो म्हारे बाबा रै गुंसाई जी री आरतियाँ॥
+                </div>
+
+                <div>
+                    <span class="dedication-badge">सप्रेम भेंट : रमेश सारस्वत शेरेराँ</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Services & Works -->
+        <section class="card">
+            <div class="section-header">
+                <h2>कार्यक्षेत्र एवं सेवाएँ</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>🎨 डिजिटल मीडिया एवं पोस्टर</h3>
+                    <p>धार्मिक उत्सवों, सामाजिक आयोजनों और संस्थाओं के लिए आकर्षक बैनर व पोस्टर निर्माण।</p>
+                </div>
+                <div class="service-item">
+                    <h3>💻 तकनीकी एवं वेब समाधान</h3>
+                    <p>वेबसाइट प्रबंधन, सोशल मीडिया और दैनिक डिजिटल आवश्यकताओं का समाधान।</p>
+                </div>
+                <div class="service-item">
+                    <h3>📖 धार्मिक एवं सांस्कृतिक साहित्य</h3>
+                    <p>स्थानीय भजनों, आरतियों एवं देव स्थलों के प्रामाणिक साहित्य का संरक्षण एवं संकलन।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="card">
+            <div class="section-header">
+                <h2>संपर्क सूत्र</h2>
+            </div>
+            <ul class="contact-list">
+                <li>
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <strong>स्थानीय निवास:</strong><br>
+                        ग्राम शेरेराँ, तहसील व ज़िला बीकानेर (राजस्थान)
+                    </div>
+                </li>
+                <li>
+                    <span class="contact-icon">📱</span>
+                    <div>
+                        <strong>फ़ोन / WhatsApp:</strong><br>
+                        <a href="tel:8949126572" style="color: var(--primary); text-decoration: none; font-weight: bold;">+91 8949126572</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <strong>ईमेल पता:</strong><br>
+                        <a href="mailto:rksaraswat21@gmail.com" style="color: var(--primary); text-decoration: none;">rksaraswat21@gmail.com</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918949126572?text=नमस्ते%20रमेश%20जी!" target="_blank" class="floating-wa" title="WhatsApp Chat">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="white">
+            <path d="M12.031 2C6.511 2 2.016 6.484 2.016 11.984c0 1.902.532 3.684 1.455 5.215L2 22l4.98-1.425a9.92 9.92 0 005.051 1.378c5.52 0 10.016-4.484 10.016-9.969 0-5.5-4.496-9.984-10.016-9.984zm5.82 14.156c-.244.688-1.22 1.264-1.708 1.343-.464.075-1.07.135-3.155-.726-2.668-1.103-4.385-3.818-4.52-3.996-.134-.18-1.085-1.442-1.085-2.75 0-1.309.687-1.954.93-2.218.245-.264.536-.33.716-.33.18 0 .36 0 .518.008.167.009.39-.064.61.464.226.544.77 1.884.838 2.02.067.137.112.298.022.477-.089.18-.134.293-.267.45-.134.158-.282.353-.404.473-.134.135-.274.282-.118.55.157.268.697 1.15 1.493 1.86 1.026.914 1.89 1.196 2.158 1.33.27.135.426.113.583-.067.158-.18.67-.78.85-1.047.179-.268.358-.224.6-.134.246.09 1.558.735 1.826.87.268.134.447.201.514.312.067.112.067.649-.177 1.337z"/>
+        </svg>
+    </a>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 <strong>Ramesh Saraswat</strong> | सर्वाधिकार सुरक्षित।</p>
+        <p>© 2026 <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर (राजस्थान)</p>
+        <p style="font-size: 0.85rem; margin-top: 6px;">श्री गुंसाई जी महाराज की असीम कृपा से निर्मित</p>
     </footer>
 
 </body>
