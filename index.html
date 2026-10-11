@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>रमेश सारस्वत | आधिकारिक वेबसाइट | शेरेराँ, बीकानेर</title>
-    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)। मीडिया एवं प्रेस कवरेज, फ़ोटो गैलरी, प्रीमियम कैलकुलेटर, श्री गुंसाई जी महाराज आरती एवं संपर्क।">
+    <meta name="description" content="रमेश सारस्वत - शेरेराँ (बीकानेर)।">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -111,7 +111,7 @@
         .container {
             max-width: 850px;
             margin: 0 auto;
-            padding: 25px 16px 80px;
+            padding: 20px 16px 80px;
         }
 
         /* Home View */
@@ -120,36 +120,20 @@
             animation: fadeIn 0.3s ease;
         }
 
-        .home-heading {
-            text-align: center;
-            margin-bottom: 22px;
-        }
-
-        .home-heading h2 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            font-weight: 800;
-        }
-
-        .home-heading p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
         .menu-grid {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 13px;
         }
 
         .menu-card {
             background: var(--white);
             border: 2px solid #fed7aa;
             border-radius: 16px;
-            padding: 16px 20px;
+            padding: 15px 18px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 15px;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
             transition: all 0.25s ease;
@@ -165,8 +149,8 @@
         }
 
         .menu-icon-box {
-            width: 54px;
-            height: 54px;
+            width: 52px;
+            height: 52px;
             border-radius: 14px;
             background: #ffedd5;
             display: flex;
@@ -174,7 +158,7 @@
             justify-content: center;
             flex-shrink: 0;
             border: 1px solid #fed7aa;
-            font-size: 26px;
+            font-size: 25px;
         }
 
         .menu-info {
@@ -182,20 +166,20 @@
         }
 
         .menu-info h3 {
-            font-size: 1.25rem;
+            font-size: 1.22rem;
             color: var(--dark);
             font-weight: 800;
             margin-bottom: 2px;
         }
 
         .menu-info p {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--gray);
-            line-height: 1.3;
+            line-height: 1.35;
         }
 
         .menu-arrow {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: var(--primary);
             font-weight: bold;
         }
@@ -231,12 +215,12 @@
             border: none;
             padding: 12px 20px;
             border-radius: 30px;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 700;
             cursor: pointer;
             box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
             transition: all 0.25s ease;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .btn-home:hover {
@@ -377,33 +361,39 @@
             padding: 16px 5px 6px;
         }
 
-        /* 3. CALCULATOR STYLES */
+        /* CALCULATOR FORMS & RESULTS */
         .calc-form {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
             padding: 22px 18px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .form-group label {
             display: block;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 6px;
-            font-size: 0.98rem;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 14px;
+            padding: 11px 13px;
             border: 2px solid #cbd5e1;
             border-radius: 10px;
-            font-size: 1rem;
+            font-size: 0.98rem;
             background: #fff;
             color: var(--dark);
             outline: none;
@@ -414,14 +404,32 @@
             border-color: var(--primary);
         }
 
+        .advisor-box {
+            background: #fff7ed;
+            border: 1px dashed #f97316;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+        }
+
+        .advisor-box-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .btn-calc {
             width: 100%;
             background: linear-gradient(135deg, #c2410c, #ea580c);
             color: #fff;
             border: none;
-            padding: 14px;
+            padding: 13px;
             border-radius: 30px;
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             font-weight: 800;
             cursor: pointer;
             box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35);
@@ -447,18 +455,18 @@
 
         .result-title {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--primary-dark);
             border-bottom: 2px dashed #fed7aa;
             padding-bottom: 10px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .result-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .result-table tr {
@@ -466,8 +474,8 @@
         }
 
         .result-table td {
-            padding: 10px 6px;
-            font-size: 1rem;
+            padding: 9px 5px;
+            font-size: 0.98rem;
         }
 
         .result-table td:first-child {
@@ -487,12 +495,12 @@
 
         .highlight-row td {
             color: var(--primary) !important;
-            font-size: 1.15rem !important;
+            font-size: 1.1rem !important;
         }
 
         .action-btn-row {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             margin-top: 15px;
         }
@@ -534,7 +542,7 @@
             box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
         }
 
-        /* 4. Gusai Ji Aarti */
+        /* Aarti Special Card */
         .aarti-special-card {
             background: #fffbeb;
             border: 2px solid #fde68a;
@@ -606,7 +614,7 @@
             font-size: 1.05rem;
         }
 
-        /* 5. About Us */
+        /* About Us */
         .about-content {
             display: flex;
             flex-direction: column;
@@ -637,7 +645,7 @@
             margin-bottom: 4px;
         }
 
-        /* 6. Contact Info */
+        /* Contact Info */
         .contact-list {
             list-style: none;
             margin-top: 10px;
@@ -701,26 +709,27 @@
             font-size: 0.95rem;
         }
 
-        /* Print Mode for PDF */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .menu-card { padding: 13px 15px; }
+            .menu-icon-box { width: 46px; height: 46px; font-size: 22px; }
+            .menu-info h3 { font-size: 1.1rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+        }
+
+        /* Print Media for Clean PDF */
         @media print {
             body * { visibility: hidden; }
-            #printable-quotation, #printable-quotation * { visibility: visible; }
-            #printable-quotation {
+            .printable-active, .printable-active * { visibility: visible; }
+            .printable-active {
                 position: absolute;
                 left: 0;
                 top: 0;
                 width: 100%;
-                border: 2px solid #000;
-                padding: 20px;
+                border: 2px solid #333 !important;
+                padding: 20px !important;
             }
             .action-btn-row, .btn-home { display: none !important; }
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .menu-card { padding: 14px 16px; }
-            .menu-icon-box { width: 48px; height: 48px; font-size: 22px; }
-            .menu-info h3 { font-size: 1.12rem; }
         }
     </style>
 </head>
@@ -745,14 +754,9 @@
     <div class="container">
 
         <!-- ==============================================
-             HOME VIEW: 6 CLEAN APP-STYLE OPTIONS
+             HOME VIEW: EXACT APP-STYLE CARDS
              ============================================== -->
         <main id="home-view">
-            <div class="home-heading">
-                <h2>मुख्य विकल्प (मेनू)</h2>
-                <p>विवरण देखने के लिए नीचे दिए गए किसी भी विकल्प पर क्लिक करें:</p>
-            </div>
-
             <div class="menu-grid">
                 
                 <!-- 1. Media and News Paper -->
@@ -770,42 +774,52 @@
                     <div class="menu-icon-box">🖼️</div>
                     <div class="menu-info">
                         <h3>Picture Gallery</h3>
-                        <p>धार्मिक एवं सामाजिक कार्यक्रमों की फ़ोटो गैलरी</p>
+                        <p>प्रकृति एवं ग्रामीण परिवेश की सुंदर झलकियाँ</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 3. NEW: Premium Calculator (गैलरी के ठीक नीचे) -->
-                <div class="menu-card" onclick="openSection('detail-calc')" style="border-color: #f97316; background: #fffaf0;">
+                <!-- 3. PLI Calculator -->
+                <div class="menu-card" onclick="openSection('detail-pli')" style="border-color: #f97316; background: #fffaf0;">
                     <div class="menu-icon-box" style="background: #ffedd5; border-color: #f97316;">📊</div>
                     <div class="menu-info">
-                        <h3 style="color: var(--primary);">Premium Calculator (कैलकुलेटर)</h3>
-                        <p>DOB व आयु से प्रीमियम व मैच्योरिटी गणना, PDF व WhatsApp शेयर</p>
+                        <h3 style="color: var(--primary);">PLI Calculator</h3>
+                        <p>डाक जीवन बीमा योजना चयन, प्रीमियम, मैच्योरिटी व शेयर</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 4. Gusai Ji Aarti -->
+                <!-- 4. RPLI Calculator -->
+                <div class="menu-card" onclick="openSection('detail-rpli')" style="border-color: #0284c7; background: #f0f9ff;">
+                    <div class="menu-icon-box" style="background: #e0f2fe; border-color: #0284c7;">📈</div>
+                    <div class="menu-info">
+                        <h3 style="color: #0284c7;">RPLI Calculator</h3>
+                        <p>ग्रामीण डाक जीवन बीमा योजना चयन, प्रीमियम, मैच्योरिटी व शेयर</p>
+                    </div>
+                    <div class="menu-arrow">➔</div>
+                </div>
+
+                <!-- 5. Gusai Ji Aarti -->
                 <div class="menu-card" onclick="openSection('detail-aarti')">
                     <div class="menu-icon-box">🪔</div>
                     <div class="menu-info">
                         <h3>Gusai Ji Aarti</h3>
-                        <p>श्री गुंसाई जी महाराज के दर्शन एवं संपूर्ण आरती</p>
+                        <p>श्री गुंसाई जी महाराज के दर्शन एवं आरती</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 5. About Us -->
+                <!-- 6. About Us -->
                 <div class="menu-card" onclick="openSection('detail-about')">
                     <div class="menu-icon-box">👤</div>
                     <div class="menu-info">
                         <h3>About Us</h3>
-                        <p>व्यक्तिगत परिचय, कार्यक्षेत्र एवं सामाजिक सेवाएँ</p>
+                        <p>व्यक्तिगत परिचय, कार्यक्षेत्र एवं सेवाएँ</p>
                     </div>
                     <div class="menu-arrow">➔</div>
                 </div>
 
-                <!-- 6. Contact Info -->
+                <!-- 7. Contact Info -->
                 <div class="menu-card" onclick="openSection('detail-contact')">
                     <div class="menu-icon-box">📞</div>
                     <div class="menu-info">
@@ -922,7 +936,7 @@
                     <h2>Picture Gallery (फ़ोटो गैलरी)</h2>
                 </div>
                 <p class="section-subtitle">
-                    🌿 प्रकृति के रंग एवं ग्रामीण परिवेश की सुंदर झलकियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
+                    🌿 प्रकृति एवं ग्रामीण परिवेश की सुंदर झलकियाँ (फ़ोटो पर क्लिक करके पूरा देखें)
                 </p>
 
                 <div class="photo-gallery-grid">
@@ -1036,135 +1050,129 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 3: PREMIUM CALCULATOR (NEW)
+             DETAIL VIEW 3: PLI CALCULATOR
              ============================================== -->
-        <section id="detail-calc" class="detail-view">
+        <section id="detail-pli" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
 
             <div class="card-box">
                 <div class="section-header">
-                    <h2>बीमा प्रीमियम एवं परिपक्वता कैलकुलेटर</h2>
+                    <h2>PLI Calculator (डाक जीवन बीमा)</h2>
                 </div>
                 <p class="section-subtitle">
-                    अपनी जन्मतिथि, बीमा राशि एवं परिपक्वता आयु दर्ज कर तत्काल सटीक प्रीमियम व मैच्योरिटी लाभ जानें।
+                    योजना का चयन करें, विवरण भरें और सटीक प्रीमियम, कुल जमा राशि व मैच्योरिटी लाभ निकालें।
                 </p>
 
-                <!-- Input Form -->
                 <div class="calc-form">
-                    <div class="form-group">
-                        <label for="custName">ग्राहक का नाम (Customer Name):</label>
-                        <input type="text" id="custName" class="form-control" placeholder="उदा. सुरेश कुमार" value="सम्मानित ग्राहक">
+                    <!-- Advisor Settings -->
+                    <div class="advisor-box">
+                        <div class="advisor-box-title">👤 सलाहकार विवरण (एडिट करें यदि बदलना हो):</div>
+                        <div class="form-row">
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label style="font-size:0.85rem;">सलाहकार का नाम:</label>
+                                <input type="text" id="pliAdvName" class="form-control" value="रमेश सारस्वत">
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label style="font-size:0.85rem;">सलाहकार का मोबाइल:</label>
+                                <input type="tel" id="pliAdvPhone" class="form-control" value="8949126572">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="custDob">जन्मतिथि (Date of Birth - DOB):</label>
-                        <input type="date" id="custDob" class="form-control" onchange="autoUpdateAge()">
-                        <small id="ageDisplay" style="color: var(--primary); font-weight: 700; margin-top: 4px; display: block;"></small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sumAssured">बीमा राशि / Sum Assured (₹):</label>
-                        <select id="sumAssured" class="form-control">
-                            <option value="100000">₹ 1,00,000 (एक लाख)</option>
-                            <option value="200000">₹ 2,00,000 (दो लाख)</option>
-                            <option value="300000">₹ 3,00,000 (तीन लाख)</option>
-                            <option value="500000" selected>₹ 5,00,000 (पाँच लाख)</option>
-                            <option value="1000000">₹ 10,00,000 (दस लाख)</option>
-                            <option value="2000000">₹ 20,00,000 (बीस लाख)</option>
-                            <option value="5000000">₹ 50,00,000 (पचास लाख)</option>
+                        <label for="pliScheme">PLI योजना चुनें (Select Scheme):</label>
+                        <select id="pliScheme" class="form-control">
+                            <option value="santosh" selected>संतोष - Endowment Assurance (EA) [बोनस: ₹52/हज़ार]</option>
+                            <option value="suraksha">सुरक्षा - Whole Life Assurance (WLA) [बोनस: ₹76/हज़ार]</option>
+                            <option value="suvidha">सुविधा - Convertible Whole Life (CWLA) [बोनस: ₹76/हज़ार]</option>
+                            <option value="sumangal">सुमंगल - Anticipated Endowment (AEA) [बोनस: ₹48/हज़ार]</option>
+                            <option value="yugal">युगल सुरक्षा - Joint Life Assurance [बोनस: ₹52/हज़ार]</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="maturityAge">परिपक्वता आयु (Maturity Age):</label>
-                        <select id="maturityAge" class="form-control">
-                            <option value="35">35 वर्ष</option>
-                            <option value="40">40 वर्ष</option>
-                            <option value="45">45 वर्ष</option>
-                            <option value="50">50 वर्ष</option>
-                            <option value="55">55 वर्ष</option>
-                            <option value="58" selected>58 वर्ष (PLI सेवानिवृत्ति)</option>
-                            <option value="60">60 वर्ष (सामान्य सेवानिवृत्ति)</option>
-                        </select>
+                        <label for="pliCustName">ग्राहक का नाम (Customer Name):</label>
+                        <input type="text" id="pliCustName" class="form-control" placeholder="उदा. सुरेश कुमार" value="सम्मानित ग्राहक">
                     </div>
 
-                    <div class="form-group">
-                        <label for="freq">प्रीमियम भुगतान आवृत्ति (Premium Frequency):</label>
-                        <select id="freq" class="form-control">
-                            <option value="12" selected>मासिक (Monthly)</option>
-                            <option value="4">त्रैमासिक (Quarterly)</option>
-                            <option value="2">छमाही (Half-Yearly)</option>
-                            <option value="1">वार्षिक (Yearly)</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pliDob">जन्मतिथि (DOB):</label>
+                            <input type="date" id="pliDob" class="form-control" onchange="updatePliAge()">
+                            <small id="pliAgeText" style="color:var(--primary); font-weight:700; margin-top:3px; display:block;"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="pliSumAssured">बीमा राशि (Sum Assured):</label>
+                            <select id="pliSumAssured" class="form-control">
+                                <option value="50000">₹ 50,000</option>
+                                <option value="100000">₹ 1,00,000</option>
+                                <option value="200000">₹ 2,00,000</option>
+                                <option value="300000">₹ 3,00,000</option>
+                                <option value="500000" selected>₹ 5,00,000</option>
+                                <option value="1000000">₹ 10,00,000</option>
+                                <option value="2000000">₹ 20,00,000</option>
+                                <option value="5000000">₹ 50,00,000 (अधिकतम)</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <button type="button" class="btn-calc" onclick="calculatePlan()">
-                        ⚡ गणना करें (Calculate Result)
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pliFreq">प्रीमियम आवृत्ति (Frequency):</label>
+                            <select id="pliFreq" class="form-control">
+                                <option value="12" selected>मासिक (Monthly)</option>
+                                <option value="4">त्रैमासिक (Quarterly)</option>
+                                <option value="2">छमाही (Half-Yearly)</option>
+                                <option value="1">वार्षिक (Yearly)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pliMaturityAge">परिपक्वता आयु (Maturity Age):</label>
+                            <select id="pliMaturityAge" class="form-control">
+                                <option value="35">35 वर्ष</option>
+                                <option value="40">40 वर्ष</option>
+                                <option value="45">45 वर्ष</option>
+                                <option value="50">50 वर्ष</option>
+                                <option value="55">55 वर्ष</option>
+                                <option value="58" selected>58 वर्ष (PLI)</option>
+                                <option value="60">60 वर्ष</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-calc" onclick="calculatePli()">
+                        ⚡ कैलकुलेट करें (Calculate Result)
                     </button>
                 </div>
 
-                <!-- Printable / Downloadable Result Quotation Box -->
-                <div id="printable-quotation" class="result-box">
-                    <div class="result-title">📋 बीमा प्रस्ताव कोटेशन (Policy Quotation)</div>
+                <!-- PLI Quotation Result -->
+                <div id="pliResultBox" class="result-box">
+                    <div class="result-title">📋 डाक जीवन बीमा (PLI) प्रस्ताव कोटेशन</div>
 
                     <table class="result-table">
-                        <tr>
-                            <td>प्रस्तावित ग्राहक:</td>
-                            <td id="resName">-</td>
+                        <tr><td>प्रस्तावित ग्राहक:</td><td id="resPliName">-</td></tr>
+                        <tr><td>चयनित योजना:</td><td id="resPliScheme">-</td></tr>
+                        <tr><td>वर्तमान आयु:</td><td id="resPliAge">-</td></tr>
+                        <tr><td>पॉलिसी अवधि (Term):</td><td id="resPliTerm">-</td></tr>
+                        <tr><td>परिपक्वता आयु (Maturity Age):</td><td id="resPliMatAge">-</td></tr>
+                        <tr><td>बीमा राशि (Sum Assured):</td><td id="resPliSA">-</td></tr>
+                        <tr class="highlight-row"><td>किस्त प्रीमियम राशि:</td><td id="resPliPrem">-</td></tr>
+                        <tr><td>कुल जमा प्रीमियम (Total Deposited):</td><td id="resPliTotal">-</td></tr>
+                        <tr><td>अनुमानित बोनस लाभ:</td><td id="resPliBonus">-</td></tr>
+                        <tr class="highlight-row" style="background:#ecfdf5;">
+                            <td style="color:#047857 !important;">कुल परिपक्वता लाभ (Expected Maturity):</td>
+                            <td id="resPliMat" style="color:#047857 !important;">-</td>
                         </tr>
-                        <tr>
-                            <td>प्रवेश आयु (Current Age):</td>
-                            <td id="resAge">-</td>
-                        </tr>
-                        <tr>
-                            <td>पॉलिसी अवधि (Term):</td>
-                            <td id="resTerm">-</td>
-                        </tr>
-                        <tr>
-                            <td>परिपक्वता आयु (Maturity Age):</td>
-                            <td id="resMatAge">-</td>
-                        </tr>
-                        <tr>
-                            <td>बीमा राशि (Sum Assured):</td>
-                            <td id="resSumAssured">-</td>
-                        </tr>
-                        <tr>
-                            <td>प्रीमियम भुगतान प्रकार:</td>
-                            <td id="resFreq">-</td>
-                        </tr>
-                        <tr class="highlight-row">
-                            <td>किस्त प्रीमियम राशि:</td>
-                            <td id="resPremium">-</td>
-                        </tr>
-                        <tr>
-                            <td>कुल जमा प्रीमियम (Total Paid):</td>
-                            <td id="resTotalPaid">-</td>
-                        </tr>
-                        <tr>
-                            <td>अनुमानित बोनस (Bonus @ ₹52/1000):</td>
-                            <td id="resBonus">-</td>
-                        </tr>
-                        <tr class="highlight-row" style="background: #ecfdf5;">
-                            <td style="color: #047857 !important;">कुल परिपक्वता लाभ (Maturity):</td>
-                            <td id="resMaturity" style="color: #047857 !important;">-</td>
-                        </tr>
-                        <tr>
-                            <td>शुद्ध अनुमानित लाभ (Net Profit):</td>
-                            <td id="resNetProfit" style="color: #16a34a; font-weight: bold;">-</td>
-                        </tr>
+                        <tr><td>अनुमानित शुद्ध लाभ:</td><td id="resPliProfit" style="color:#16a34a; font-weight:bold;">-</td></tr>
                     </table>
 
-                    <div style="font-size: 0.85rem; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 10px;">
-                        सलाहकार: <strong>रमेश सारस्वत</strong> | शेरेराँ, बीकानेर | मो.: 8949126572<br>
-                        <em>*यह कोटेशन अनुमानित दरों पर आधारित है। वास्तविक नियम व शर्तें पॉलिसी दस्तावेज़ के अनुसार मान्य होंगी।</em>
-                    </div>
+                    <div id="pliAdvisorFooter" style="font-size:0.85rem; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px;"></div>
 
-                    <!-- Share & Download Buttons -->
                     <div class="action-btn-row">
-                        <button type="button" class="btn-share-wa" onclick="shareOnWhatsApp()">
-                            💬 WhatsApp पर भेजें
+                        <button type="button" class="btn-share-wa" onclick="sharePliWhatsApp()">
+                            💬 WhatsApp पर शेयर करें
                         </button>
-                        <button type="button" class="btn-download-pdf" onclick="window.print()">
+                        <button type="button" class="btn-download-pdf" onclick="printQuotation('pliResultBox')">
                             📄 PDF / प्रिंट कोटेशन
                         </button>
                     </div>
@@ -1177,7 +1185,145 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 4: Gusai Ji Aarti
+             DETAIL VIEW 4: RPLI CALCULATOR
+             ============================================== -->
+        <section id="detail-rpli" class="detail-view">
+            <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+
+            <div class="card-box">
+                <div class="section-header">
+                    <h2>RPLI Calculator (ग्रामीण डाक जीवन बीमा)</h2>
+                </div>
+                <p class="section-subtitle">
+                    ग्रामीण डाक जीवन बीमा (RPLI) योजना चुनें, विवरण भरें और तुरंत सटीक कोटेशन निकालें।
+                </p>
+
+                <div class="calc-form">
+                    <!-- Advisor Settings -->
+                    <div class="advisor-box">
+                        <div class="advisor-box-title">👤 सलाहकार विवरण (एडिट करें यदि बदलना हो):</div>
+                        <div class="form-row">
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label style="font-size:0.85rem;">सलाहकार का नाम:</label>
+                                <input type="text" id="rpliAdvName" class="form-control" value="रमेश सारस्वत">
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label style="font-size:0.85rem;">सलाहकार का मोबाइल:</label>
+                                <input type="tel" id="rpliAdvPhone" class="form-control" value="8949126572">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rpliScheme">RPLI योजना चुनें (Select Scheme):</label>
+                        <select id="rpliScheme" class="form-control">
+                            <option value="gram_santosh" selected>ग्राम संतोष - Endowment Assurance (EA) [बोनस: ₹48/हज़ार]</option>
+                            <option value="gram_suraksha">ग्राम सुरक्षा - Whole Life Assurance (WLA) [बोनस: ₹60/हज़ार]</option>
+                            <option value="gram_suvidha">ग्राम सुविधा - Convertible Whole Life (CWLA) [बोनस: ₹60/हज़ार]</option>
+                            <option value="gram_sumangal">ग्राम सुमंगल - Anticipated Endowment (AEA) [बोनस: ₹45/हज़ार]</option>
+                            <option value="gram_priya">ग्राम प्रिया - 10 Year Rural PLI [बोनस: ₹45/हज़ार]</option>
+                            <option value="bal_bima">बाल बीमा योजना - Children Policy [बोनस: ₹48/हज़ार]</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rpliCustName">ग्राहक का नाम (Customer Name):</label>
+                        <input type="text" id="rpliCustName" class="form-control" placeholder="उदा. रामनिवास" value="सम्मानित ग्राहक">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rpliDob">जन्मतिथि (DOB):</label>
+                            <input type="date" id="rpliDob" class="form-control" onchange="updateRpliAge()">
+                            <small id="rpliAgeText" style="color:var(--primary); font-weight:700; margin-top:3px; display:block;"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="rpliSumAssured">बीमा राशि (Sum Assured):</label>
+                            <select id="rpliSumAssured" class="form-control">
+                                <option value="20000">₹ 20,000</option>
+                                <option value="50000">₹ 50,000</option>
+                                <option value="100000" selected>₹ 1,00,000</option>
+                                <option value="200000">₹ 2,00,000</option>
+                                <option value="300000">₹ 3,00,000</option>
+                                <option value="500000">₹ 5,00,000</option>
+                                <option value="1000000">₹ 10,00,000 (अधिकतम)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rpliFreq">प्रीमियम आवृत्ति (Frequency):</label>
+                            <select id="rpliFreq" class="form-control">
+                                <option value="12" selected>मासिक (Monthly)</option>
+                                <option value="4">त्रैमासिक (Quarterly)</option>
+                                <option value="2">छमाही (Half-Yearly)</option>
+                                <option value="1">वार्षिक (Yearly)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rpliMaturityAge">परिपक्वता आयु (Maturity Age):</label>
+                            <select id="rpliMaturityAge" class="form-control">
+                                <option value="35">35 वर्ष</option>
+                                <option value="40">40 वर्ष</option>
+                                <option value="45">45 वर्ष</option>
+                                <option value="50">50 वर्ष</option>
+                                <option value="55">55 वर्ष</option>
+                                <option value="58" selected>58 वर्ष (RPLI)</option>
+                                <option value="60">60 वर्ष</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-calc" style="background:linear-gradient(135deg, #0284c7, #0369a1);" onclick="calculateRpli()">
+                        ⚡ कैलकुलेट करें (Calculate Result)
+                    </button>
+                </div>
+
+                <!-- RPLI Quotation Result -->
+                <div id="rpliResultBox" class="result-box">
+                    <div class="result-title" style="color:#0369a1; border-color:#bae6fd;">📋 ग्रामीण डाक जीवन बीमा (RPLI) प्रस्ताव कोटेशन</div>
+
+                    <table class="result-table">
+                        <tr><td>प्रस्तावित ग्राहक:</td><td id="resRpliName">-</td></tr>
+                        <tr><td>चयनित योजना:</td><td id="resRpliScheme">-</td></tr>
+                        <tr><td>वर्तमान आयु:</td><td id="resRpliAge">-</td></tr>
+                        <tr><td>पॉलिसी अवधि (Term):</td><td id="resRpliTerm">-</td></tr>
+                        <tr><td>परिपक्वता आयु (Maturity Age):</td><td id="resRpliMatAge">-</td></tr>
+                        <tr><td>बीमा राशि (Sum Assured):</td><td id="resRpliSA">-</td></tr>
+                        <tr class="highlight-row" style="background:#f0f9ff;">
+                            <td style="color:#0284c7 !important;">किस्त प्रीमियम राशि:</td>
+                            <td id="resRpliPrem" style="color:#0284c7 !important;">-</td>
+                        </tr>
+                        <tr><td>कुल जमा प्रीमियम (Total Deposited):</td><td id="resRpliTotal">-</td></tr>
+                        <tr><td>अनुमानित बोनस लाभ:</td><td id="resRpliBonus">-</td></tr>
+                        <tr class="highlight-row" style="background:#ecfdf5;">
+                            <td style="color:#047857 !important;">कुल परिपक्वता लाभ (Expected Maturity):</td>
+                            <td id="resRpliMat" style="color:#047857 !important;">-</td>
+                        </tr>
+                        <tr><td>अनुमानित शुद्ध लाभ:</td><td id="resRpliProfit" style="color:#16a34a; font-weight:bold;">-</td></tr>
+                    </table>
+
+                    <div id="rpliAdvisorFooter" style="font-size:0.85rem; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px;"></div>
+
+                    <div class="action-btn-row">
+                        <button type="button" class="btn-share-wa" onclick="shareRpliWhatsApp()">
+                            💬 WhatsApp पर शेयर करें
+                        </button>
+                        <button type="button" class="btn-download-pdf" onclick="printQuotation('rpliResultBox')">
+                            📄 PDF / प्रिंट कोटेशन
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="btn-home btn-home-bottom" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
+        </section>
+
+
+        <!-- ==============================================
+             DETAIL VIEW 5: Gusai Ji Aarti
              ============================================== -->
         <section id="detail-aarti" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
@@ -1248,7 +1394,7 @@
                     </div>
 
                     <div>
-                        <span class="dedication-badge">सप्रेम भेंट : रमेश सारस्वत शेरेराँ</span>
+                        <span class="dedication-badge">शेरेराँ</span>
                     </div>
                 </div>
             </div>
@@ -1258,7 +1404,7 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 5: About Us
+             DETAIL VIEW 6: About Us
              ============================================== -->
         <section id="detail-about" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
@@ -1272,7 +1418,7 @@
                         <strong>सादर जय श्री कृष्णा / जय श्री गुंसाई जी री सा,</strong>
                     </p>
                     <p>
-                        मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, सनातन संस्कृति के संरक्षण, प्रेस लेखन, बीमा परामर्श एवं डिजिटल नवाचारों के प्रति समर्पित रहा हूँ।
+                        मेरा नाम <strong>रमेश सारस्वत</strong> है। मैं मूल रूप से ग्राम <strong>शेरेराँ (ज़िला बीकानेर, राजस्थान)</strong> का निवासी हूँ। समाज में जन-कल्याण, सनातन संस्कृति के संरक्षण, प्रेस लेखन, डाक जीवन बीमा (PLI/RPLI) परामर्श एवं डिजिटल नवाचारों के प्रति समर्पित रहा हूँ।
                     </p>
                     <p>
                         स्थानीय स्तर पर सनातन संस्कृति के प्रचार-प्रसार, श्री गुंसाई जी महाराज की महिमा को डिजिटल माध्यमों से जन-जन तक पहुँचाने और समाचार पत्रों में सामयिक विषयों पर विचार साझा करने में मेरी निरंतर रुचि रही है।
@@ -1284,8 +1430,8 @@
                             <p>दैनिक समाचार पत्रों में नियमित आलेख, स्तंभ व समाचार संपादन।</p>
                         </div>
                         <div class="feature-box">
-                            <h4>📊 वित्तीय एवं बीमा समाधान</h4>
-                            <p>सटीक योजना चयन, प्रीमियम गणना व बीमा बचत परामर्श।</p>
+                            <h4>📊 डाक बीमा परामर्श</h4>
+                            <p>PLI एवं RPLI में सटीक योजना चयन, प्रीमियम व मैच्योरिटी गणना।</p>
                         </div>
                         <div class="feature-box">
                             <h4>🪔 सांस्कृतिक संकलन</h4>
@@ -1300,7 +1446,7 @@
 
 
         <!-- ==============================================
-             DETAIL VIEW 6: Contact Info
+             DETAIL VIEW 7: Contact Info
              ============================================== -->
         <section id="detail-contact" class="detail-view">
             <button class="btn-home" onclick="goToHome()">🏠 Go to Home Page (होम पेज पर वापस जाएँ)</button>
@@ -1310,7 +1456,7 @@
                     <h2>Contact Info (संपर्क सूत्र)</h2>
                 </div>
                 <p class="section-subtitle">
-                    किसी भी विचार-विमर्श, बीमा योजना अथवा सहयोग के लिए आप मुझसे सीधे संपर्क कर सकते हैं:
+                    किसी भी विचार-विमर्श, बीमा योजना अथवा सहयोग के लिए आप सीधे संपर्क कर सकते हैं:
                 </p>
 
                 <ul class="contact-list">
@@ -1363,9 +1509,9 @@
         <p style="font-size: 0.85rem; margin-top: 6px;">श्री गुंसाई जी महाराज की असीम कृपा से निर्मित</p>
     </footer>
 
-    <!-- App Switcher & Calculator Logic Scripts -->
+    <!-- Scripts -->
     <script>
-        // Screen Navigation
+        // Navigation Switcher
         function openSection(sectionId) {
             document.getElementById('home-view').style.display = 'none';
             const allSections = document.querySelectorAll('.detail-view');
@@ -1385,7 +1531,6 @@
             window.scrollTo({ top: 120, behavior: 'smooth' });
         }
 
-        // Calculate Age from DOB
         function getAge(birthDateString) {
             const today = new Date();
             const birthDate = new Date(birthDateString);
@@ -1397,134 +1542,202 @@
             return age;
         }
 
-        function autoUpdateAge() {
-            const dob = document.getElementById('custDob').value;
+        function updatePliAge() {
+            const dob = document.getElementById('pliDob').value;
             if (dob) {
-                const age = getAge(dob);
-                document.getElementById('ageDisplay').innerText = `✓ वर्तमान आयु: ${age} वर्ष`;
+                document.getElementById('pliAgeText').innerText = '✓ वर्तमान आयु: ' + getAge(dob) + ' वर्ष';
             }
         }
 
-        // Global variable for sharing
-        let latestQuote = null;
-
-        // Premium Calculator Logic
-        function calculatePlan() {
-            const name = document.getElementById('custName').value.trim() || 'सम्मानित ग्राहक';
-            const dob = document.getElementById('custDob').value;
-            const sumAssured = parseFloat(document.getElementById('sumAssured').value);
-            const maturityAge = parseInt(document.getElementById('maturityAge').value);
-            const freq = parseInt(document.getElementById('freq').value);
-
-            if (!dob) {
-                alert('कृपया ग्राहक की जन्मतिथि (DOB) दर्ज करें।');
-                return;
+        function updateRpliAge() {
+            const dob = document.getElementById('rpliDob').value;
+            if (dob) {
+                document.getElementById('rpliAgeText').innerText = '✓ वर्तमान आयु: ' + getAge(dob) + ' वर्ष';
             }
+        }
 
-            const currentAge = getAge(dob);
+        // Global Quotes
+        let latestPliQuote = null;
+        let latestRpliQuote = null;
 
-            if (currentAge < 19) {
-                alert('पॉलिसी प्रवेश के लिए न्यूनतम आयु 19 वर्ष होनी चाहिए।');
-                return;
-            }
+        // PLI Calculator Logic
+        function calculatePli() {
+            const schemeSelect = document.getElementById('pliScheme');
+            const schemeVal = schemeSelect.value;
+            const schemeName = schemeSelect.options[schemeSelect.selectedIndex].text.split('[')[0].trim();
+            const name = document.getElementById('pliCustName').value.trim() || 'सम्मानित ग्राहक';
+            const dob = document.getElementById('pliDob').value;
+            const sa = parseFloat(document.getElementById('pliSumAssured').value);
+            const freq = parseInt(document.getElementById('pliFreq').value);
+            const matAge = parseInt(document.getElementById('pliMaturityAge').value);
+            const advName = document.getElementById('pliAdvName').value.trim() || 'रमेश सारस्वत';
+            const advPhone = document.getElementById('pliAdvPhone').value.trim() || '8949126572';
 
-            if (currentAge >= maturityAge) {
-                alert('परिपक्वता आयु (Maturity Age) वर्तमान आयु (' + currentAge + ' वर्ष) से अधिक होनी चाहिए।');
-                return;
-            }
+            if (!dob) { alert('कृपया जन्मतिथि (DOB) दर्ज करें।'); return; }
+            const age = getAge(dob);
+            if (age < 19) { alert('PLI में न्यूनतम आयु 19 वर्ष होनी चाहिए।'); return; }
+            if (age >= matAge) { alert('परिपक्वता आयु वर्तमान आयु से अधिक होनी चाहिए।'); return; }
 
-            const term = maturityAge - currentAge;
+            const term = matAge - age;
 
-            // Annual Base Rate per 1000 sum assured (approx standard PLI endowment formula)
-            // Premium decreases as term increases, increases slightly with entry age
-            const baseRatePerThousandYearly = ((1000 / term) + (currentAge * 0.45));
-            const annualBasePremium = (sumAssured / 1000) * baseRatePerThousandYearly;
+            // Scheme Bonus Rates & Factors
+            let bonusRate = 52;
+            let schemeFactor = 1.0;
+            if (schemeVal === 'suraksha') { bonusRate = 76; schemeFactor = 0.86; }
+            else if (schemeVal === 'suvidha') { bonusRate = 76; schemeFactor = 0.90; }
+            else if (schemeVal === 'sumangal') { bonusRate = 48; schemeFactor = 1.35; }
+            else if (schemeVal === 'yugal') { bonusRate = 52; schemeFactor = 1.15; }
 
-            // Frequency calculation with frequency rebate/rebate factors
-            let installmentPremium = 0;
+            const baseRatePerThousand = ((1000 / term) + (age * 0.42)) * schemeFactor;
+            const annualBase = (sa / 1000) * baseRatePerThousand;
+
+            let prem = 0;
             let freqText = '';
+            if (freq === 12) { freqText = 'मासिक (Monthly)'; prem = Math.round(annualBase / 12); }
+            else if (freq === 4) { freqText = 'त्रैमासिक (Quarterly)'; prem = Math.round((annualBase * 0.99) / 4); }
+            else if (freq === 2) { freqText = 'छमाही (Half-Yearly)'; prem = Math.round((annualBase * 0.985) / 2); }
+            else { freqText = 'वार्षिक (Yearly)'; prem = Math.round(annualBase * 0.98); }
 
-            if (freq === 12) {
-                freqText = 'मासिक (Monthly)';
-                installmentPremium = Math.round(annualBasePremium / 12);
-            } else if (freq === 4) {
-                freqText = 'त्रैमासिक (Quarterly)';
-                installmentPremium = Math.round((annualBasePremium * 0.99) / 4);
-            } else if (freq === 2) {
-                freqText = 'छमाही (Half-Yearly)';
-                installmentPremium = Math.round((annualBasePremium * 0.985) / 2);
-            } else {
-                freqText = 'वार्षिक (Yearly)';
-                installmentPremium = Math.round(annualBasePremium * 0.98);
-            }
+            const totalDep = Math.round(prem * freq * term);
+            const totalBonus = Math.round((sa / 1000) * bonusRate * term);
+            const matAmount = Math.round(sa + totalBonus);
+            const profit = Math.round(matAmount - totalDep);
 
-            const totalInstallments = term * freq;
-            const totalPaid = Math.round(installmentPremium * totalInstallments);
+            document.getElementById('resPliName').innerText = name;
+            document.getElementById('resPliScheme').innerText = schemeName;
+            document.getElementById('resPliAge').innerText = age + ' वर्ष';
+            document.getElementById('resPliTerm').innerText = term + ' वर्ष';
+            document.getElementById('resPliMatAge').innerText = matAge + ' वर्ष';
+            document.getElementById('resPliSA').innerText = '₹ ' + sa.toLocaleString('en-IN');
+            document.getElementById('resPliPrem').innerText = '₹ ' + prem.toLocaleString('en-IN') + ' (' + freqText + ')';
+            document.getElementById('resPliTotal').innerText = '₹ ' + totalDep.toLocaleString('en-IN');
+            document.getElementById('resPliBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN') + ' (@ ₹' + bonusRate + '/हज़ार)';
+            document.getElementById('resPliMat').innerText = '₹ ' + matAmount.toLocaleString('en-IN');
+            document.getElementById('resPliProfit').innerText = '₹ ' + profit.toLocaleString('en-IN');
+            document.getElementById('pliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong><br><em>*यह कोटेशन अनुमानित दरों पर आधारित है।</em>`;
 
-            // Bonus Calculation: Standard PLI rate @ ₹52 per 1000 sum assured per year
-            const annualBonus = (sumAssured / 1000) * 52;
-            const totalBonus = Math.round(annualBonus * term);
-            const maturityAmount = Math.round(sumAssured + totalBonus);
-            const netProfit = Math.round(maturityAmount - totalPaid);
+            latestPliQuote = { name, schemeName, age, term, matAge, sa: sa.toLocaleString('en-IN'), freqText, prem: prem.toLocaleString('en-IN'), totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
 
-            // Populate Results Table
-            document.getElementById('resName').innerText = name;
-            document.getElementById('resAge').innerText = currentAge + ' वर्ष';
-            document.getElementById('resTerm').innerText = term + ' वर्ष';
-            document.getElementById('resMatAge').innerText = maturityAge + ' वर्ष';
-            document.getElementById('resSumAssured').innerText = '₹ ' + sumAssured.toLocaleString('en-IN');
-            document.getElementById('resFreq').innerText = freqText;
-            document.getElementById('resPremium').innerText = '₹ ' + installmentPremium.toLocaleString('en-IN') + ' (' + freqText + ')';
-            document.getElementById('resTotalPaid').innerText = '₹ ' + totalPaid.toLocaleString('en-IN');
-            document.getElementById('resBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN');
-            document.getElementById('resMaturity').innerText = '₹ ' + maturityAmount.toLocaleString('en-IN');
-            document.getElementById('resNetProfit').innerText = '₹ ' + netProfit.toLocaleString('en-IN');
-
-            // Save Quote Object for WhatsApp
-            latestQuote = {
-                name,
-                currentAge,
-                term,
-                maturityAge,
-                sumAssured: sumAssured.toLocaleString('en-IN'),
-                freqText,
-                installmentPremium: installmentPremium.toLocaleString('en-IN'),
-                totalPaid: totalPaid.toLocaleString('en-IN'),
-                totalBonus: totalBonus.toLocaleString('en-IN'),
-                maturityAmount: maturityAmount.toLocaleString('en-IN'),
-                netProfit: netProfit.toLocaleString('en-IN')
-            };
-
-            // Show result box
-            const resBox = document.getElementById('printable-quotation');
-            resBox.style.display = 'block';
-            resBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            const rBox = document.getElementById('pliResultBox');
+            rBox.style.display = 'block';
+            rBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // WhatsApp Share Function
-        function shareOnWhatsApp() {
-            if (!latestQuote) return;
-
+        function sharePliWhatsApp() {
+            if (!latestPliQuote) return;
+            const q = latestPliQuote;
             const text = 
-`📋 *बीमा प्रस्ताव कोटेशन (Insurance Quotation)*
-👤 *ग्राहक का नाम:* ${latestQuote.name}
-🎂 *वर्तमान आयु:* ${latestQuote.currentAge} वर्ष
-🎯 *परिपक्वता आयु:* ${latestQuote.maturityAge} वर्ष (अवधि: ${latestQuote.term} वर्ष)
-💰 *बीमा राशि (Sum Assured):* ₹${latestQuote.sumAssured}
+`📋 *डाक जीवन बीमा (PLI) प्रस्ताव कोटेशन*
+👤 *ग्राहक:* ${q.name}
+📑 *योजना:* ${q.schemeName}
+🎂 *वर्तमान आयु:* ${q.age} वर्ष | 🎯 *परिपक्वता आयु:* ${q.matAge} वर्ष (अवधि: ${q.term} वर्ष)
+💰 *बीमा राशि (Sum Assured):* ₹${q.sa}
 ----------------------------------
-💳 *किस्त प्रीमियम:* ₹${latestQuote.installmentPremium} (${latestQuote.freqText})
-💵 *कुल जमा प्रीमियम:* ₹${latestQuote.totalPaid}
-🎁 *अनुमानित बोनस:* ₹${latestQuote.totalBonus}
-🏆 *कुल मैच्योरिटी लाभ:* ₹${latestQuote.maturityAmount}
-📈 *शुद्ध लाभ:* ₹${latestQuote.netProfit}
+💳 *किस्त प्रीमियम:* ₹${q.prem} (${q.freqText})
+💵 *कुल जमा प्रीमियम:* ₹${q.totalDep}
+🎁 *अनुमानित बोनस:* ₹${q.totalBonus}
+🏆 *कुल मैच्योरिटी लाभ:* ₹${q.matAmount}
+📈 *शुद्ध लाभ:* ₹${q.profit}
 ----------------------------------
-*परामर्शदाता:* रमेश सारस्वत
-📍 शेरेराँ, बीकानेर (राजस्थान)
-📞 फ़ोन / WhatsApp: +91 8949126572
+*परामर्शदाता:* ${q.advName}
+📞 *फ़ोन / WhatsApp:* +91 ${q.advPhone}
 🌐 वेबसाइट: https://RameshSaraswat21.github.io/My-website/`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        }
 
-            const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
+        // RPLI Calculator Logic
+        function calculateRpli() {
+            const schemeSelect = document.getElementById('rpliScheme');
+            const schemeVal = schemeSelect.value;
+            const schemeName = schemeSelect.options[schemeSelect.selectedIndex].text.split('[')[0].trim();
+            const name = document.getElementById('rpliCustName').value.trim() || 'सम्मानित ग्राहक';
+            const dob = document.getElementById('rpliDob').value;
+            const sa = parseFloat(document.getElementById('rpliSumAssured').value);
+            const freq = parseInt(document.getElementById('rpliFreq').value);
+            const matAge = parseInt(document.getElementById('rpliMaturityAge').value);
+            const advName = document.getElementById('rpliAdvName').value.trim() || 'रमेश सारस्वत';
+            const advPhone = document.getElementById('rpliAdvPhone').value.trim() || '8949126572';
+
+            if (!dob) { alert('कृपया जन्मतिथि (DOB) दर्ज करें।'); return; }
+            const age = getAge(dob);
+            if (age < 19 && schemeVal !== 'bal_bima') { alert('RPLI में न्यूनतम आयु 19 वर्ष होनी चाहिए।'); return; }
+            if (age >= matAge && schemeVal !== 'gram_priya') { alert('परिपक्वता आयु वर्तमान आयु से अधिक होनी चाहिए।'); return; }
+
+            let term = matAge - age;
+            if (schemeVal === 'gram_priya') { term = 10; }
+
+            // RPLI Bonus Rates & Factors
+            let bonusRate = 48;
+            let schemeFactor = 1.0;
+            if (schemeVal === 'gram_suraksha') { bonusRate = 60; schemeFactor = 0.84; }
+            else if (schemeVal === 'gram_suvidha') { bonusRate = 60; schemeFactor = 0.88; }
+            else if (schemeVal === 'gram_sumangal') { bonusRate = 45; schemeFactor = 1.30; }
+            else if (schemeVal === 'gram_priya') { bonusRate = 45; schemeFactor = 1.25; }
+            else if (schemeVal === 'bal_bima') { bonusRate = 48; schemeFactor = 0.75; }
+
+            const baseRatePerThousand = ((1000 / term) + (age * 0.40)) * schemeFactor;
+            const annualBase = (sa / 1000) * baseRatePerThousand;
+
+            let prem = 0;
+            let freqText = '';
+            if (freq === 12) { freqText = 'मासिक (Monthly)'; prem = Math.round(annualBase / 12); }
+            else if (freq === 4) { freqText = 'त्रैमासिक (Quarterly)'; prem = Math.round((annualBase * 0.99) / 4); }
+            else if (freq === 2) { freqText = 'छमाही (Half-Yearly)'; prem = Math.round((annualBase * 0.985) / 2); }
+            else { freqText = 'वार्षिक (Yearly)'; prem = Math.round(annualBase * 0.98); }
+
+            const totalDep = Math.round(prem * freq * term);
+            const totalBonus = Math.round((sa / 1000) * bonusRate * term);
+            const matAmount = Math.round(sa + totalBonus);
+            const profit = Math.round(matAmount - totalDep);
+
+            document.getElementById('resRpliName').innerText = name;
+            document.getElementById('resRpliScheme').innerText = schemeName;
+            document.getElementById('resRpliAge').innerText = age + ' वर्ष';
+            document.getElementById('resRpliTerm').innerText = term + ' वर्ष';
+            document.getElementById('resRpliMatAge').innerText = (schemeVal === 'gram_priya' ? (age + 10) + ' वर्ष' : matAge + ' वर्ष');
+            document.getElementById('resRpliSA').innerText = '₹ ' + sa.toLocaleString('en-IN');
+            document.getElementById('resRpliPrem').innerText = '₹ ' + prem.toLocaleString('en-IN') + ' (' + freqText + ')';
+            document.getElementById('resRpliTotal').innerText = '₹ ' + totalDep.toLocaleString('en-IN');
+            document.getElementById('resRpliBonus').innerText = '₹ ' + totalBonus.toLocaleString('en-IN') + ' (@ ₹' + bonusRate + '/हज़ार)';
+            document.getElementById('resRpliMat').innerText = '₹ ' + matAmount.toLocaleString('en-IN');
+            document.getElementById('resRpliProfit').innerText = '₹ ' + profit.toLocaleString('en-IN');
+            document.getElementById('rpliAdvisorFooter').innerHTML = `सलाहकार: <strong>${advName}</strong> | मो.: <strong>${advPhone}</strong><br><em>*यह कोटेशन अनुमानित दरों पर आधारित है।</em>`;
+
+            latestRpliQuote = { name, schemeName, age, term, matAge: (schemeVal === 'gram_priya' ? (age + 10) : matAge), sa: sa.toLocaleString('en-IN'), freqText, prem: prem.toLocaleString('en-IN'), totalDep: totalDep.toLocaleString('en-IN'), totalBonus: totalBonus.toLocaleString('en-IN'), matAmount: matAmount.toLocaleString('en-IN'), profit: profit.toLocaleString('en-IN'), advName, advPhone };
+
+            const rBox = document.getElementById('rpliResultBox');
+            rBox.style.display = 'block';
+            rBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function shareRpliWhatsApp() {
+            if (!latestRpliQuote) return;
+            const q = latestRpliQuote;
+            const text = 
+`📋 *ग्रामीण डाक जीवन बीमा (RPLI) प्रस्ताव कोटेशन*
+👤 *ग्राहक:* ${q.name}
+📑 *योजना:* ${q.schemeName}
+🎂 *वर्तमान आयु:* ${q.age} वर्ष | 🎯 *परिपक्वता आयु:* ${q.matAge} वर्ष (अवधि: ${q.term} वर्ष)
+💰 *बीमा राशि (Sum Assured):* ₹${q.sa}
+----------------------------------
+💳 *किस्त प्रीमियम:* ₹${q.prem} (${q.freqText})
+💵 *कुल जमा प्रीमियम:* ₹${q.totalDep}
+🎁 *अनुमानित बोनस:* ₹${q.totalBonus}
+🏆 *कुल मैच्योरिटी लाभ:* ₹${q.matAmount}
+📈 *शुद्ध लाभ:* ₹${q.profit}
+----------------------------------
+*परामर्शदाता:* ${q.advName}
+📞 *फ़ोन / WhatsApp:* +91 ${q.advPhone}
+🌐 वेबसाइट: https://RameshSaraswat21.github.io/My-website/`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Print active box only
+        function printQuotation(boxId) {
+            const box = document.getElementById(boxId);
+            box.classList.add('printable-active');
+            window.print();
+            box.classList.remove('printable-active');
         }
     </script>
 
